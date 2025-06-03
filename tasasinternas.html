@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Instituto Tecnológico Trujillo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- CDN de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MD2d3oGzH8yPt9bEOeRl6N6a1C/3RAcY1B9zVeyELn8MvGmjmr9Q9r+n6gdcvxPVKFS4OAr0h01AIjHx+NjPug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
+
+     <style>   
+     h3 {
+      color: #99001f;
+      font-size: 25px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+   #visor {
+      width: 80vw;   /* 80% del ancho de la pantalla */
+      height: 80vh;  /* 80% del alto de la pantalla */
+      border: none;
+      margin: 10vh auto; /* Centrado vertical y horizontal */
+      display: block;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header-container"></div>
+
+  <!-- Aquí se cargará el menú (opcional) -->
+  <div id="menu-container"></div>
+
+
+
+<main class="main-content">
+    <!-- Banner de bienvenida -->
+    <section class="hero">
+        <div class="hero-content">
+        <h2>Tasa Internas</h2>
+        <p>Comprometidos con una formación técnica de calidad, orientada a la innovación y al desarrollo profesional de nuestros estudiantes.</p>
+        <a href="#" class="btn-cta">Conoce nuestros programas</a>
+        </div>
+    </section>
+
+    <h3>Tasa Internas</h3>
+<iframe id="visor" src="./tasas/tasas-internas.pdf"></iframe>    
+</main>
+
+
+
+<div id="footer-container"></div>
+
+</body>
+</html>
+
+
