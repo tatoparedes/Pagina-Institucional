@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guía Oficial de Turismo - Instituto Tecnológico Trujillo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+  <style>
+    .schedule {
+      max-width: 700px;
+      margin: 30px auto;
+      border-collapse: collapse;
+      width: 90%;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .schedule th, .schedule td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+      font-weight: 500;
+    }
+    .schedule th {
+      background-color: #99001f;
+      color: white;
+    }
+    .schedule caption {
+      font-size: 22px;
+      font-weight: 700;
+      color: #99001f;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="main-header">
+  <div class="top-bar">
+    <div class="contact-info">
+      <span><img src="img/telefono.png" alt="Teléfono"> (044) 123456</span>
+      <span><img src="img/email.png" alt="Correo"> informes@institutotrujillo.edu.pe</span>
+    </div>
+    <div class="social-icons">
+      <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+    </div>
+  </div>
+  <div class="branding">
+    <img src="img/logo.png" alt="Logo Instituto" class="logo-header" />
+    <div class="brand-text">
+      <h1>Instituto Tecnológico Trujillo</h1>
+      <p>Formando profesionales técnicos con visión de futuro</p>
+    </div>
+  </div>
+</header>
+
+ <div id="menu-container"></div>
+
+<main class="main-content">
+  <h2>Horario - Guía Oficial de Turismo</h2>
+
+  <table class="schedule" summary="Horario por Periodo y Turno - Guía Oficial de Turismo">
+    <caption>HORARIO 2025 - I</caption>
+    <thead>
+      <tr>
+        <th>Periodo Académico</th>
+        <th>Turno Tarde</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Periodo I</td>
+        <td><button class="pdf-btn" data-pdf="pdfs/guia_periodoI_tarde.pdf">Ver PDF</button></td>
+      </tr>
+      <tr>
+        <td>Periodo III</td>
+        <td><button class="pdf-btn" data-pdf="pdfs/guia_periodoIII_tarde.pdf">Ver PDF</button></td>
+      </tr>
+      <tr>
+        <td>Periodo V</td>
+        <td><button class="pdf-btn" data-pdf="pdfs/guia_periodoV_tarde.pdf">Ver PDF</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="text-align:center; margin-top: 20px;">
+    <a href="index.html" class="btn-cta" style="padding: 10px 20px; font-size: 16px;">Volver al Inicio</a>
+  </p>
+</main>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section about">
+      <img src="img/logo.png" alt="Logo Instituto" class="footer-logo" />
+      <p>Instituto de Educación Superior Tecnológico Público Trujillo.<br />Formando profesionales técnicos con visión de futuro.</p>
+    </div>
+    <div class="footer-section links">
+      <h3>Enlaces rápidos</h3>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Admisión</a></li>
+        <li><a href="#">Programas de Estudio</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Trámites</a></li>
+      </ul>
+    </div>
+    <div class="footer-section contact">
+      <h3>Contacto</h3>
+      <p><strong>Dirección:</strong> Av. América Sur 1234, Trujillo, Perú</p>
+      <p><strong>Teléfono:</strong> (044) 123456</p>
+      <p><strong>Email:</strong> informes@institutotrujillo.edu.pe</p>
+    </div>
+    <div class="footer-section social">
+      <h3>Síguenos</h3>
+      <div class="social-icons">
+        <a href="#"><img src="img/facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
+        <a href="#"><img src="img/telefono.png" alt="Teléfono" /></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Instituto Tecnológico Trujillo. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.pdf-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const pdfUrl = button.getAttribute('data-pdf');
+      window.open(pdfUrl, '_blank', 'noopener');
+    });
+  });
+</script>
+
+</body>
+</html>
