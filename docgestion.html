@@ -102,37 +102,75 @@
     <!-- Banner de bienvenida -->
     <section class="hero">
         <div class="hero-content">
-        <h2>Bienvenidos al Instituto Tecnológico Trujillo</h2>
+        <h2>Documentos de Gestión</h2>
         <p>Comprometidos con una formación técnica de calidad, orientada a la innovación y al desarrollo profesional de nuestros estudiantes.</p>
         <a href="#" class="btn-cta">Conoce nuestros programas</a>
         </div>
     </section>
+     <div class="container">
+        <header>
+            <h1>Documentos de Gestión</h1>
+        </header>
+        
+        <div class="document-container">
+            <!-- Documento 1 -->
+            <div class="document-card">
+                <div class="document-title">Proyecto Educativo Institucional</div>
+              
+                <div class="button-container">
+                    <a href="./documentos/pei.pdf" class="btn download-btn" download>Download</a>
+                    <a onclick="mostrarModal('documentos/pei.pdf')" class="btn preview-btn">Preview</a>
+                </div>
+            </div>
+            
+            <!-- Documento 2 -->
+            <div class="document-card">
+                <div class="document-title">Reglamento Interno</div>
+              
+                <div class="button-container">
+                    <a href="./documentos/ri.pdf" class="btn download-btn" download>Download</a>
+                    <a onclick="mostrarModal('documentos/ri.pdf')" class="btn preview-btn">Preview</a>
+                </div>
+            </div>
 
-    <!-- Presentación institucional -->
-    <section class="presentation">
-        <h3>¿Quiénes somos?</h3>
-        <p>Somos una institución de educación superior tecnológica comprometida con la formación de profesionales técnicos altamente capacitados, éticos y preparados para enfrentar los desafíos del mundo laboral y contribuir al desarrollo del país.</p>
-    </section>
+            <!-- Documento 3 -->
+            <div class="document-card">
+                <div class="document-title">Plan de Trabajo</div>
+              
+                <div class="button-container">
+                    <a href="./documentos/pat.pdf" class="btn download-btn" download>Download</a>
+                    <a onclick="mostrarModal('documentos/pat.pdf')" class="btn preview-btn">Preview</a>
+                </div>
+            </div>
 
-    <!-- Programas de estudio -->
-    <section class="programs">
-        <h3>Nuestros programas de estudio</h3>
-        <div class="program-list">
-        <div class="program-card">
-            <h4>Diseño y Programación Web</h4>
-            <p>Especialízate en desarrollo de sitios y aplicaciones web con tecnologías modernas.</p>
+            <!-- Documento 4 -->
+            <div class="document-card">
+                <div class="document-title">Manual de Perfil de Puestos</div>
+              
+                <div class="button-container">
+                    <a href="./documentos/mpp.pdf" class="btn download-btn" download>Download</a>
+                    <a onclick="mostrarModal('documentos/mpp.pdf')" class="btn preview-btn">Preview</a>
+                </div>
+            </div>
+
+            <!-- Documento 5 -->
+            <div class="document-card">
+                <div class="document-title">Manuel de Procesos de Régimen Académico</div>              
+                <div class="button-container">
+                    <a href="./documentos/matpro.pdf" class="btn download-btn" download>Download</a>
+                    <a onclick="mostrarModal('documentos/matpro.pdf')" class="btn preview-btn">Preview</a>
+                </div>
+            </div>
+
         </div>
-        <div class="program-card">
-            <h4>Enfermería Técnica</h4>
-            <p>Forma parte del sistema de salud brindando atención técnica con calidad humana.</p>
-        </div>
-        <div class="program-card">
-            <h4>Contabilidad</h4>
-            <p>Domina los procesos contables y financieros en organizaciones públicas y privadas.</p>
-        </div>
-        <!-- Puedes agregar más programas aquí -->
-        </div>
-    </section>
+    </div>
+
+     <div class="modal" id="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarModal()">×</span>
+      <iframe id="visor"></iframe>
+    </div>
+    
 </main>
 
 <footer class="footer">
