@@ -24,18 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // También cerrar si se hace clic fuera del contenido
-    window.onclick = function(event) {
-      const modal = document.getElementById('modal');
-      if (event.target === modal) {
-        cerrarModal();
-      }
+     function cargarComponente(ruta, contenedorId) {
+      fetch(ruta)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById(contenedorId).innerHTML = html;
+        })
+        .catch(err => console.error(`Error al cargar ${ruta}:`, err));
     }
 
-     fetch('menu.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('menu-container').innerHTML = data;
-      })
-      .catch(error => {
-        console.error('Error al cargar el menú:', error);
-      });
+    // Cargar componentes
+    cargarComponente('header.html', 'header-container');
+    cargarComponente('menu.html', 'menu-container');  // Opcional
+    cargarComponente('footer.html', 'footer-container');

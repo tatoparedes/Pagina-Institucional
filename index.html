@@ -5,33 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Instituto Tecnológico Trujillo</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- CDN de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MD2d3oGzH8yPt9bEOeRl6N6a1C/3RAcY1B9zVeyELn8MvGmjmr9Q9r+n6gdcvxPVKFS4OAr0h01AIjHx+NjPug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="script.js" defer></script>
 </head>
 <body>
 
-<header class="main-header">
-    <div class="top-bar">
-        <div class="contact-info">
-        <span><img src="img/telefono.png" alt="Teléfono"> (044) 123456</span>
-        <span><img src="img/email.png" alt="Correo"> informes@institutotrujillo.edu.pe</span>
-        </div>
-        <div class="social-icons">
-        <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="img/whatsapp.png" alt="WhatsApp"></a>
-        </div>
-    </div>
+  <div id="header-container"></div>
 
-    <div class="branding">
-        <img src="img/logo.png" alt="Logo Instituto" class="logo-header">
-        <div class="brand-text">
-        <h1>Instituto Tecnológico Trujillo</h1>
-        <p>Formando profesionales técnicos con visión de futuro</p>
-        </div>
-    </div>
-</header>
-
- <div id="menu-container"></div>
-
+  <!-- Aquí se cargará el menú (opcional) -->
+  <div id="menu-container"></div>
 
 <main class="main-content">
     <!-- Banner de bienvenida -->
@@ -53,69 +36,47 @@
     <section class="programs">
         <h3>Nuestros programas de estudio</h3>
         <div class="program-list">
-        <div class="program-card">
-            <h4>Diseño y Programación Web</h4>
-            <p>Especialízate en desarrollo de sitios y aplicaciones web con tecnologías modernas.</p>
-        </div>
-        <div class="program-card">
-            <h4>Enfermería Técnica</h4>
-            <p>Forma parte del sistema de salud brindando atención técnica con calidad humana.</p>
-        </div>
-        <div class="program-card">
-            <h4>Contabilidad</h4>
-            <p>Domina los procesos contables y financieros en organizaciones públicas y privadas.</p>
-        </div>
-        <!-- Puedes agregar más programas aquí -->
-        </div>
-    </section>
-</main>
-
-<footer class="footer">
-    <div class="footer-container">
-        
-        <!-- Logo e Institución -->
-        <div class="footer-section about">
-            <img src="img/logo.png" alt="Logo Instituto" class="footer-logo">
-            <p>Instituto de Educación Superior Tecnológico Público Trujillo.<br>Formando profesionales técnicos con visión de futuro.</p>
-        </div>
-
-        <!-- Enlaces rápidos -->
-        <div class="footer-section links">
-        <h3>Enlaces rápidos</h3>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Admisión</a></li>
-            <li><a href="#">Programas de Estudio</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Trámites</a></li>
-        </ul>
-        </div>
-
-        <!-- Contacto -->
-        <div class="footer-section contact">
-        <h3>Contacto</h3>
-            <p><strong>Dirección:</strong> Av. América Sur 1234, Trujillo, Perú</p>
-            <p><strong>Teléfono:</strong> (044) 123456</p>
-            <p><strong>Email:</strong> informes@institutotrujillo.edu.pe</p>
-        </div>
-
-        <!-- Redes sociales -->
-        <div class="footer-section social">
-            <h3>Síguenos</h3>
-            <div class="social-icons">
-                <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="img/whatsapp.png" alt="WhatsApp"></a>
-                <a href="#"><img src="img/telefono.png" alt="Teléfono"></a>
+            <div class="program-card">
+                <h4><a href="asistencia-admin.html">Asistencia Administrativa</a></h4>
+                <p>Gestiona eficientemente las actividades administrativas de cualquier organización.</p>
+            </div>
+            <div class="program-card">
+                <h4><a href="contabilidad.html">Contabilidad</a></h4>
+                <p>Domina los procesos contables y financieros en organizaciones públicas y privadas.</p>
+            </div>
+            <div class="program-card">
+                <h4><a href="diseno-web.html">Diseño y Programación Web</a></h4>
+                <p>Especialízate en desarrollo de sitios y aplicaciones web con tecnologías modernas.</p>
+            </div>
+            <div class="program-card">
+                <h4><a href="enfermeria.html">Enfermería Técnica</a></h4>
+                <p>Forma parte del sistema de salud brindando atención técnica con calidad humana.</p>
+            </div>
+            <div class="program-card">
+                <h4><a href="guia-turismo.html">Guía Oficial de Turismo</a></h4>
+                <p>Conviértete en un profesional del turismo y promoción cultural.</p>
+            </div>
+            <div class="program-card">
+                <h4><a href="laboratorio-clinico.html">Laboratorio Clínico y Anatomía Patológica</a></h4>
+                <p>Aprende técnicas para el análisis clínico y diagnóstico patológico.</p>
+            </div>
+            <div class="program-card">
+                <h4><a href="marketing.html">Marketing</a></h4>
+                <p>Aprende estrategias para posicionar marcas y productos en el mercado actual.</p>
+            </div>
+            <div class="program-card">
+                <h4><a href="efsrt.html">EFSRT</a></h4>
+                <p>Especialízate en temas avanzados del sector EFSRT.</p>
             </div>
         </div>
+    </section>
+    
+</main>
 
-    </div>
 
-    <div class="footer-bottom">
-        <p>&copy; 2025 Instituto Tecnológico Trujillo. Todos los derechos reservados.</p>
-    </div>
-</footer>
-
+<div id="footer-container"></div>
 
 </body>
 </html>
+
+
