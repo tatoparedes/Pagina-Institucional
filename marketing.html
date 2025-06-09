@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Marketing - Instituto Tecnológico Trujillo</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
   <style>
     .schedule {
       max-width: 700px;
@@ -33,55 +32,126 @@
       color: #99001f;
       margin-bottom: 10px;
     }
+    .pdf-btn {
+      background-color: #99001f;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .pdf-btn:hover {
+      background-color: #cc0033;
+    }
   </style>
 </head>
 <body>
+<header class="main-header">
+  <!-- Contenido del header con logo y redes -->
+</header>
 
-  <div id="header-container"></div>
-
- <div id="menu-container"></div>
+<nav class="navbar">
+  <ul class="menu">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="asistencia-admin.html">Asistencia Administrativa</a></li>
+    <li><a href="contabilidad.html">Contabilidad</a></li>
+    <li><a href="diseno-web.html">Diseño y Programación Web</a></li>
+    <li><a href="enfermeria.html">Enfermería Técnica</a></li>
+    <li><a href="guia-turismo.html">Guía Oficial de Turismo</a></li>
+    <li><a href="laboratorio-clinico.html">Laboratorio Clínico y Anatomía Patológica</a></li>
+    <li><a href="marketing.html" class="active">Marketing</a></li>
+    <li><a href="efsrt.html">EFSRT</a></li>
+  </ul>
+</nav>
 
 <main class="main-content">
-  <h2>Horario - Marketing</h2>
 
-  <table class="schedule" summary="Horario por Periodo y Turno - Marketing">
-    <caption>HORARIO 2025 - I</caption>
-    <thead>
-      <tr>
-        <th>Periodo Académico</th>
-        <th>Turno Mañana</th>
-        <th>Turno Tarde</th>
-        <th>Turno Noche</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Periodo I</td>
-        <td><button class="pdf-btn" data-pdf="pdfs/marketing_periodoI_manana.pdf">Ver PDF</button></td>
-        <td><button class="pdf-btn" data-pdf="pdfs/marketing_periodoI_tarde.pdf">Ver PDF</button></td>
-        <td><button class="pdf-btn" data-pdf="pdfs/marketing_periodoI_noche.pdf">Ver PDF</button></td>
-      </tr>
-      <tr>
-        <td>Periodo III</td>
-        <td><button class="pdf-btn" data-pdf="pdfs/marketing_periodoIII_manana.pdf">Ver PDF</button></td>
-        <td><button class="pdf-btn" data-pdf="pdfs/marketing_periodoIII_tarde.pdf">Ver PDF</button></td>
-        <td><button class="pdf-btn" data-pdf="pdfs/marketing_periodoIII_noche.pdf">Ver PDF</button></td>
-      </tr>
-      <tr>
-        <td>Periodo V</td>
-        <td><button class="pdf-btn" data-pdf="pdfs/marketing_periodoV_manana.pdf">Ver PDF</button></td>
-        <td><button class="pdf-btn" data-pdf="pdfs/marketing_periodoV_tarde.pdf">Ver PDF</button></td>
-        <td><button class="pdf-btn" data-pdf="pdfs/marketing_periodoV_noche.pdf">Ver PDF</button></td>
-      </tr>
-    </tbody>
-  </table>
+<section style="background: linear-gradient(to right, #fff 50%, #fff0f0 100%); display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px; margin: 60px auto; max-width: 1200px; padding: 40px 0; border-radius: 16px 16px 0 0;">
+  <div style="flex: 1; min-width: 300px; max-width: 500px;">
+    <img src="img/mark1.webp" alt="Coordinador Marketing" style="width: 100%; border-radius: 12px;">
+  </div>
+  <div style="flex: 1; min-width: 300px; max-width: 600px; text-align: center;">
+    <h2 style="color: #99001f; font-size: 36px; margin-bottom: 10px;">MARKETING</h2>
+    <p style="font-style: italic; font-size: 18px; color: #333;">«Comunicar valor, conectar con el cliente y crear oportunidades de negocio»</p>
+  </div>
+</section>
 
-  <p style="text-align:center; margin-top: 20px;">
-    <a href="index.html" class="btn-cta" style="padding: 10px 20px; font-size: 16px;">Volver al Inicio</a>
-  </p>
+<section style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin: 40px auto; max-width: 1200px;">
+  <div style="flex: 1; min-width: 300px; max-width: 500px;">
+    <img src="img/mark2.webp" alt="Perfil Marketing" style="width: 100%; border-radius: 12px;">
+  </div>
+  <div style="flex: 1; min-width: 300px; max-width: 600px;">
+    <h2 style="color: #99001f;">Perfil Profesional</h2>
+    <p style="text-align: justify;">
+      El profesional técnico en Marketing diseña, ejecuta y evalúa estrategias comerciales orientadas al mercado, utilizando herramientas digitales y tradicionales para posicionar productos y servicios. Está preparado para trabajar en áreas de publicidad, ventas, investigación de mercados y gestión comercial en empresas públicas o privadas.
+    </p>
+  </div>
+</section>
+
+<section style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px; margin: 40px auto; max-width: 1200px;">
+  <div style="flex: 1; min-width: 300px; max-width: 600px; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    <h2 style="color: #99001f;">Competencias</h2>
+    <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+      <li>-Diseñar estrategias de marketing y comunicación comercial.</li>
+      <li>-Ejecutar campañas de promoción y publicidad.</li>
+      <li>-Aplicar técnicas de ventas y atención al cliente.</li>
+      <li>-Investigar el comportamiento del consumidor y el mercado.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; min-width: 300px; max-width: 500px;">
+    <img src="img/mark3.webp" alt="Ilustración Competencias" style="width: 100%; border-radius: 12px;">
+  </div>
+</section>
+
+<section style="max-width: 1200px; margin: 60px auto; text-align: center;">
+  <h2 style="color: #000; font-size: 28px; margin-bottom: 30px;">¿QUÉ SE ESTUDIA EN MARKETING?</h2>
+  <img src="img/planmark.jpg" alt="Plan de Estudios Marketing" style="width: 100%; max-width: 1000px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <div style="text-align: center; margin-top: 30px;">
+    <a href="PLAN/MarketingItinerario.pdf" target="_blank" style="display: inline-block; background-color: #99001f; color: white; padding: 12px 24px; border-radius: 30px; font-size: 16px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease;">
+      Descargar Plan de Estudios
+    </a>
+  </div>
+</section>
+
+<h2 style="text-align:center; margin-top: 50px;">Horario - Marketing</h2>
+<table class="schedule" summary="Horario por Periodo y Turno - Marketing">
+  <caption>HORARIO 2025 - I</caption>
+  <thead>
+    <tr>
+      <th>Periodo Académico</th>
+      <th>Turno Tarde</th>
+      <th>Turno Noche</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Periodo I</td>
+      <td><button class="pdf-btn" data-pdf="MARK/MARK-I-TARDE.pdf">Ver PDF</button></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Periodo III</td>
+      <td></td>
+      <td><button class="pdf-btn" data-pdf="MARK/MARK-III-TARDE.pdf">Ver PDF</button></td>
+    </tr>
+    <tr>
+      <td>Periodo V</td>
+      <td></td>
+      <td><button class="pdf-btn" data-pdf="MARK/MARK-V-TARDE.pdf">Ver PDF</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="text-align:center; margin-top: 20px;">
+  <a href="index.html" class="btn-cta" style="padding: 10px 20px; font-size: 16px;">Volver al Inicio</a>
+</p>
 </main>
 
-<div id="footer-container"></div>
+<footer class="footer">
+  <!-- Contenido del footer -->
+</footer>
 
 <script>
   document.querySelectorAll('.pdf-btn').forEach(button => {

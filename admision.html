@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Instituto Tecnológico Trujillo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- CDN de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MD2d3oGzH8yPt9bEOeRl6N6a1C/3RAcY1B9zVeyELn8MvGmjmr9Q9r+n6gdcvxPVKFS4OAr0h01AIjHx+NjPug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
+</head>
+<style>
+    .container {
+    width: 80%; /* Ajusta el ancho del contenedor según lo necesites */
+    margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+.presentation {
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    align-items: flex-start; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Deja espacio entre el texto y la imagen */
+}
+
+.text {
+    flex: 1; /* El texto ocupa el espacio restante */
+}
+
+.right-img {
+    margin-left: 20px;
+    width: 500px; /* Ajusta el tamaño de la imagen según necesites */
+}
+</style>
+<body>
+
+    <div id="header-container"></div>
+
+    <!-- Aquí se cargará el menú (opcional) -->
+    <div id="menu-container"></div>
+
+    <main class="main-content">
+        <!-- Banner de bienvenida -->
+        <section class="hero">
+            <div class="hero-content">
+            <h2>Admisión</h2>
+            <p>Te invitamos a formar parte de nuestra institución, donde la excelencia académica y el desarrollo profesional van de la mano.</p>
+            <a href="#" class="btn-cta">2025</a>
+            </div>
+        </section>
+
+        <!-- Presentación institucional -->
+        <section class="container">
+        <div class="presentation">
+            <h3>Ordinaria</h3>
+            <div class="content">
+                <div class="text">
+                    <p>La Admisión Ordinaria está dirigida a los egresados de educación secundaria que desean ingresar a nuestra institución para continuar su formación académica y profesional. A través de este proceso, los postulantes podrán acceder a una educación de calidad en diversas carreras técnicas y profesionales, con el respaldo de un plan educativo innovador y accesible.</p>
+                    <p>Requisitos:</p>
+                    <p>☑ Certificados originales de estudios secundarios</p>
+                    <p>☑ Copia de DNI</p>
+                    <p>☑ 1 foto tamaño carné a color.</p>
+                    <p>☑ Pago por derecho de inscripción</p>
+                </div>
+                <!-- Imagen a la derecha dentro del contenedor -->
+                <img src="./img/admision.jpg" alt="Imagen de Admisión" class="right-img">
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="presentation">
+            <h3>Por exoneración</h3>
+            <div class="content">
+                <div class="text">
+                    <p>Requisitos:</p>
+                    <p>☑ Egresados de Educación Secundaria que han ocupado el 1º y 2º puesto durante los dos últimos años dentro del ámbito local y Regional.</p>
+                    <p>☑ Deportistas calificados, acreditados por el Instituto Peruano del Deporte.</p>
+                    <p>☑ Estudiantes talentosos.</p>
+                    <p>☑ Los discapacitados.</p>
+                    <p>☑ Los que están cumpliendo servicio militar obligatorio.</p>
+                    <p>☑ Las personas víctimas del terrorismo, con acreditación comprobada Ley 28592. Plan integral de reparaciones PIR.</p>
+                </div>
+                <!-- Imagen a la derecha dentro del contenedor -->
+                <img src="./img/exoneracion.jpg" alt="Imagen de Admisión" class="right-img">
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="presentation">
+            <h3>Por ingreso extraordinario</h3>
+            <div class="content">
+                <div class="text">
+                    <p>El Ingreso Extraordinario es un proceso autorizado por el MINEDU, dirigido a estudiantes que han sido beneficiarios de becas, programas de movilidad académica o convenios especiales, permitiendo su ingreso directo a la institución.</p>
+                
+                </div>
+                <!-- Imagen a la derecha dentro del contenedor -->
+                <img src="./img/beca.webp" alt="Imagen de Admisión" class="right-img">
+            </div>
+        </div>
+    </section>
+
+        
+    </main>
+
+    <div id="footer-container"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Instituto Tecnológico Trujillo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <!-- Aquí se cargará el menú (opcional) -->
+    <div id="menu-container"></div>
+
+<main class="main-content">
+    <!-- Banner de bienvenida -->
+    <section class="hero">
+        <div class="hero-content">
+        <h2>Plana Jerárquica</h2>
+        <p>Comprometidos con una formación técnica de calidad, orientada a la innovación y al desarrollo profesional de nuestros estudiantes.</p>
+        <a href="#" class="btn-cta">2025</a>
+        </div>
+    </section>
+
+      <div class="grupo">
+    <h3>Diseño y Programacion Web</h3>
+    <div class="fila">
+      <div class="persona" onclick="mostrarModal('documentos/persona.pdf')">
+        <img src="./img/foto.jpg" alt="Persona 1">
+        <p>Edwin Paredes</p>
+      </div>
+      <div class="persona" onclick="mostrarModal('documentos/persona.pdf')">
+        <img src="./img/foto.jpg" alt="Persona 2">
+        <p>Persona 2</p>
+      </div>
+      <div class="persona" onclick="mostrarModal('documentos/persona.pdf')">
+        <img src="./img/foto.jpg" alt="Persona 3">
+        <p>Persona 3</p>
+      </div>
+    </div>
+  </div>
+
+   <div class="modal" id="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarModal()">×</span>
+      <iframe id="visor"></iframe>
+    </div>
+  </div>
+  
+
+
+<footer class="footer">
+    <div class="footer-container">
+        
+        <!-- Logo e Institución -->
+        <div class="footer-section about">
+            <img src="img/logo1.jpg" alt="Logo Instituto" class="footer-logo">
+            <p>Instituto de Educación Superior Tecnológico Público Trujillo.<br>Formando profesionales técnicos con visión de futuro.</p>
+        </div>
+
+        <!-- Enlaces rápidos -->
+        <div class="footer-section links">
+        <h3>Enlaces rápidos</h3>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Admisión</a></li>
+            <li><a href="#">Programas de Estudio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Trámites</a></li>
+        </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div class="footer-section contact">
+        <h3>Contacto</h3>
+            <p><strong>Dirección:</strong> Psje. Olaya N° 180, Trujillo, Perú</p>
+            <p><strong>Teléfono:</strong> (044) 614225</p>
+            <p><strong>Email:</strong> admision@iestp.edu.pe</p>
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="footer-section social">
+            <h3>Síguenos</h3>
+            <div class="social-icons">
+                <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="img/whatsapp.png" alt="WhatsApp"></a>
+                <a href="#"><img src="img/telefono.png" alt="Teléfono"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 IESTP Trujillo. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>
+
+
