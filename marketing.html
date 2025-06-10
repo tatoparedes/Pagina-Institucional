@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Marketing - Instituto Tecnológico Trujillo</title>
   <link rel="stylesheet" href="styles.css" />
+    <!-- CDN de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MD2d3oGzH8yPt9bEOeRl6N6a1C/3RAcY1B9zVeyELn8MvGmjmr9Q9r+n6gdcvxPVKFS4OAr0h01AIjHx+NjPug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
   <style>
     .schedule {
       max-width: 700px;
@@ -48,23 +51,11 @@
   </style>
 </head>
 <body>
-<header class="main-header">
-  <!-- Contenido del header con logo y redes -->
-</header>
 
-<nav class="navbar">
-  <ul class="menu">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="asistencia-admin.html">Asistencia Administrativa</a></li>
-    <li><a href="contabilidad.html">Contabilidad</a></li>
-    <li><a href="diseno-web.html">Diseño y Programación Web</a></li>
-    <li><a href="enfermeria.html">Enfermería Técnica</a></li>
-    <li><a href="guia-turismo.html">Guía Oficial de Turismo</a></li>
-    <li><a href="laboratorio-clinico.html">Laboratorio Clínico y Anatomía Patológica</a></li>
-    <li><a href="marketing.html" class="active">Marketing</a></li>
-    <li><a href="efsrt.html">EFSRT</a></li>
-  </ul>
-</nav>
+  <div id="header-container"></div>
+
+  <!-- Aquí se cargará el menú (opcional) -->
+  <div id="menu-container"></div>
 
 <main class="main-content">
 
@@ -149,9 +140,7 @@
 </p>
 </main>
 
-<footer class="footer">
-  <!-- Contenido del footer -->
-</footer>
+<div id="footer-container"></div>
 
 <script>
   document.querySelectorAll('.pdf-btn').forEach(button => {

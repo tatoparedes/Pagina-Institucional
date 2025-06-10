@@ -3,18 +3,134 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Instituto Tecnológico Trujillo</title>
+    <title>Instituto Tecnológico Trujillo - Plana Docente</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        .carreras-container {
+            margin-top: 40px;
+        }
+        .carrera-section {
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .carrera-title {
+            color: #99001f;
+            border-bottom: 2px solid #99001f;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            padding: 0 50px;
+        }
+        .profesores-carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+            padding: 10px 0;
+        }
+        .profesores-carousel::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        .profesor-card {
+            flex: 0 0 280px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .profesor-card:hover {
+            transform: translateY(-5px);
+        }
+        .profesor-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .profesor-info {
+            padding: 15px;
+        }
+        .profesor-nombre {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .profesor-profesion {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .profesor-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        .cv-btn {
+            background: #99001f;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .cv-btn:hover {
+            background: #7a001a;
+        }
+        .social-links a {
+            color: #333;
+            margin-left: 10px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #99001f;
+        }
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: #99001f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+        }
+        .carousel-arrow:hover {
+            background: #7a001a;
+        }
+        .carousel-prev {
+            left: 0;
+        }
+        .carousel-next {
+            right: 0;
+        }
+    </style>
     <script src="script.js" defer></script>
 </head>
 <body>
 
   <div id="header-container"></div>
 
-
- <div id="menu-container"></div>
+  <div id="menu-container"></div>
 
 <main class="main-content">
+
     <!-- Banner de bienvenida -->
     <section class="hero">
         <div class="hero-content">
@@ -24,30 +140,498 @@
         </div>
     </section>
 
-      <div class="grupo">
-    <h3>Diseño y Programacion Web</h3>
-    <div class="fila">
-      <div class="persona" onclick="mostrarModal('cv/HV MIRTHA.pdf')">
-        <img src="./fotos/mirta.jpg" alt="Persona 1">
-        <p>Mirtha R. Gómez Dominguez</p>
-      </div>
-      
+    <!-- Contenedor de carreras -->
+    <div class="carreras-container">
+        
+        <!-- Asistencia Administrativa -->
+        <section class="carrera-section" id="asistencia-admin">
+            <h2 class="carrera-title">Asistencia Administrativa</h2>
+            <div class="carousel-container">
+                <div class="carousel-arrow carousel-prev" onclick="moveCarousel('asistencia-carousel', 'prev')">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="profesores-carousel" id="asistencia-carousel">
+                    <div class="profesor-card">
+                        <img src="fotos/maestra1.jpg" alt="Profesor" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Carlos Mendoza</h3>
+                            <p class="profesor-profesion">Lic. en Administración</p>
+                            <div class="profesor-actions">
+                                <a href="cv/carlos-mendoza.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="fotos/maestra2.jpg" alt="Profesora" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Ana Gutiérrez</h3>
+                            <p class="profesor-profesion">Mg. en Gestión Empresarial</p>
+                            <div class="profesor-actions">
+                                <a href="cv/ana-gutierrez.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="fotos/maestra3.jpg" alt="Profesor" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Luis Ramírez</h3>
+                            <p class="profesor-profesion">Dr. en Administración</p>
+                            <div class="profesor-actions">
+                                <a href="cv/luis-ramirez.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="fotos/maestra1.jpg" alt="Profesora" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Marta Sánchez</h3>
+                            <p class="profesor-profesion">Lic. en Administración</p>
+                            <div class="profesor-actions">
+                                <a href="cv/marta-sanchez.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="fotos/maestra2.jpg" alt="Profesor" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Luis Ramírez</h3>
+                            <p class="profesor-profesion">Dr. en Administración</p>
+                            <div class="profesor-actions">
+                                <a href="cv/luis-ramirez.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="fotos/maestra3.jpg" alt="Profesor" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Luis Ramírez</h3>
+                            <p class="profesor-profesion">Dr. en Administración</p>
+                            <div class="profesor-actions">
+                                <a href="cv/luis-ramirez.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-arrow carousel-next" onclick="moveCarousel('asistencia-carousel', 'next')">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contabilidad -->
+        <section class="carrera-section" id="contabilidad">
+            <h2 class="carrera-title">Contabilidad</h2>
+            <div class="carousel-container">
+                <div class="carousel-arrow carousel-prev" onclick="moveCarousel('contabilidad-carousel', 'prev')">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="profesores-carousel" id="contabilidad-carousel">
+                    <div class="profesor-card">
+                        <img src="fotos/maestra1.jpg" alt="Profesor" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Roberto Sánchez</h3>
+                            <p class="profesor-profesion">CPC, Mg. en Tributación</p>
+                            <div class="profesor-actions">
+                                <a href="cv/roberto-sanchez.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="fotos/maestra2.jpg" alt="Profesora" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">María Rodríguez</h3>
+                            <p class="profesor-profesion">CPC, Especialista en NIIF</p>
+                            <div class="profesor-actions">
+                                <a href="cv/maria-rodriguez.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="fotos/maestra3.jpg" alt="Profesor" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Jorge Pérez</h3>
+                            <p class="profesor-profesion">CPC, Dr. en Finanzas</p>
+                            <div class="profesor-actions">
+                                <a href="cv/jorge-perez.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="fotos/maestra1.jpg" alt="Profesor" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Roberto Sánchez</h3>
+                            <p class="profesor-profesion">CPC, Mg. en Tributación</p>
+                            <div class="profesor-actions">
+                                <a href="cv/roberto-sanchez.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="fotos/maestra2.jpg" alt="Profesora" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">María Rodríguez</h3>
+                            <p class="profesor-profesion">CPC, Especialista en NIIF</p>
+                            <div class="profesor-actions">
+                                <a href="cv/maria-rodriguez.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="fotos/maestra3.jpg" alt="Profesor" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Jorge Pérez</h3>
+                            <p class="profesor-profesion">CPC, Dr. en Finanzas</p>
+                            <div class="profesor-actions">
+                                <a href="cv/jorge-perez.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-arrow carousel-next" onclick="moveCarousel('contabilidad-carousel', 'next')">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Diseño y Programación Web -->
+        <section class="carrera-section" id="diseno-web">
+            <h2 class="carrera-title">Diseño y Programación Web</h2>
+            <div class="carousel-container">
+                <div class="carousel-arrow carousel-prev" onclick="moveCarousel('diseno-carousel', 'prev')">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="profesores-carousel" id="diseno-carousel">
+                    <div class="profesor-card">
+                        <img src="img/foto.jpg" alt="Profesor" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Daniel Torres</h3>
+                            <p class="profesor-profesion">Ing. de Sistemas, Full Stack Developer</p>
+                            <div class="profesor-actions">
+                                <a href="cv/daniel-torres.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="img/foto.jpg" alt="Profesora" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Laura Vega</h3>
+                            <p class="profesor-profesion">Diseñadora UX/UI, Frontend Developer</p>
+                            <div class="profesor-actions">
+                                <a href="cv/laura-vega.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-behance"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="img/foto.jpg" alt="Profesor" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Miguel Ríos</h3>
+                            <p class="profesor-profesion">Ing. de Software, Backend Developer</p>
+                            <div class="profesor-actions">
+                                <a href="cv/miguel-rios.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                    <a href="#"><i class="fab fa-stack-overflow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-arrow carousel-next" onclick="moveCarousel('diseno-carousel', 'next')">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Enfermería Técnica -->
+        <section class="carrera-section" id="enfermeria">
+            <h2 class="carrera-title">Enfermería Técnica</h2>
+            <div class="carousel-container">
+                <div class="carousel-arrow carousel-prev" onclick="moveCarousel('enfermeria-carousel', 'prev')">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="profesores-carousel" id="enfermeria-carousel">
+                    <div class="profesor-card">
+                        <img src="img/foto.jpg" alt="Profesora" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Carmen Díaz</h3>
+                            <p class="profesor-profesion">Lic. en Enfermería, Especialista en Emergencias</p>
+                            <div class="profesor-actions">
+                                <a href="cv/carmen-diaz.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="img/foto.jpg" alt="Profesor" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Jorge Paredes</h3>
+                            <p class="profesor-profesion">Lic. en Enfermería, Mg. en Salud Pública</p>
+                            <div class="profesor-actions">
+                                <a href="cv/jorge-paredes.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-arrow carousel-next" onclick="moveCarousel('enfermeria-carousel', 'next')">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Guía Oficial de Turismo -->
+        <section class="carrera-section" id="guia-turismo">
+            <h2 class="carrera-title">Guía Oficial de Turismo</h2>
+            <div class="carousel-container">
+                <div class="carousel-arrow carousel-prev" onclick="moveCarousel('turismo-carousel', 'prev')">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="profesores-carousel" id="turismo-carousel">
+                    <div class="profesor-card">
+                        <img src="img/foto.jpg" alt="Profesor" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Pedro Castillo</h3>
+                            <p class="profesor-profesion">Lic. en Turismo, Guía Oficial</p>
+                            <div class="profesor-actions">
+                                <a href="cv/pedro-castillo.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="img/foto.jpg" alt="Profesora" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Lucía Morales</h3>
+                            <p class="profesor-profesion">Mg. en Gestión Turística</p>
+                            <div class="profesor-actions">
+                                <a href="cv/lucia-morales.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-arrow carousel-next" onclick="moveCarousel('turismo-carousel', 'next')">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Laboratorio Clínico y Anatomía Patológica -->
+        <section class="carrera-section" id="laboratorio">
+            <h2 class="carrera-title">Laboratorio Clínico y Anatomía Patológica</h2>
+            <div class="carousel-container">
+                <div class="carousel-arrow carousel-prev" onclick="moveCarousel('laboratorio-carousel', 'prev')">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="profesores-carousel" id="laboratorio-carousel">
+                    <div class="profesor-card">
+                        <img src="img/foto.jpg" alt="Profesor" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Miguel Ángel Vargas</h3>
+                            <p class="profesor-profesion">Tecnólogo Médico, Especialista en Microbiología</p>
+                            <div class="profesor-actions">
+                                <a href="cv/miguel-vargas.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-researchgate"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="img/foto.jpg" alt="Profesora" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Silvia Ortiz</h3>
+                            <p class="profesor-profesion">Tecnóloga Médica, Mg. en Patología Clínica</p>
+                            <div class="profesor-actions">
+                                <a href="cv/silvia-ortiz.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-arrow carousel-next" onclick="moveCarousel('laboratorio-carousel', 'next')">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Marketing -->
+        <section class="carrera-section" id="marketing">
+            <h2 class="carrera-title">Marketing</h2>
+            <div class="carousel-container">
+                <div class="carousel-arrow carousel-prev" onclick="moveCarousel('marketing-carousel', 'prev')">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="profesores-carousel" id="marketing-carousel">
+                    <div class="profesor-card">
+                        <img src="img/foto.jpg" alt="Profesor" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Javier Ramos</h3>
+                            <p class="profesor-profesion">Lic. en Marketing, Especialista en Marketing Digital</p>
+                            <div class="profesor-actions">
+                                <a href="cv/javier-ramos.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profesor-card">
+                        <img src="img/foto.jpg" alt="Profesora" class="profesor-img">
+                        <div class="profesor-info">
+                            <h3 class="profesor-nombre">Claudia Benites</h3>
+                            <p class="profesor-profesion">Mg. en Dirección de Marketing, Consultora de Branding</p>
+                            <div class="profesor-actions">
+                                <a href="cv/claudia-benites.pdf" class="cv-btn">Ver CV</a>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-behance"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-arrow carousel-next" onclick="moveCarousel('marketing-carousel', 'next')">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </section>
     </div>
-  </div>
 
-   <div class="modal" id="modal">
-    <div class="modal-contenido">
-      <span class="cerrar" onclick="cerrarModal()">×</span>
-      <iframe id="visor"></iframe>
-    </div>
-  </div>
-  
-
+</main>
 
 <div id="footer-container"></div>
 
+<script>
+    // Cargar componentes
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            });
+        
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-container').innerHTML = data;
+            });
+        
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    });
+    
+    // Función para mover el carrusel
+    function moveCarousel(carouselId, direction) {
+        const carousel = document.getElementById(carouselId);
+        const cardWidth = 300; // Ancho de tarjeta + gap
+        
+        if (direction === 'next') {
+            carousel.scrollLeft += cardWidth;
+        } else {
+            carousel.scrollLeft -= cardWidth;
+        }
+    }
+</script>
 
 </body>
 </html>
-
-
