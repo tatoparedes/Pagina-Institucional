@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Instituto Tecnológico Trujillo</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- CDN de Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MD2d3oGzH8yPt9bEOeRl6N6a1C/3RAcY1B9zVeyELn8MvGmjmr9Q9r+n6gdcvxPVKFS4OAr0h01AIjHx+NjPug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="script.js" defer></script>
-
-     <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas Académicas - Menú Colapsable</title>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -20,7 +15,8 @@
         body {            
             color: #191970;
             min-height: 100vh;
-            padding: 20px;            
+            padding: 20px;
+            display: flex;
             flex-direction: column;
             align-items: center;
         }
@@ -28,7 +24,6 @@
         .container {
             width: 100%;
             max-width: 900px;
-            align-items: center;
             background-color: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -103,7 +98,6 @@
             margin: 15px 0;
             background-color: white;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            align-content:flex-end
         }
         
         .stats-table th, .stats-table td {
@@ -114,7 +108,7 @@
         
         .stats-table th {
             background-color: #1a2a6c;
-            color: white;            
+            color: white;
             font-weight: 600;
         }
         
@@ -211,17 +205,9 @@
             }
         }
     </style>
-
-
 </head>
 <body>
-
-  <div id="header-container"></div>
-
-  <!-- Aquí se cargará el menú (opcional) -->
-  <div id="menu-container"></div>
-
-  <div class="container">     
+    <div class="container">     
         
         <div class="accordion">
             <!-- Ingresantes -->
@@ -520,12 +506,10 @@
             
          
         </div>
-    </div>   
-
-
-<div id="footer-container"></div>
-
-<script>
+    </div>    
+  
+    
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const accordionItems = document.querySelectorAll('.accordion-item');
             
@@ -563,8 +547,5 @@
             });
         });
     </script>
-
 </body>
 </html>
-
-
