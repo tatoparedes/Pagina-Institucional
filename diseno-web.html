@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Diseño y Programación Web - Instituto Tecnológico Trujillo</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+    <!-- CDN de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MD2d3oGzH8yPt9bEOeRl6N6a1C/3RAcY1B9zVeyELn8MvGmjmr9Q9r+n6gdcvxPVKFS4OAr0h01AIjHx+NjPug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
   <style>
     .schedule {
       max-width: 700px;
@@ -49,39 +51,11 @@
   </style>
 </head>
 <body>
-  <header class="main-header">
-    <div class="top-bar">
-      <div class="contact-info">
-        <span><img src="img/telefono.png" alt="Teléfono"> (044) 123456</span>
-        <span><img src="img/email.png" alt="Correo"> informes@institutotrujillo.edu.pe</span>
-      </div>
-      <div class="social-icons">
-        <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="img/whatsapp.png" alt="WhatsApp"></a>
-      </div>
-    </div>
-    <div class="branding">
-      <img src="img/logo.png" alt="Logo Instituto" class="logo-header" />
-      <div class="brand-text">
-        <h1>Instituto Tecnológico Trujillo</h1>
-        <p>Formando profesionales técnicos con visión de futuro</p>
-      </div>
-    </div>
-  </header>
+  
+  <div id="header-container"></div>
 
-  <nav class="navbar">
-    <ul class="menu">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="asistencia-admin.html">Asistencia Administrativa</a></li>
-      <li><a href="contabilidad.html">Contabilidad</a></li>
-      <li><a href="diseno-web.html" class="active">Diseño y Programación Web</a></li>
-      <li><a href="enfermeria.html">Enfermería Técnica</a></li>
-      <li><a href="guia-turismo.html">Guía Oficial de Turismo</a></li>
-      <li><a href="laboratorio-clinico.html">Laboratorio Clínico y Anatomía Patológica</a></li>
-      <li><a href="marketing.html">Marketing</a></li>
-      <li><a href="efsrt.html">EFSRT</a></li>
-    </ul>
-  </nav>
+  <!-- Aquí se cargará el menú (opcional) -->
+  <div id="menu-container"></div>
 
   <main class="main-content">
     <section style="background: linear-gradient(to right, #fff 50%, #fff0f0 100%); display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px; margin: 60px auto; max-width: 1200px; padding: 40px 0; border-radius: 16px 16px 0 0;">
@@ -169,6 +143,8 @@
       <a href="index.html" class="btn-cta" style="padding: 10px 20px; font-size: 16px;">Volver al Inicio</a>
     </p>
   </main>
+
+  <div id="footer-container"></div>
 
   <script>
     document.querySelectorAll('.pdf-btn').forEach(button => {
