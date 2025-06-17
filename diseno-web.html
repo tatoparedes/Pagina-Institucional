@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Diseño y Programación Web - Instituto Tecnológico Trujillo</title>
   <link rel="stylesheet" href="styles.css" />
-    <!-- CDN de Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MD2d3oGzH8yPt9bEOeRl6N6a1C/3RAcY1B9zVeyELn8MvGmjmr9Q9r+n6gdcvxPVKFS4OAr0h01AIjHx+NjPug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="script.js" defer></script>
+  <!-- CDN de Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MD2d3oGzH8yPt9bEOeRl6N6a1C/3RAcY1B9zVeyELn8MvGmjmr9Q9r+n6gdcvxPVKFS4OAr0h01AIjHx+NjPug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="script.js" defer></script>
   <style>
     .schedule {
       max-width: 700px;
@@ -48,6 +48,55 @@
     .pdf-btn:hover {
       background-color: #cc0033;
     }
+  .plan-estudios-modulos .period-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .plan-estudios-modulos .toggle-btn {
+    flex: 0 0 40px;
+    height: 40px;
+    border: 1px solid #99001f;
+    background: #fff;
+    color: #99001f;
+    font-size: 24px;
+    line-height: 1;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 16px;
+    transition: background 0.3s, color 0.3s;
+  }
+  .plan-estudios-modulos .toggle-btn.active {
+    background: #99001f;
+    color: #fff;
+  }
+  .plan-estudios-modulos .period-label {
+    color: #1fa052;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .plan-estudios-modulos .module-content {
+    display: none;
+    margin-bottom: 24px;
+  }
+  .plan-estudios-modulos .course-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .plan-estudios-modulos .course-table th,
+  .plan-estudios-modulos .course-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  .plan-estudios-modulos .course-table th {
+    background: #99001f;
+    color: #fff;
+    font-weight: 600;
+  }
+  .plan-estudios-modulos .course-table tbody tr:nth-child(odd) {
+    background: #fafafa;
+  }
   </style>
 </head>
 <body>
@@ -96,15 +145,362 @@
   </div>
 </section>
 
-    <section class="plan-estudios-conta" style="max-width: 1200px; margin: 60px auto; text-align: center;">
-      <h2 style="color: #000; font-size: 28px; margin-bottom: 30px;">¿QUÉ SE ESTUDIA EN DISEÑO Y PROGRAMACIÓN WEB?</h2>
-      <img src="img/plandiseno.jpg" alt="Plan de Estudios Diseño Web" style="width: 100%; max-width: 1000px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-      <div style="text-align: center; margin-top: 30px;">
-        <a href="PLAN/DisenoProgWebItinerario.pdf" target="_blank" style="display: inline-block; background-color: #99001f; color: white; padding: 12px 24px; border-radius: 30px; font-size: 16px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease;">
-          Descargar Plan de Estudios
-        </a>
-      </div>
-    </section>
+<section class="plan-estudios-modulos" style="max-width:1200px; margin:60px auto;">
+
+  <h2 style="color:#000; font-size:28px; text-align:center; margin-bottom:30px;">
+    ¿QUÉ SE ESTUDIA EN DISEÑO Y PROGRAMACIÓN WEB?
+  </h2>
+
+  <!-- —— MÓDULO 1 —— -->
+  <div class="module">
+    <h3 style="color:#333; font-size:22px; margin-bottom:10px;">
+      Módulo 1 – Tecnologías Web Front End
+    </h3>
+
+    <!-- Fila Periodo I -->
+    <div class="period-row">
+      <button
+        class="toggle-btn"
+        data-label="PERÍODO ACADÉMICO I"
+        onclick="toggleModule(this,'mod1-i')"
+      >＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO I</span>
+    </div>
+<div id="mod1-i" class="module-content">
+  <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fundamentos de Programación Web</td>
+        <td>4</td>
+        <td>112</td>
+      </tr>
+      <tr>
+        <td>Usabilidad y Experiencia de Usuario</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Desarrollo Web Front End</td>
+        <td>5</td>
+        <td>128</td>
+      </tr>
+      <tr>
+        <td>Ilustración y Gráfica Digital</td>
+        <td>5</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Comunicación Oral</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Aplicaciones en Internert Windows e Internet</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+    <!-- Fila Periodo II -->
+    <div class="period-row">
+      <button
+        class="toggle-btn"
+        data-label="PERÍODO ACADÉMICO II"
+        onclick="toggleModule(this,'mod1-ii')"
+      >＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO II</span>
+    </div>
+    <div id="mod1-ii" class="module-content">
+      <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Accesibilidad Web e Internacionalización</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Desarrollo Web Front End Avanzado</td>
+        <td>4</td>
+        <td>112</td>
+      </tr>
+      <tr>
+        <td>Procesadores HTML y CSS</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Interpretación y producción de textos</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Animación Web</td>
+        <td>5</td>
+        <td>128</td>
+      </tr>
+      <tr>
+        <td>Aplicaciones ofimáticas</td>
+        <td>1</td>
+        <td>32</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    </div>
+  </div>
+
+  <!-- —— MÓDULO 2 ——, igual estructura de period-rows IJ y IV -->
+  <div class="module">
+    <h3 style="color:#333; font-size:22px; margin-bottom:10px;">
+      Módulo 2 – Desarrollo de Aplicaciones Web y Móviles
+    </h3>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO III" onclick="toggleModule(this,'mod2-iii')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO III</span>
+    </div>
+    <div id="mod2-iii" class="module-content">
+       <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Análisis y Diseño de Sistemas Web</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Metodologías Ágiles</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Desarrollo Web Back End</td>
+        <td>4</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Diseño de Base de Datos</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Taller de Herramientas para el Desarollo Web y Móvil</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Comportamiento Ético</td>
+        <td>2</td>
+        <td>32</td>
+      </tr>
+            <tr>
+        <td>Comunicación Oral en Inglés</td>
+        <td>2</td>
+        <td>32</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO IV" onclick="toggleModule(this,'mod2-iv')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO IV</span>
+    </div>
+    <div id="mod2-iv" class="module-content">
+           <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Aplicación de la Ingerniería Web</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Taller de Aplicaciones Web Multiplataforma</td>
+        <td>4</td>
+        <td>112</td>
+      </tr>
+      <tr>
+        <td>Aplciaciones Móviles</td>
+        <td>4</td>
+        <td>112</td>
+      </tr>
+      <tr>
+        <td>Fundamentos de Base de Datos</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Git y GitHub</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Interpretación y redacción en Inglés</td>
+        <td>2</td>
+        <td>32</td>
+      </tr>
+            <tr>
+        <td>Solución de Problemas</td>
+        <td>2</td>
+        <td>32</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+
+  <!-- —— MÓDULO 3 —— -->
+  <div class="module">
+    <h3 style="color:#333; font-size:22px; margin-bottom:10px;">
+      Módulo 3 – Gestión de Proyectos Web y Móviles
+    </h3>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO V" onclick="toggleModule(this,'mod3-v')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO V</span>
+    </div>
+    <div id="mod3-v" class="module-content">
+            <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Administración de Proyectos Web y Móviles</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Taller de Aplicaciones Móviles</td>
+        <td>4</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Marketing Digital</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Inteligencia de Negocios</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Internet de las Cosas (IoT)</td>
+        <td>4</td>
+        <td>112</td>
+      </tr>
+      <tr>
+        <td>Emprendimiento</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+            <tr>
+        <td>Creatividad empresarial</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO VI" onclick="toggleModule(this,'mod3-vi')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO VI</span>
+    </div>
+    <div id="mod3-vi" class="module-content">
+                  <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cloud Computing</td>
+        <td>4</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Inteligencia Artificial</td>
+        <td>4</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Ciencia de Datos</td>
+        <td>4</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Inteligencia de Negocios</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Desarrollo de Video Juegos</td>
+        <td>4</td>
+        <td>112</td>
+      </tr>
+      <tr>
+        <td>Proyectos de innovación empresarial</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+            <tr>
+        <td>Creatividad empresarial</td>
+        <td>2</td>
+        <td>64</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  function toggleTable(tableId) {
+    const table = document.getElementById(tableId);
+    if (table.style.display === "none") {
+      table.style.display = "table";
+    } else {
+      table.style.display = "none";
+    }
+  }
+</script>
+
 
     <h2>HORARIO 2025 - I</h2>
     <table class="schedule" summary="Horario por Periodo y Turno - Diseño y Programación Web">
@@ -154,6 +550,15 @@
       });
     });
   </script>
+  <script>
+  function toggleModule(btn, contentId) {
+    const content = document.getElementById(contentId);
+    const isOpen = content.style.display === 'block';
+    content.style.display = isOpen ? 'none' : 'block';
+    btn.innerText = isOpen ? '＋' : '−';
+    btn.classList.toggle('active', !isOpen);
+  }
+</script>
 
 </body>
 </html>
