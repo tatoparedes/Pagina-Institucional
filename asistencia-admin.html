@@ -35,7 +35,57 @@
       color: #99001f;
       margin-bottom: 10px;
     }
+          .plan-estudios-modulos .period-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .plan-estudios-modulos .toggle-btn {
+    flex: 0 0 40px;
+    height: 40px;
+    border: 1px solid #99001f;
+    background: #fff;
+    color: #99001f;
+    font-size: 24px;
+    line-height: 1;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 16px;
+    transition: background 0.3s, color 0.3s;
+  }
+  .plan-estudios-modulos .toggle-btn.active {
+    background: #99001f;
+    color: #fff;
+  }
+  .plan-estudios-modulos .period-label {
+    color: #1fa052;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .plan-estudios-modulos .module-content {
+    display: none;
+    margin-bottom: 24px;
+  }
+  .plan-estudios-modulos .course-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .plan-estudios-modulos .course-table th,
+  .plan-estudios-modulos .course-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  .plan-estudios-modulos .course-table th {
+    background: #99001f;
+    color: #fff;
+    font-weight: 600;
+  }
+  .plan-estudios-modulos .course-table tbody tr:nth-child(odd) {
+    background: #fafafa;
+  }
   </style>
+
 </head>
 <body>
 
@@ -86,18 +136,383 @@
   </div>
 </section>
 
-<section class="plan-estudios" style="max-width: 1200px; margin: 60px auto; text-align: center;">
-  <h2 style="color: #000; font-size: 28px; margin-bottom: 30px;">¿QUÉ SE ESTUDIA EN ASISTENCIA ADMINISTRATIVA?</h2>
-  <img src="img/planadmin.jpg" alt="Plan de Estudios Asistencia Administrativa" style="width: 100%; max-width: 1000px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-<div style="text-align: center; margin-top: 30px;">
-  <a href="PLAN/DisenoProgWebItinerario.pdf" target="_blank" download style="display: inline-block; background-color: #99001f; color: white; padding: 12px 24px; border-radius: 30px; font-size: 16px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease;">
-    Descargar Plan de Estudios
-  </a>
+<section class="plan-estudios-modulos" style="max-width:1200px; margin:60px auto;">
+
+  <h2 style="color:#000; font-size:28px; text-align:center; margin-bottom:30px;">
+    ¿QUÉ SE ESTUDIA EN ASISTENCIA ADMINISTRATIVA?
+  </h2>
+
+  <!-- —— MÓDULO 1 —— -->
+  <div class="module">
+    <h3 style="color:#333; font-size:22px; margin-bottom:10px;">
+      Módulo 1 – Asistencia de Gestión de Documentos Administrativos
+    </h3>
+
+    <!-- Fila Periodo I -->
+    <div class="period-row">
+      <button
+        class="toggle-btn"
+        data-label="PERÍODO ACADÉMICO I"
+        onclick="toggleModule(this,'mod1-i')"
+      >＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO I</span>
+    </div>
+<div id="mod1-i" class="module-content">
+  <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Administración del sistema de archivo</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Gestión documentaria</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Técnicas básicas dactilográficas</td>
+        <td>3</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Redacción administrativa</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Branding personal</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Comunicación y gestión empresarial</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Comunicación oral</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Aplicaciones en Internet</td>
+        <td>1</td>
+        <td>32</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-</section>
 
-  <h2>Horario - Asistencia Administrativa</h2>
+    <!-- Fila Periodo II -->
+    <div class="period-row">
+      <button
+        class="toggle-btn"
+        data-label="PERÍODO ACADÉMICO II"
+        onclick="toggleModule(this,'mod1-ii')"
+      >＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO II</span>
+    </div>
+    <div id="mod1-ii" class="module-content">
+      <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Técnicas de archivo digital</td>
+        <td>2</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Sistema de trámite documentario Web</td>
+        <td>2</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Atención al cliente y gestión de consultas</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Equipos tecnológicos</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Teoría de la administración</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Interpretación y producción de textos</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Aplicaciones ofimáticas</td>
+        <td>1</td>
+        <td>32</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    </div>
+  </div>
+
+  <!-- —— MÓDULO 2 ——, igual estructura de period-rows IJ y IV -->
+  <div class="module">
+    <h3 style="color:#333; font-size:22px; margin-bottom:10px;">
+      Módulo 2 – Gestión de Actividades y Eventos Administrativos
+    </h3>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO III" onclick="toggleModule(this,'mod2-iii')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO III</span>
+    </div>
+    <div id="mod2-iii" class="module-content">
+       <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Excel Ejecutivo</td>
+        <td>3</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Coaching Ejecutivo</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Protocolo Empresarial</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Gestión del talento humano</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Organización y administración empresarial</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Comunicación Oral en Inglés</td>
+        <td>2</td>
+        <td>32</td>
+      </tr>
+            <tr>
+        <td>Comportamiento ético</td>
+        <td>2</td>
+        <td>32</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO IV" onclick="toggleModule(this,'mod2-iv')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO IV</span>
+    </div>
+    <div id="mod2-iv" class="module-content">
+           <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Marketing empresarial</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Gestión de documentos empresariales</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Organización de eventos corporativos</td>
+        <td>3</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Relaciones públicas</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Habilidades sociales en las empresas.</td>
+        <td>4</td>
+        <td>80</td>
+      </tr>
+            <tr>
+        <td>Interpretación y redacción en inglés</td>
+        <td>2</td>
+        <td>32</td>
+      </tr>
+      <tr>
+        <td>Solución de problemas</td>
+        <td>2</td>
+        <td>32</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+
+  <!-- —— MÓDULO 3 —— -->
+  <div class="module">
+    <h3 style="color:#333; font-size:22px; margin-bottom:10px;">
+      Módulo 3 – Asistencia en Recursos Humanos Y Financieros
+
+    </h3>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO V" onclick="toggleModule(this,'mod3-v')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO V</span>
+    </div>
+    <div id="mod3-v" class="module-content">
+            <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Legislación laboral</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Administración de proyectos empresariales</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Gestión de Recursos humanos</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Logística</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Gestión de Documentación mercantil</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Matemática financiera</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Emprendimiento</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Creatividad empresarial</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO VI" onclick="toggleModule(this,'mod3-vi')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO VI</span>
+    </div>
+    <div id="mod3-vi" class="module-content">
+                  <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Contabilidad administrativa</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Gestión de documentación comercial</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Taller de informes técnicos y académicos.</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Project Gerencial</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Business English</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Administración financiera</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Proyectos de innovación empresarial</td>
+        <td>2</td>
+        <td>64</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+
+</section>
+<script>
+  function toggleTable(tableId) {
+    const table = document.getElementById(tableId);
+    if (table.style.display === "none") {
+      table.style.display = "table";
+    } else {
+      table.style.display = "none";
+    }
+  }
+</script>
+
+  
 
 <table class="schedule" summary="Horario por Periodo y Turno - Asistencia Administrativa">
   <caption>HORARIO 2025 - I</caption>
@@ -137,6 +552,15 @@
     window.open(pdfUrl, '_blank', 'noopener');
   });
 });
+</script>
+  <script>
+  function toggleModule(btn, contentId) {
+    const content = document.getElementById(contentId);
+    const isOpen = content.style.display === 'block';
+    content.style.display = isOpen ? 'none' : 'block';
+    btn.innerText = isOpen ? '＋' : '−';
+    btn.classList.toggle('active', !isOpen);
+  }
 </script>
 
 </body>

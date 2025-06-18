@@ -35,6 +35,55 @@
       color: #99001f;
       margin-bottom: 10px;
     }
+      .plan-estudios-modulos .period-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .plan-estudios-modulos .toggle-btn {
+    flex: 0 0 40px;
+    height: 40px;
+    border: 1px solid #99001f;
+    background: #fff;
+    color: #99001f;
+    font-size: 24px;
+    line-height: 1;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 16px;
+    transition: background 0.3s, color 0.3s;
+  }
+  .plan-estudios-modulos .toggle-btn.active {
+    background: #99001f;
+    color: #fff;
+  }
+  .plan-estudios-modulos .period-label {
+    color: #1fa052;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .plan-estudios-modulos .module-content {
+    display: none;
+    margin-bottom: 24px;
+  }
+  .plan-estudios-modulos .course-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .plan-estudios-modulos .course-table th,
+  .plan-estudios-modulos .course-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  .plan-estudios-modulos .course-table th {
+    background: #99001f;
+    color: #fff;
+    font-weight: 600;
+  }
+  .plan-estudios-modulos .course-table tbody tr:nth-child(odd) {
+    background: #fafafa;
+  }
   </style>
 </head>
 <body>
@@ -86,17 +135,357 @@
   </div>
 </section>
 
-<section class="plan-estudios-conta" style="max-width: 1200px; margin: 60px auto; text-align: center;">
-  <h2 style="color: #000; font-size: 28px; margin-bottom: 30px;">¿QUÉ SE ESTUDIA EN CONTABILIDAD?</h2>
-  <img src="img/planconta.jpg" alt="Plan de Estudios Contabilidad" style="width: 100%; max-width: 1000px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-  <div style="text-align: center; margin-top: 30px;">
-    <a href="PLAN/ContabilidadItinerario.pdf" target="_blank" style="display: inline-block; background-color: #99001f; color: white; padding: 12px 24px; border-radius: 30px; font-size: 16px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease;">
-      Descargar Plan de Estudios
-    </a>
-  </div>
-</section>
+<section class="plan-estudios-modulos" style="max-width:1200px; margin:60px auto;">
 
-<h2>Horario - Contabilidad</h2>
+  <h2 style="color:#000; font-size:28px; text-align:center; margin-bottom:30px;">
+    ¿QUÉ SE ESTUDIA EN CONTABILIDAD?
+  </h2>
+
+  <!-- —— MÓDULO 1 —— -->
+  <div class="module">
+    <h3 style="color:#333; font-size:22px; margin-bottom:10px;">
+      Módulo 1 – Procesos Contables y Financieros
+    </h3>
+
+    <!-- Fila Periodo I -->
+    <div class="period-row">
+      <button
+        class="toggle-btn"
+        data-label="PERÍODO ACADÉMICO I"
+        onclick="toggleModule(this,'mod1-i')"
+      >＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO I</span>
+    </div>
+<div id="mod1-i" class="module-content">
+  <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Contabilidad básica</td>
+        <td>5</td>
+        <td>128</td>
+      </tr>
+      <tr>
+        <td>Documentación contable y comercial</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Matemática empresarial</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Gestión empresarial</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Plan de cuentas</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Comunicación oral</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Aplicaciones en Internet</td>
+        <td>1</td>
+        <td>32</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+    <!-- Fila Periodo II -->
+    <div class="period-row">
+      <button
+        class="toggle-btn"
+        data-label="PERÍODO ACADÉMICO II"
+        onclick="toggleModule(this,'mod1-ii')"
+      >＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO II</span>
+    </div>
+    <div id="mod1-ii" class="module-content">
+      <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Informática contable</td>
+        <td>5</td>
+        <td>128</td>
+      </tr>
+      <tr>
+        <td>Libros y registros contables</td>
+        <td>5</td>
+        <td>128</td>
+      </tr>
+      <tr>
+        <td>Legislación laboral</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Legislación tributaria</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Interpretación y producción de textos</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Aplicaciones ofimáticas</td>
+        <td>1</td>
+        <td>32</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    </div>
+  </div>
+
+  <!-- —— MÓDULO 2 ——, igual estructura de period-rows IJ y IV -->
+  <div class="module">
+    <h3 style="color:#333; font-size:22px; margin-bottom:10px;">
+      Módulo 2 – Supervisión de Procesos Contables y Financieros
+    </h3>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO III" onclick="toggleModule(this,'mod2-iii')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO III</span>
+    </div>
+    <div id="mod2-iii" class="module-content">
+       <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Integración contable</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Planificación financiera</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Fundamentos de contabilidad pública</td>
+        <td>4</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Fundamentos de costos</td>
+        <td>4</td>
+        <td>112</td>
+      </tr>
+      <tr>
+        <td>Tributación aplicada</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Comunicación Oral en Inglés</td>
+        <td>2</td>
+        <td>32</td>
+      </tr>
+            <tr>
+        <td>Comportamiento ético</td>
+        <td>2</td>
+        <td>32</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO IV" onclick="toggleModule(this,'mod2-iv')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO IV</span>
+    </div>
+    <div id="mod2-iv" class="module-content">
+           <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Contabilidad de sociedades</td>
+        <td>4</td>
+        <td>112</td>
+      </tr>
+      <tr>
+        <td>Contabilidad de costos</td>
+        <td>4</td>
+        <td>112</td>
+      </tr>
+      <tr>
+        <td>Aplicativoss informáticos contables</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Contabilidad pública</td>
+        <td>5</td>
+        <td>128</td>
+      </tr>
+      <tr>
+        <td>Interpretación y redacción en Inglés</td>
+        <td>2</td>
+        <td>32</td>
+      </tr>
+            <tr>
+        <td>Solución de Problemas</td>
+        <td>2</td>
+        <td>32</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+
+  <!-- —— MÓDULO 3 —— -->
+  <div class="module">
+    <h3 style="color:#333; font-size:22px; margin-bottom:10px;">
+      Módulo 3 – Gestión de Estados Financieros
+    </h3>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO V" onclick="toggleModule(this,'mod3-v')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO V</span>
+    </div>
+    <div id="mod3-v" class="module-content">
+            <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Formulación de Estados Financieros</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Fundamentos de auditoría</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Finanzas empresariales</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Contabilidad de entidades financieras</td>
+        <td>5</td>
+        <td>144</td>
+      </tr>
+      <tr>
+        <td>Contabilidad para el comercio exterior</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Emprendimiento</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+            <tr>
+        <td>Creatividad empresarial</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO VI" onclick="toggleModule(this,'mod3-vi')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO VI</span>
+    </div>
+    <div id="mod3-vi" class="module-content">
+                  <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Análisis financieros</td>
+        <td>4</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Proyectos empresariales</td>
+        <td>4</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Contabilidad digital</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Finanzas públicas</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Contabilidad por sectores empresariales</td>
+        <td>4</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Proyectos de innovación empresarial</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+
+</section>
+<script>
+  function toggleTable(tableId) {
+    const table = document.getElementById(tableId);
+    if (table.style.display === "none") {
+      table.style.display = "table";
+    } else {
+      table.style.display = "none";
+    }
+  }
+</script>
+
+
 <table class="schedule" summary="Horario por Periodo y Turno - Contabilidad">
   <caption>HORARIO 2025 - I</caption>
   <thead>
@@ -139,6 +528,15 @@
       window.open(pdfUrl, '_blank', 'noopener');
     });
   });
+</script>
+  <script>
+  function toggleModule(btn, contentId) {
+    const content = document.getElementById(contentId);
+    const isOpen = content.style.display === 'block';
+    content.style.display = isOpen ? 'none' : 'block';
+    btn.innerText = isOpen ? '＋' : '−';
+    btn.classList.toggle('active', !isOpen);
+  }
 </script>
 
 </body>

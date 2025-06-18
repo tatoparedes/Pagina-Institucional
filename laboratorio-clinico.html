@@ -48,6 +48,55 @@
     .pdf-btn:hover {
       background-color: #cc0033;
     }
+              .plan-estudios-modulos .period-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .plan-estudios-modulos .toggle-btn {
+    flex: 0 0 40px;
+    height: 40px;
+    border: 1px solid #99001f;
+    background: #fff;
+    color: #99001f;
+    font-size: 24px;
+    line-height: 1;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 16px;
+    transition: background 0.3s, color 0.3s;
+  }
+  .plan-estudios-modulos .toggle-btn.active {
+    background: #99001f;
+    color: #fff;
+  }
+  .plan-estudios-modulos .period-label {
+    color: #1fa052;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .plan-estudios-modulos .module-content {
+    display: none;
+    margin-bottom: 24px;
+  }
+  .plan-estudios-modulos .course-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .plan-estudios-modulos .course-table th,
+  .plan-estudios-modulos .course-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  .plan-estudios-modulos .course-table th {
+    background: #99001f;
+    color: #fff;
+    font-weight: 600;
+  }
+  .plan-estudios-modulos .course-table tbody tr:nth-child(odd) {
+    background: #fafafa;
+  }
   </style>
 </head>
 <body>
@@ -92,14 +141,359 @@
     <img src="img/lab2.jpg" alt="Ilustración Competencias" style="width: 100%; border-radius: 12px;">
   </div>
 </section>
-<section style="max-width: 1200px; margin: 60px auto; text-align: center;">
-  <h2 style="color: #000; font-size: 28px; margin-bottom: 30px;">¿QUÉ SE ESTUDIA EN LABORATORIO CLÍNICO Y ANATOMÍA PATOLÓGICA?</h2>
-  <img src="img/planlab.jpg" alt="Plan de Estudios Laboratorio" style="width: 100%; max-width: 1000px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-  <div style="text-align: center; margin-top: 30px;">
-    <a href="PLAN/LaboratorioPlanEstudios.pdf" target="_blank" style="display: inline-block; background-color: #99001f; color: white; padding: 12px 24px; border-radius: 30px; font-size: 16px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease;">
-      Descargar Plan de Estudios
-    </a>
+<section class="plan-estudios-modulos" style="max-width:1200px; margin:60px auto;">
+
+  <h2 style="color:#000; font-size:28px; text-align:center; margin-bottom:30px;">
+    ¿QUÉ SE ESTUDIA EN LABORATORIO CLÍNICO Y ANATOMÍA PATOLÓGICA?
+  </h2>
+
+  <!-- —— MÓDULO 1 —— -->
+  <div class="module">
+    <h3 style="color:#333; font-size:22px; margin-bottom:10px;">
+      Módulo 1 – Extración y recepción de muestras biológicas humanas
+    </h3>
+
+    <!-- Fila Periodo I -->
+    <div class="period-row">
+      <button
+        class="toggle-btn"
+        data-label="PERÍODO ACADÉMICO I"
+        onclick="toggleModule(this,'mod1-i')"
+      >＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO I</span>
+    </div>
+<div id="mod1-i" class="module-content">
+  <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Recepción de muestras biológicas humanas</td>
+        <td>4</td>
+        <td>112</td>
+      </tr>
+      <tr>
+        <td>Anatomía y fisiología</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Antropología del Turismo</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Equipos e instrumentos de laboratorio clínica Turística</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Inglés para el traslado al turista</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Procesos de Traslado al visitante</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Comunicación oral</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Aplicaciones en internet</td>
+        <td>1</td>
+        <td>32</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+    <!-- Fila Periodo II -->
+    <div class="period-row">
+      <button
+        class="toggle-btn"
+        data-label="PERÍODO ACADÉMICO II"
+        onclick="toggleModule(this,'mod1-ii')"
+      >＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO II</span>
+    </div>
+    <div id="mod1-ii" class="module-content">
+      <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Arqueoturismo</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Historia del Arte del Perú y del Mundo</td>
+        <td>4</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Ténicas de control del servicio turístico</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Herramientas informáticas aplicadas al servicio turístico</td>
+        <td>4</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Inglés para el control turistico</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Interpretación y producción de textos</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Aplicaciones ofimáticas</td>
+        <td>1</td>
+        <td>32</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    </div>
   </div>
+
+  <!-- —— MÓDULO 2 ——, igual estructura de period-rows IJ y IV -->
+  <div class="module">
+    <h3 style="color:#333; font-size:22px; margin-bottom:10px;">
+      Módulo 2 – Gestión del Servicio Turístico
+    </h3>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO III" onclick="toggleModule(this,'mod2-iii')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO III</span>
+    </div>
+    <div id="mod2-iii" class="module-content">
+       <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Agencias de Viajes y Turismo</td>
+        <td>4</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Gestión de Eventos y Protocolo</td>
+        <td>5</td>
+        <td>128</td>
+      </tr>
+      <tr>
+        <td>Turismo Comunitario Y Ecoturismo</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Inglés para el servicio Turístico</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Comunicación oral en inglés</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Comportamiento Ético</td>
+        <td>2</td>
+        <td>32</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO IV" onclick="toggleModule(this,'mod2-iv')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO IV</span>
+    </div>
+    <div id="mod2-iv" class="module-content">
+           <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Patrimonio Cultural y Natural</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Turismo Convencional y No Convencional</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Técnicas de Conducción e interpretación del Patrimonio</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Psicología y Animación Turística</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Inglés para la animación Turística</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Diseño de Programas Turísticos</td>
+        <td>2</td>
+        <td>32</td>
+      </tr>
+            <tr>
+        <td>Interpretación y redacción en inglés</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+      <tr>
+        <td>Solución de problemas</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+
+  <!-- —— MÓDULO 3 —— -->
+  <div class="module">
+    <h3 style="color:#333; font-size:22px; margin-bottom:10px;">
+      Módulo 3 – Guíado al visitante e implementación de protocolos de seguridad en el servicio turístico
+    </h3>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO V" onclick="toggleModule(this,'mod3-v')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO V</span>
+    </div>
+    <div id="mod3-v" class="module-content">
+            <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Quechua Básico</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Logística del Guiado</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Guiado en Turismo Convencional</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Gestión de Operaciones Turísticas</td>
+        <td>4</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Inglés para Operaciones Turísticas</td>
+        <td>3</td>
+        <td>64</td>
+      </tr>
+      <tr>
+        <td>Emprendimiento</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+            <tr>
+        <td>Creatividad empresarial</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+    <div class="period-row">
+      <button class="toggle-btn" data-label="PERÍODO ACADÉMICO VI" onclick="toggleModule(this,'mod3-vi')">＋</button>
+      <span class="period-label">PERÍODO ACADÉMICO VI</span>
+    </div>
+    <div id="mod3-vi" class="module-content">
+                  <table class="course-table">
+    <thead>
+      <tr>
+        <th>Unidad Didáctica</th>
+        <th>Créditos</th>
+        <th>Horas Semestrales</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Guiado en Turismo No Convencional</td>
+        <td>4</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Gestión de Proyectos Turísticos</td>
+        <td>4</td>
+        <td>96</td>
+      </tr>
+      <tr>
+        <td>Seguridad y Primeros Auxilios para Turistas</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Control de Calidad del Servicio Turístico</td>
+        <td>3</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>Inglés para el Guiado Turístico</td>
+        <td>4</td>
+        <td>112</td>
+      </tr>
+      <tr>
+        <td>Proyectos de innovación empresarial</td>
+        <td>2</td>
+        <td>48</td>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+
 </section>
 <h2 style="text-align:center; margin-top: 50px;">Horario - Laboratorio Clínico y Anatomía Patológica</h2>
 <table class="schedule" summary="Horario por Periodo y Turno - Laboratorio Clínico y Anatomía Patológica">
@@ -139,6 +533,15 @@
       window.open(pdfUrl, '_blank', 'noopener');
     });
   });
+</script>
+  <script>
+  function toggleModule(btn, contentId) {
+    const content = document.getElementById(contentId);
+    const isOpen = content.style.display === 'block';
+    content.style.display = isOpen ? 'none' : 'block';
+    btn.innerText = isOpen ? '＋' : '−';
+    btn.classList.toggle('active', !isOpen);
+  }
 </script>
 </body>
 </html>
