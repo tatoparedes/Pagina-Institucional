@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Instituto Tecnológico Trujillo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+</head>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            padding: 50px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            background: linear-gradient(45deg, #dc2626, #ef4444, #f87171);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 70px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 8px rgba(220, 38, 38, 0.3);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(45deg, #dc2626, #ef4444);
+            border-radius: 2px;
+        }
+
+        .systems-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .system-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 45px 35px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .system-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .system-card:hover::before {
+            left: 100%;
+        }
+
+        .system-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.15);
+            border-color: #dc2626;
+        }
+
+        .system-card:active {
+            transform: translateY(-4px) scale(1.01);
+        }
+
+        .system-logo {
+            width: 100%;
+            height: 250px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .system-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .system-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .system-card:hover .system-title {
+            color: #dc2626;
+            transform: translateY(-2px);
+        }
+
+        .system-description {
+            color: #6b7280;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            font-weight: 400;
+            text-align: justify;
+            max-width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .system-card:hover .system-description {
+            color: #4b5563;
+        }
+
+        /* Animación sutil para cuando se carga la página */
+        .system-card {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .system-card:nth-child(1) { animation-delay: 0.1s; }
+        .system-card:nth-child(2) { animation-delay: 0.2s; }
+        .system-card:nth-child(3) { animation-delay: 0.3s; }
+        .system-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 30px 15px;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+                margin-bottom: 50px;
+                letter-spacing: 1px;
+            }
+            
+            .systems-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 25px;
+                margin-top: 40px;
+            }
+            
+            .system-card {
+                padding: 35px 25px;
+            }
+
+            .system-logo {
+                width: 100%;
+                height: 220px;
+                margin-bottom: 25px;
+            }
+
+            .system-logo img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .system-title {
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+            }
+
+            .system-description {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+
+            .system-card {
+                padding: 30px 20px;
+            }
+
+            .system-logo {
+                width: 100%;
+                height: 180px;
+            }
+
+            .system-logo img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .system-title {
+                font-size: 1.4rem;
+            }
+
+            .system-description {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+<body>
+
+  <div id="header-container"></div>
+
+
+ <div id="menu-container"></div>
+
+<main class="main-content">
+    <div class="container">
+        <h1 class="section-title">Sistemas de Información</h1>
+        
+        <div class="systems-grid">
+            <a href="https://registra.minedu.gob.pe/#!/" class="system-card">
+                <div class="system-logo">
+                    <img src="./img/logoRegistra.png" alt="Logo Registra">
+                </div>
+                <h3 class="system-title">Registra</h3>
+                <p class="system-description">
+                    Software de apoyo a la gestión académica de los Institutos de Educación Superior que permite gestionar los
+                    procesos de admisión, matrícula y evaluación de los estudiantes.
+                </p>
+            </a>
+
+            <a href="https://titula.minedu.gob.pe/" class="system-card">
+                <div class="system-logo">
+                    <img src="./img/logoTitula.png" alt="Logo Titula">
+                </div>
+                <h3 class="system-title">Título</h3>
+                <p class="system-description">
+                    Software de registro de los grados y títulos de los Institutos de Educación Superior Tecnológicos en el marco del artículo 50 de la Ley N° 30512, Ley de Institutos y Escuelas de Educación Superior y de la Carrera Pública de sus Docentes.
+                </p>
+            </a>
+
+            <a href="https://conecta.minedu.gob.pe/" class="system-card">
+                <div class="system-logo">
+                    <img src="./img/logoConecta.png" alt="Logo Conecta">
+                </div>
+                <h3 class="system-title">Conecta</h3>
+                <p class="system-description">
+                    Software de información sobre los egresados de los Institutos de Educación Superior Tecnológicos relacionado a su trayectoria e inserción laboral en cumplimiento de la Ley N° 30512, Ley de Institutos y Escuelas de Educación Superior de la Carrera Pública de sus Docentes.
+                </p>
+            </a>
+
+            <a href="https://avanza.minedu.gob.pe/" class="system-card">
+                <div class="system-logo">
+                    <img src="./img/logoAvanza.png" alt="Logo Avanza">
+                </div>
+                <h3 class="system-title">Avanza</h3>
+                <p class="system-description">
+                    Software de apoyo brinda las opciones para participar en los procesos relacionados con la gestión del personal docente, directivo y jerárquico de la educación superior tecnológica y artística. Asimismo, permite a los directores acceder al sistema para el registro de información.
+                </p>
+            </a>
+        </div>
+    </div>
+
+    
+</main>
+
+<div id="footer-container"></div>
+
+
+</body>
+</html>
