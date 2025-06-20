@@ -3,7 +3,7 @@ name: 🚀 Deploy optimizado vía FTP
 on:
   push:
     branches:
-      - deploy
+      - main
 
 jobs:
   ftp-deploy:
