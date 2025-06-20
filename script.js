@@ -65,10 +65,10 @@
                 // Funcionalidad para submenús en móviles
                 menu.addEventListener('click', function(e) {
                     if (window.innerWidth <= 768) {
-                        const clickedLink = e.target.closest('.menu > li > a');
+                        const clickedLink = e.target.closest('.main-menu-link');
                         if (clickedLink) {
                             const parentLi = clickedLink.parentElement;
-                            const submenu = parentLi.querySelector('ul');
+                            const submenu = parentLi.querySelector('.submenu');
                             
                             if (submenu) {
                                 e.preventDefault();
