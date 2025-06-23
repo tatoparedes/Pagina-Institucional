@@ -7,120 +7,191 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
-        .carreras-container {
-            margin-top: 40px;
-        }
-        .carrera-section {
-            margin-bottom: 50px;
-            position: relative;
-        }
-        .carrera-title {
-            color: #99001f;
-            border-bottom: 2px solid #99001f;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
-            padding: 0 50px;
-        }
-        .profesores-carousel {
-            display: flex;
-            transition: transform 0.5s ease;
-            gap: 20px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE and Edge */
-            padding: 10px 0;
-        }
-        .profesores-carousel::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
-        }
-        .profesor-card {
-            flex: 0 0 280px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        .profesor-card:hover {
-            transform: translateY(-5px);
-        }
-        .profesor-img {
-            width: 90%;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        .profesor-info {
-            padding: 15px;
-        }
-        .profesor-nombre {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        .profesor-profesion {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-        .profesor-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 15px;
-        }
-        .cv-btn {
-            background: #99001f;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 14px;
-            transition: background 0.3s;
-        }
-        .cv-btn:hover {
-            background: #7a001a;
-        }
-        .social-links a {
-            color: #333;
-            margin-left: 10px;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-        .social-links a:hover {
-            color: #99001f;
-        }
-        .carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 40px;
-            height: 40px;
-            background: #99001f;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            transition: background 0.3s;
-        }
-        .carousel-arrow:hover {
-            background: #7a001a;
-        }
-        .carousel-prev {
-            left: 0;
-        }
-        .carousel-next {
-            right: 0;
-        }
+           /* Carreras y Carrusel de Profesores */
+.carreras-container {
+    margin-top: 40px;
+}
+.carrera-section {
+    margin-bottom: 50px;
+    position: relative;
+}
+.carrera-title {
+    color: #99001f;
+    border-bottom: 2px solid #99001f;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    padding: 0 40px;
+}
+.profesores-carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 10px 0;
+}
+.profesores-carousel::-webkit-scrollbar {
+    display: none;
+}
+.profesor-card {
+    flex: 0 0 260px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    padding: 0;
+}
+.profesor-card:hover {
+    transform: translateY(-5px);
+}
+.profesor-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+.profesor-info {
+    padding: 15px;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+.profesor-nombre {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 3px;
+    line-height: 1.2;
+}
+.profesor-profesion {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.profesor-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.cv-btn {
+    background: #99001f;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+.cv-btn:hover {
+    background: #7a001a;
+}
+.social-links a {
+    color: #333;
+    margin-left: 10px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: #99001f;
+}
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background: #99001f;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+.carousel-arrow:hover {
+    background: #7a001a;
+}
+.carousel-prev {
+    left: 0;
+}
+.carousel-next {
+    right: 0;
+}
+
+/* Docentes en cuadrícula */
+.docentes-grid-section {
+    margin: 40px 0;
+}
+.docentes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.docente-card {
+    min-width: 320px;
+    min-height: 100px;
+    display: flex;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    gap: 15px;
+    align-items: flex-start;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.docente-foto {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.docente-info {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+.docente-info h3 {
+    font-size: 15px;
+    margin: 0 0 5px;
+}
+.docente-info p {
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+.link-descarga {
+    font-size: 14px;
+    color: #0066cc;
+    text-decoration: none;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.link-descarga:hover {
+    text-decoration: underline;
+}
+.docentes-grid-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+.docentes-grid-carousel::-webkit-scrollbar {
+    display: none;
+}
+
     </style>
     <script src="script.js" defer></script>
 </head>
@@ -145,248 +216,190 @@
     <!-- Contenedor de carreras -->
     <div class="carreras-container">
         
-        <!-- Asistencia Administrativa -->
-        <section class="carrera-section" id="asistencia-admin">
-            <h2 class="carrera-title">Asistencia Administrativa</h2>
-            <div class="carousel-container">
-                <div class="carousel-arrow carousel-prev" onclick="moveCarousel('asistencia-carousel', 'prev')">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="profesores-carousel" id="asistencia-carousel">
-                    <div class="profesor-card">
-                        <img src="./fotos/Eliana.jpg" alt="Profesor" class="profesor-img">
-                        <div class="profesor-info">
-                            <h3 class="profesor-nombre">Eliana Arlin Barrantes Miranda</h3>
-                            <p class="profesor-profesion">Licenciada en Ciencias de la Educación</p>
-                            <div class="profesor-actions">
-                                <a href="./cv/HV_BARRANTESMIRANDA_Eliana_A.A.pdf" class="cv-btn">Ver CV</a>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="profesor-card">
-                        <img src="./fotos/Deysi.jpeg" alt="Profesora" class="profesor-img">
-                        <div class="profesor-info">
-                            <h3 class="profesor-nombre">Deysi Alicia Flores Toledo</h3>
-                            <br>
-                            <p class="profesor-profesion">P.T. en Secretariado Ejecutivo</p>
-                            <div class="profesor-actions">
-                                <a href="./cv/HV_FLORESTOLEDODeysi.pdf" class="cv-btn">Ver CV</a>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="profesor-card">
-                        <img src="./fotos/susy1.jpg" alt="Profesor" class="profesor-img">
-                        <div class="profesor-info">
-                            <h3 class="profesor-nombre">Susy Estela Gamero Morales</h3>
-                            <br>
-                            <p class="profesor-profesion">Secretaria Ejecutiva</p>
-                            <div class="profesor-actions">
-                                <a href="cv/HV_GAMEROMORALES.pdf" class="cv-btn">Ver CV</a>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="profesor-card">
-                        <img src="./fotos/Silvia.jpg" alt="Profesora" class="profesor-img">
-                        <div class="profesor-info">
-                            <h3 class="profesor-nombre">Silvia Carola Ortiz Cáceres</h3>
-                            <br>
-                            <p class="profesor-profesion">Doctora en Educación</p>
-                            <div class="profesor-actions">
-                                <a href="./cv/HV_ORTIZCACERES_Carola_A.A..pdf" class="cv-btn">Ver CV</a>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="profesor-card">
-                        <img src="./fotos/maestra9.jpg" alt="Profesora" class="profesor-img">
-                        <div class="profesor-info">
-                            <h3 class="profesor-nombre">Elvira Del Rosario Sanchez Díaz</h3>
-                            <br>
-                            <p class="profesor-profesion">Docente</p>
-                            <div class="profesor-actions">
-                                <a href="./cv/HV_ORTIZCACERES_Carola_A.A." class="cv-btn">Ver CV</a>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="carousel-arrow carousel-next" onclick="moveCarousel('asistencia-carousel', 'next')">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Contabilidad -->
-        <section class="carrera-section" id="contabilidad">
-            <h2 class="carrera-title">Contabilidad</h2>
-            <div class="carousel-container">
-                <div class="carousel-arrow carousel-prev" onclick="moveCarousel('contabilidad-carousel', 'prev')">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="profesores-carousel" id="contabilidad-carousel">
-                    <div class="profesor-card">
-                        <img src="./fotos/Berta-conta.png" alt="Profesor" class="profesor-img">
-                        <div class="profesor-info">
-                            <h3 class="profesor-nombre">Berta Teolinda Cabello Mancisidor</h3>
-                            <p class="profesor-profesion">Contaddor Público Colegiado</p>
-                            <div class="profesor-actions">
-                                <a href="./cv/Contabilidad/HOJA DE VIDA_BERTA TEOLINDA CABELLO MANCISIDOR.pdf" class="cv-btn">Ver CV</a>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="profesor-card">
-                        <img src="./fotos/ochoa-conta1.png" alt="Profesor" class="profesor-img">
-                        <div class="profesor-info">
-                            <h3 class="profesor-nombre">César Ubaldo Ruiz Ochoa</h3>
-                            <br>
-                            <p class="profesor-profesion">Contaddor Público Colegiado</p>
-                            <div class="profesor-actions">
-                                <a href="./cv/Contabilidad/DOCENTE-CESAR RUIZ OCHOA-HOJA DE VIDA.pdf" class="cv-btn">Ver CV</a>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <!-- Asistencia Administrativa -->
+         <section class="carrera-section">
+  <h2 class="carrera-title">Asistencia Administrativa</h2>
+  <div class="carousel-container">
+    <div class="carousel-arrow carousel-prev" onclick="moveCarousel('asistencia-grid-carousel', 'prev')">
+      <i class="fas fa-chevron-left"></i>
+    </div>
 
-                     <div class="profesor-card">
-                        <img src="./fotos/Emel-conta.jpeg" alt="Profesor" class="profesor-img">
-                        <div class="profesor-info">
-                            <h3 class="profesor-nombre">Emel Efraín Morales Meléndez</h3>
-                            
-                            <p class="profesor-profesion">Contador Público Colegiado</p>
-                            <div class="profesor-actions">
-                                <a href="./cv/Contabilidad/DOCENTE-CESAR RUIZ OCHOA-HOJA DE VIDA.pdf" class="cv-btn">Ver CV</a>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="docentes-grid-carousel" id="asistencia-grid-carousel">
+      <div class="docente-card">
+        <img src="./fotos/Eliana.jpg" alt="Eliana Barrantes" class="docente-foto">
+        <div class="docente-info">
+          <h3><i class="fas fa-user"></i> LIC. Eliana Arlin Barrantes Miranda</h3>
+          <p><i class="fas fa-envelope"></i> ebarrantesm@iestp-trujillo.edu.pe</p>
+          <a href="./cv/HV_BARRANTESMIRANDA_Eliana_A.A.pdf" class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+        </div>
+      </div>
+      
+      <div class="docente-card">
+        <img src="./fotos/Deysi.jpeg" alt="Deysi Flores" class="docente-foto">
+        <div class="docente-info">
+          <h3><i class="fas fa-user"></i> LIC. Deysi Alicia Flores Toledo</h3>
+          <p><i class="fas fa-envelope"></i> florestoledod@iestp-trujillo.net</p>
+          <a href="./cv/HV_FLORESTOLEDODeysi.pdf" class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+        </div>
+      </div>
+      
+      <div class="docente-card">
+        <img src="./fotos/susy1.jpg" alt="Susy Gamero" class="docente-foto">
+        <div class="docente-info">
+          <h3><i class="fas fa-user"></i> LIC. Susy Estela Gamero Morales</h3>
+          <p><i class="fas fa-envelope"></i> valza@istrfa.edu.pe</p>
+          <a href="./cv/asistencia/HV_GAMEROMORALES.pdf" class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+        </div>
+      </div>
+      <div class="docente-card">
+        <img src="./fotos/Silvia.jpg" alt="Silvia" class="docente-foto">
+        <div class="docente-info">
+          <h3><i class="fas fa-user"></i> DRA. Silvia Carola Ortiz Cáceres</h3>
+          <p><i class="fas fa-envelope"></i> valza@istrfa.edu.pe</p>
+          <a href="./cv/asistencia/HV_ORTIZCACERES.pdf" class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+        </div>
+      </div>
+    </div>
 
-                    <div class="profesor-card">
-                        <img src="./fotos/Isabel-conta1.jpg" alt="Profesor" class="profesor-img">
-                        <div class="profesor-info">
-                            <h3 class="profesor-nombre">Isabel Frías Sánchez</h3>
-                            <br>
-                            <p class="profesor-profesion">Contaddor Público Colegiado</p>
-                            <div class="profesor-actions">
-                                <a href="./cv/Contabilidad/HOJA DE VIDA ISABEL FRÍAS SÁNCHEZ.pdf" class="cv-btn">Ver CV</a>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="carousel-arrow carousel-next" onclick="moveCarousel('asistencia-grid-carousel', 'next')">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+</section>
+<br>
 
-                    <div class="profesor-card">
-                        <img src="fotos/maestro5.jpg" alt="Profesor" class="profesor-img">
-                        <div class="profesor-info">
-                            <h3 class="profesor-nombre">Niño Salazar Edgard Gilberto</h3>
-                            <br>
-                            <p class="profesor-profesion">Contaddor Público Colegiado</p>
-                            <div class="profesor-actions">
-                                <a href="./cv/Contabilidad/DOCENTE-CESAR RUIZ OCHOA-HOJA DE VIDA.pdf" class="cv-btn">Ver CV</a>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="profesor-card">
-                        <img src="./fotos/Javier-conta.png" alt="Profesor" class="profesor-img">
-                        <div class="profesor-info">
-                            <h3 class="profesor-nombre">Javier Miguel Julca Vásquez</h3>
-                            <br>
-                            <p class="profesor-profesion">Contaddor Público Colegiado</p>
-                            <div class="profesor-actions">
-                                <a href="./cv/Contabilidad/DOCENTE-CESAR RUIZ OCHOA-HOJA DE VIDA.pdf" class="cv-btn">Ver CV</a>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="profesor-card">
-                        <img src="fotos/maestro5.jpg" alt="Profesor" class="profesor-img">
-                        <div class="profesor-info">
-                            <h3 class="profesor-nombre">Yoni Herminio Rodrìguez Urbina</h3>
-                            <br>
-                            <p class="profesor-profesion">Contaddor Público Colegiado</p>
-                            <div class="profesor-actions">
-                                <a href="cv/jorge-perez.pdf" class="cv-btn">Ver CV</a>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+ <!-- Contabilidad -->
+       <section class="carrera-section">
+  <h2 class="carrera-title">Contabilidad</h2>
+  <div class="carousel-container">
+    <div class="carousel-arrow carousel-prev" onclick="moveCarousel('contabilidad-grid-carousel', 'prev')">
+      <i class="fas fa-chevron-left"></i>
+    </div>
 
-                    <div class="profesor-card">
-                        <img src="fotos/maestro5.jpg" alt="Profesor" class="profesor-img">
-                        <div class="profesor-info">
-                            <h3 class="profesor-nombre">Hermitanio Heriberto Rubio Espinola</h3>
-                            <br>
-                            <p class="profesor-profesion">Economista</p>
-                            <div class="profesor-actions">
-                                <a href="cv/jorge-perez.pdf" class="cv-btn">Ver CV</a>
-                                <div class="social-links">
-                                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-arrow carousel-next" onclick="moveCarousel('contabilidad-carousel', 'next')">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
-        </section>
+    <div class="docentes-grid-carousel" id="contabilidad-grid-carousel">
+      <div class="docente-card">
+        <img src="./fotos/Berta-conta.png" alt="Berta Cabello" class="docente-foto">
+        <div class="docente-info">
+          <h3><i class="fas fa-user"></i> LIC. Berta Teolinda Cabello Mancisidor</h3>
+          <p><i class="fas fa-envelope"></i> cabellomancisidorb@iestp-trujillo.edu.pe</p>
+          <a href="./cv/contabilidad/HV-BERTATEOLINDACABELLO.pdf" class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+        </div>
+      </div>
+
+      <div class="docente-card">
+        <img src="./fotos/ochoa-conta1.png" alt="César Ochoa" class="docente-foto">
+        <div class="docente-info">
+          <h3><i class="fas fa-user"></i> DR. César Ubaldo Ruiz Ochoa</h3>
+          <p><i class="fas fa-envelope"></i> ruizochoac@iestptrujillo.net</p>
+          <a href="./cv/contabilidad/DOCENTE-CESAR RUIZ OCHOA-HOJA DE VIDA.pdf" class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+        </div>
+      </div>
+
+      <div class="docente-card">
+        <img src="./fotos/Emel-conta.jpeg" alt="Emel Morales" class="docente-foto">
+        <div class="docente-info">
+          <h3><i class="fas fa-user"></i> LIC. Emel Efraín Morales Meléndez</h3>
+          <p><i class="fas fa-envelope"></i> emelefrainmorales@gmail.com</p>
+          <a href="./cv/contabilidad/CV EMEL MORALES MELENDEZ.pdf" class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+        </div>
+      </div>
+
+      <div class="docente-card">
+        <img src="./fotos/Isabel-conta1.jpg" alt="Isabel Frías" class="docente-foto">
+        <div class="docente-info">
+          <h3><i class="fas fa-user"></i> LIC.Isabel Frías Sánchez</h3>
+          <p><i class="fas fa-envelope"></i> friassanchezi@iestptrujillo.net</p>
+          <a href="./cv/contabilidad/HOJA DE VIDA JAVIER MIGUEL JULCA VASQUEZ (1).pdf" class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+        </div>
+      </div>
+      <div class="docente-card">
+        <img src="./fotos/Javier-conta.png" alt="Isabel Frías" class="docente-foto">
+        <div class="docente-info">
+          <h3><i class="fas fa-user"></i> LIC. Javier Miguel Julca Vásquez</h3>
+          <p><i class="fas fa-envelope"></i> javierjulcaj@iestptrujillo.net</p>
+          <a href="./cv/contabilidad/HOJA DE VIDA JAVIER MIGUEL JULCA VASQUEZ (1).pdf" class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+        </div>
+      </div>
+      <div class="docente-card">
+        <img src="./fotos/Zacarias-conta1.jpg" alt="Isabel Frías" class="docente-foto">
+        <div class="docente-info">
+          <h3><i class="fas fa-user"></i> LIC. Carlos Augusto Zacarías Nomura</h3>
+          <p><i class="fas fa-envelope"></i> zacariasnomurac@iestp-trujillo.edu.pe</p>
+          <a href="./cv/contabilidad/HV-CarlosZacaríasNomura.pdf" class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-arrow carousel-next" onclick="moveCarousel('contabilidad-grid-carousel', 'next')">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+</section>
+<br>
+<!--Diseño y Programacion Web-->
+
+<section class="carrera-section">
+  <h2 class="carrera-title">Diseño y Programación Web</h2>
+  <div class="carousel-container">
+    <div class="carousel-arrow carousel-prev" onclick="moveCarousel('web-carousel', 'prev')">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+
+    <div class="docentes-grid-carousel" id="web-carousel">
+      <div class="docente-card">
+        <img src="./img/jerarquica2.jpeg" alt="María Pérez" class="docente-foto">
+        <div class="docente-info">
+          <h3><i class="fas fa-user"></i> ING. Sarita Carolina Paredes Romero</h3>
+          <p><i class="fas fa-envelope"></i> paredesromeros@iestptrujillo.net</p>
+          <a href="./cv/diseño/HV-SaritaParedes.pdf" class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+        </div>
+      </div>
+
+      <div class="docente-card">
+        <img src="./fotos/jose-web.jpg" alt="José Gutiérrez" class="docente-foto">
+        <div class="docente-info">
+          <h3><i class="fas fa-user"></i> ING. Pedro Oswaldo Beltrán Canessa</h3>
+          <p><i class="fas fa-envelope"></i> jgutierrez@iestp-trujillo.edu.pe</p>
+          <a href="./cv/web/HV_JOSE_GUTIERREZ.pdf" class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+        </div>
+      </div>
+
+      <div class="docente-card">
+        <img src="./fotos/karla-web.jpg" alt="Karla Reyes" class="docente-foto">
+        <div class="docente-info">
+          <h3><i class="fas fa-user"></i> LIC. Karla Reyes Paredes</h3>
+          <p><i class="fas fa-envelope"></i> kreyes@iestp-trujillo.edu.pe</p>
+          <a href="./cv/web/HV_KARLA_REYES.pdf" class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+        </div>
+      </div>
+       <div class="docente-card">
+        <img src="./fotos/karla-web.jpg" alt="Karla Reyes" class="docente-foto">
+        <div class="docente-info">
+          <h3><i class="fas fa-user"></i> LIC. Karla Reyes Paredes</h3>
+          <p><i class="fas fa-envelope"></i> kreyes@iestp-trujillo.edu.pe</p>
+          <a href="./cv/web/HV_KARLA_REYES.pdf" class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+        </div>
+      </div>
+       <div class="docente-card">
+        <img src="./fotos/karla-web.jpg" alt="Karla Reyes" class="docente-foto">
+        <div class="docente-info">
+          <h3><i class="fas fa-user"></i> LIC. Karla Reyes Paredes</h3>
+          <p><i class="fas fa-envelope"></i> kreyes@iestp-trujillo.edu.pe</p>
+          <a href="./cv/web/HV_KARLA_REYES.pdf" class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-arrow carousel-next" onclick="moveCarousel('web-carousel', 'next')">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+</section>
+
+
+    
+      
         <!-- Diseño y Programación Web -->
         <section class="carrera-section" id="diseno-web">
             <h2 class="carrera-title">Diseño y Programación Web</h2>
@@ -1093,6 +1106,15 @@
             carousel.scrollLeft -= cardWidth;
         }
     }
+    function moveCarousel(carouselId, direction) {
+  const carousel = document.getElementById(carouselId);
+  const cardWidth = 320; // Ajusta si tus tarjetas son más anchas
+  if (direction === 'next') {
+    carousel.scrollLeft += cardWidth;
+  } else {
+    carousel.scrollLeft -= cardWidth;
+  }
+}
 </script>
 
 </body>
