@@ -1,563 +1,262 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Instituto Tecnológico Trujillo</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- CDN de Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MD2d3oGzH8yPt9bEOeRl6N6a1C/3RAcY1B9zVeyELn8MvGmjmr9Q9r+n6gdcvxPVKFS4OAr0h01AIjHx+NjPug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instituto Tecnológico Trujillo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <style>
+/* ---- CONTENEDOR GENERAL ---- */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
 
-     <style>
-        
-        .container {
-            width: 100%;
-            max-width: 900px;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            margin: 30px 0;
-        }
-        
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        
-        .accordion {
-            width: 100%;
-        }
-        
-        .accordion-item {
-            border-bottom: 1px solid #e0e0e0;
-            overflow: hidden;
-        }
-        
-        .accordion-header {
-            background: linear-gradient(to right, #f8f9fa, #e9ecef);
-            padding: 20px;
-            font-size: 1.3rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .accordion-header:hover {
-            background: linear-gradient(to right, #e9ecef, #dde1e6);
-        }
-        
-        .accordion-header::after {
-            content: '+';
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .accordion-item.active .accordion-header::after {
-            transform: rotate(45deg);
-        }
-        
-        .accordion-item.active .accordion-header {
-            background: linear-gradient(to right, #d0ebff, #a5d8ff);
-        }
-        
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background-color: #f8f9fa;
-        }
-        
-        .accordion-content-inner {
-            padding: 25px;
-        }
-        
-        .stats-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            background-color: white;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            align-content:flex-end
-        }
-        
-        .stats-table th, .stats-table td {
-            padding: 14px 12px;
-            text-align: center;
-            border: 1px solid #dee2e6;
-        }
-        
-        .stats-table th {
-            background-color: #1a2a6c;
-            color: white;            
-            font-weight: 600;
-        }
-        
-        .stats-table tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        
-        .stats-table tr:last-child {
-            background-color: #e9ecef;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        
-        .stats-table tr:hover {
-            background-color: #e9f7ff;
-        }
-        
-        .long-text {
-            text-align: left;
-            max-width: 300px;
-        }
-        
-        .chart-container {
-            margin-top: 20px;
-            height: 300px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-around;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .chart-bar {
-            width: 50px;
-            background: linear-gradient(to top, #1a2a6c, #4a6fc5);
-            margin: 0 10px;
-            position: relative;
-            border-radius: 5px 5px 0 0;
-            transition: height 0.5s ease;
-        }
-        
-        .chart-label {
-            position: absolute;
-            bottom: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.9rem;
-            color: #333;
-        }
-        
-        .chart-value {
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-weight: bold;
-            color: #191970;
-        }
-        
-   
-        
-        @media (max-width: 768px) {
-            .container {
-                margin: 15px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .accordion-header {
-                padding: 15px;
-                font-size: 1.1rem;
-            }
-            
-            .long-text {
-                font-size: 0.9rem;
-                text-align: left;
-            }
-            
-            .stats-table th, .stats-table td {
-                padding: 10px 8px;
-                font-size: 0.9rem;
-            }
-            
-            .chart-container {
-                height: 250px;
-            }
-            
-            .chart-bar {
-                width: 30px;
-            }
-        }
-    </style>
+/* ---- TITULOS ---- */
+h1, .hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 
+/* ---- ACORDEÓN ---- */
+.accordion { width: 100%; }
+.accordion-item { border-bottom: 1px solid #e0e0e0; overflow: hidden; }
+.accordion-header {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    padding: 20px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+    position: relative;
+}
+.accordion-header:hover { background: linear-gradient(to right, #e9ecef, #dde1e6); }
+.accordion-header::after {
+    content: '+';
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+.accordion-item.active .accordion-header::after { transform: rotate(45deg); }
+.accordion-item.active .accordion-header {
+    background: linear-gradient(to right, #d0ebff, #a5d8ff);
+}
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #f8f9fa;
+}
+.accordion-content-inner { padding: 25px; }
 
+/* ---- TABLAS ---- */
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.stats-table th, .stats-table td {
+    padding: 14px 12px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
+.stats-table th {
+    background-color: #1a2a6c;
+    color: #fff;
+    font-weight: 600;
+}
+.stats-table tr:nth-child(even) { background-color: #f2f2f2; }
+.stats-table tr:last-child {
+    background-color: #e9ecef;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.long-text {
+    text-align: left;
+    max-width: 300px;
+}
+
+/* ---- GRÁFICOS ---- */
+.chart-container {
+    margin-top: 20px;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.chart-bar {
+    width: 50px;
+    background: linear-gradient(to top, #1a2a6c, #4a6fc5);
+    margin: 0 10px;
+    position: relative;
+    border-radius: 5px 5px 0 0;
+    transition: height 0.5s ease;
+}
+.chart-label {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    color: #333;
+}
+.chart-value {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    color: #191970;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+    .container { margin: 15px; }
+    h1, .hero-content h2 { font-size: 2rem; }
+    .accordion-header { padding: 15px; font-size: 1.1rem; }
+    .stats-table th, .stats-table td { padding: 10px 8px; font-size: 0.9rem; }
+    .chart-container { height: 250px; }
+    .chart-bar { width: 30px; }
+}
+
+  </style>
 </head>
 <body>
-
+  <!-- Encabezado y menú -->
   <div id="header-container"></div>
-
-  <!-- Aquí se cargará el menú (opcional) -->
   <div id="menu-container"></div>
 
-  
-  <!-- Banner de bienvenida -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Estadísticas</h2>
-            <p>2025</p>
-        </div>
-    </section>
+  <!-- Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Estadísticas</h2>
+      <p>Actualizado 2025</p>
+    </div>
+  </section>
 
+  <!-- Contenido principal -->
   <div class="container">
-        
-        <div class="accordion">
-            <!-- Ingresantes -->
-          <div class="accordion-item active">
-                <div class="accordion-header">
-                    <span>INGRESANTES</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="accordion-content-inner">
-                        <p>Datos detallados de estudiantes ingresantes por programa de estudios y año:</p>
-                        
-                        <table class="stats-table">
-                            <thead>
-                                <tr>
-                                    <th rowspan="2">PROGRAMAS DE ESTUDIOS</th>
-                                    <th colspan="4">N° de Ingresantes</th>
-                                </tr>
-                                <tr>
-                                    <th>2021</th>
-                                    <th>2022</th>
-                                    <th>2023</th>
-                                    <th>2024</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="long-text">Asistencia Administrativa</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td class="long-text">Contabilidad</td>
-                                    <td>20</td>
-                                    <td>1</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td class="long-text">Diseño y Programación Web</td>
-                                    <td>26</td>
-                                    <td>2</td>
-                                    <td>2</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td class="long-text">Guía Oficial de Turismo</td>
-                                    <td>9</td>
-                                    <td>0</td>
-                                    <td>6</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td class="long-text">Laboratorio Clínico y Anatomía Patológica</td>
-                                    <td>11</td>
-                                    <td>5</td>
-                                    <td>1</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td class="long-text">Marketing</td>
-                                    <td>20</td>
-                                    <td>12</td>
-                                    <td>18</td>
-                                    <td>0</td>
-                                </tr>
-                             
-                                <tr>
-                                    <td><strong>TOTALES</strong></td>
-                                    <td><strong>121</strong></td>
-                                    <td><strong>21</strong></td>
-                                    <td><strong>25</strong></td>
-                                    <td><strong>0</strong></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        
-                        <div class="chart-container">
-                            <div class="chart-bar" style="height: 100%;">
-                                <span class="chart-value">121</span>
-                                <span class="chart-label">2021</span>
-                            </div>
-                            <div class="chart-bar" style="height: 17%;">
-                                <span class="chart-value">21</span>
-                                <span class="chart-label">2022</span>
-                            </div>
-                            <div class="chart-bar" style="height: 21%;">
-                                <span class="chart-value">25</span>
-                                <span class="chart-label">2023</span>
-                            </div>
-                            <div class="chart-bar" style="height: 0%;">
-                                <span class="chart-value">0</span>
-                                <span class="chart-label">2024</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="accordion">
+      <!-- INGRESANTES -->
+      <div class="accordion-item active">
+        <div class="accordion-header"><span>INGRESANTES</span></div>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            <p>Datos detallados de estudiantes ingresantes por programa de estudios y año:</p>
+            <table class="stats-table">
+              <thead>
+                <tr>
+                  <th rowspan="2">PROGRAMAS DE ESTUDIOS</th>
+                  <th colspan="3">N° de Ingresantes</th>
+                </tr>
+                <tr>
+                  <th>2023</th>
+                  <th>2024</th>
+                  <th>2025</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="long-text">Asistencia Administrativa</td><td>27</td><td>23</td><td>24</td></tr>
+                <tr><td class="long-text">Contabilidad</td><td>77</td><td>73</td><td>49</td></tr>
+                <tr><td class="long-text">Diseño y Programación Web</td><td>45</td><td>34</td><td>40</td></tr>
+                <tr><td class="long-text">Enfermería Técnica</td><td>40</td><td>40</td><td>30</td></tr>
+                <tr><td class="long-text">Guía Oficial de Turismo</td><td>8</td><td>16</td><td>17</td></tr>
+                <tr><td class="long-text">Laboratorio Clínico y Anatomía Patológica</td><td>40</td><td>33</td><td>24</td></tr>
+                <tr><td class="long-text">Marketing</td><td>21</td><td>16</td><td>24</td></tr>
+                <tr><th>TOTALES</th><th>258</th><th>235</th><th>208</th></tr>
+              </tbody>
+            </table>
+            <div class="chart-container">
+              <div class="chart-bar" style="height: 100%;"><span class="chart-value">258</span><span class="chart-label">2023</span></div>
+              <div class="chart-bar" style="height: 91%;"><span class="chart-value">235</span><span class="chart-label">2024</span></div>
+              <div class="chart-bar" style="height: 81%;"><span class="chart-value">208</span><span class="chart-label">2025</span></div>
             </div>
-            
-            <!-- Matriculados -->
-            <div class="accordion-item active">
-                <div class="accordion-header">
-                    <span>MATRICULADOS</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="accordion-content-inner">
-                        <p>Datos detallados de estudiantes matriculados por programa de estudios y año:</p>
-                        
-                       <table class="stats-table">
-                            <thead>
-                                <tr>
-                                    <th rowspan="2">PROGRAMAS DE ESTUDIOS</th>
-                                    <th colspan="4">N° de Matriculados</th>
-                                </tr>
-                                <tr>
-                                    <th>2021</th>
-                                    <th>2022</th>
-                                    <th>2023</th>
-                                    <th>2024</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="long-text">Asistencia Administrativa</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td class="long-text">Contabilidad</td>
-                                    <td>20</td>
-                                    <td>1</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td class="long-text">Diseño y Programación Web</td>
-                                    <td>26</td>
-                                    <td>2</td>
-                                    <td>2</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td class="long-text">Guía Oficial de Turismo</td>
-                                    <td>9</td>
-                                    <td>0</td>
-                                    <td>6</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td class="long-text">Laboratorio Clínico y Anatomía Patológica</td>
-                                    <td>11</td>
-                                    <td>5</td>
-                                    <td>1</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td class="long-text">Marketing</td>
-                                    <td>20</td>
-                                    <td>12</td>
-                                    <td>18</td>
-                                    <td>0</td>
-                                </tr>
-                             
-                                <tr>
-                                    <td><strong>TOTALES</strong></td>
-                                    <td><strong>121</strong></td>
-                                    <td><strong>21</strong></td>
-                                    <td><strong>25</strong></td>
-                                    <td><strong>0</strong></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        
-                        <div class="chart-container">
-                            <div class="chart-bar" style="height: 100%;">
-                                <span class="chart-value">121</span>
-                                <span class="chart-label">2021</span>
-                            </div>
-                            <div class="chart-bar" style="height: 17%;">
-                                <span class="chart-value">21</span>
-                                <span class="chart-label">2022</span>
-                            </div>
-                            <div class="chart-bar" style="height: 21%;">
-                                <span class="chart-value">25</span>
-                                <span class="chart-label">2023</span>
-                            </div>
-                            <div class="chart-bar" style="height: 0%;">
-                                <span class="chart-value">0</span>
-                                <span class="chart-label">2024</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Egresados -->
-            <div class="accordion-item active">
-                <div class="accordion-header">
-                    <span>EGRESADOS</span>
-                </div>
-                <div class="accordion-content">
-                    <div class="accordion-content-inner">
-                        <p>Datos detallados de estudiantes egresados por programa de estudios y año:</p>
-                        
-                       <table class="stats-table">
-                            <thead>
-                                <tr>
-                                    <th rowspan="2">PROGRAMAS DE ESTUDIOS</th>
-                                    <th colspan="4">N° de Egresados</th>
-                                </tr>
-                                <tr>
-                                    <th>2021</th>
-                                    <th>2022</th>
-                                    <th>2023</th>
-                                    <th>2024</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="long-text">Asistencia Administrativa</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td class="long-text">Contabilidad</td>
-                                    <td>20</td>
-                                    <td>1</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td class="long-text">Diseño y Programación Web</td>
-                                    <td>26</td>
-                                    <td>2</td>
-                                    <td>2</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td class="long-text">Guía Oficial de Turismo</td>
-                                    <td>9</td>
-                                    <td>0</td>
-                                    <td>6</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td class="long-text">Laboratorio Clínico y Anatomía Patológica</td>
-                                    <td>11</td>
-                                    <td>5</td>
-                                    <td>1</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td class="long-text">Marketing</td>
-                                    <td>20</td>
-                                    <td>12</td>
-                                    <td>18</td>
-                                    <td>0</td>
-                                </tr>
-                             
-                                <tr>
-                                    <td><strong>TOTALES</strong></td>
-                                    <td><strong>121</strong></td>
-                                    <td><strong>21</strong></td>
-                                    <td><strong>25</strong></td>
-                                    <td><strong>15</strong></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        
-                        <div class="chart-container">
-                            <div class="chart-bar" style="height: 100%;">
-                                <span class="chart-value">121</span>
-                                <span class="chart-label">2021</span>
-                            </div>
-                            <div class="chart-bar" style="height: 17%;">
-                                <span class="chart-value">21</span>
-                                <span class="chart-label">2022</span>
-                            </div>
-                            <div class="chart-bar" style="height: 21%;">
-                                <span class="chart-value">25</span>
-                                <span class="chart-label">2023</span>
-                            </div>
-                            <div class="chart-bar" style="height: 12%;">
-                                <span class="chart-value">15</span>
-                                <span class="chart-label">2024</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-         
+          </div>
         </div>
-    </div>   
+      </div>
 
+      <!-- MATRICULADOS -->
+      <div class="accordion-item">
+        <div class="accordion-header"><span>MATRICULADOS</span></div>
+        <div class="accordion-content">
+          <div class="accordion-content-inner">
+            <p>Totales por periodo académico:</p>
+            <table class="stats-table">
+              <thead>
+                <tr>
+                  <th>PERIODO</th>
+                  <th>N° de Matriculados</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>2023-I</td><td>623</td></tr>
+                <tr><td>2023-II</td><td>596</td></tr>
+                <tr><td>2024-I</td><td>624</td></tr>
+                <tr><td>2024-II</td><td>580</td></tr>
+                <tr><td>2025-I</td><td>582</td></tr>
+              </tbody>
+            </table>
+            <div class="chart-container">
+              <div class="chart-bar" style="height: 100%;"><span class="chart-value">624</span><span class="chart-label">2024-I</span></div>
+              <div class="chart-bar" style="height: 99%;"><span class="chart-value">623</span><span class="chart-label">2023-I</span></div>
+              <div class="chart-bar" style="height: 95%;"><span class="chart-value">596</span><span class="chart-label">2023-II</span></div>
+              <div class="chart-bar" style="height: 93%;"><span class="chart-value">582</span><span class="chart-label">2025-I</span></div>
+              <div class="chart-bar" style="height: 92%;"><span class="chart-value">580</span><span class="chart-label">2024-II</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<div id="footer-container"></div>
+    </div>
+  </div>
 
-<script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const accordionItems = document.querySelectorAll('.accordion-item');
-            
-            // Abrir el ítem "EGRESADOS" por defecto
-            const egresadosItem = document.querySelector('.accordion-item.active');
-            if (egresadosItem) {
-                const content = egresadosItem.querySelector('.accordion-content');
-                content.style.maxHeight = content.scrollHeight + 'px';
+  <div id="footer-container"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const accordionItems = document.querySelectorAll('.accordion-item');
+
+      accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+
+        if (item.classList.contains('active')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+
+        header.addEventListener('click', () => {
+          accordionItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+              otherItem.querySelector('.accordion-content').style.maxHeight = null;
             }
-            
-            // Configurar eventos para cada ítem del acordeón
-            accordionItems.forEach(item => {
-                const header = item.querySelector('.accordion-header');
-                
-                header.addEventListener('click', () => {
-                    const content = item.querySelector('.accordion-content');
-                    
-                    // Cerrar todos los demás ítems
-                    accordionItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                            otherItem.querySelector('.accordion-content').style.maxHeight = null;
-                        }
-                    });
-                    
-                    // Alternar el ítem actual
-                    item.classList.toggle('active');
-                    
-                    if (item.classList.contains('active')) {
-                        content.style.maxHeight = content.scrollHeight + 'px';
-                    } else {
-                        content.style.maxHeight = null;
-                    }
-                });
-            });
-        });
-    </script>
+          });
 
+          item.classList.toggle('active');
+          if (item.classList.contains('active')) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+          } else {
+            content.style.maxHeight = null;
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-
-
