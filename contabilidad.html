@@ -84,6 +84,37 @@
   .plan-estudios-modulos .course-table tbody tr:nth-child(odd) {
     background: #fafafa;
   }
+  /* Botón CTA genérico */
+.btn-cta{
+    display:inline-flex;
+    align-items:center;            /* centra texto + icono vertical */
+    gap:8px;                       /* espacio entre icono y texto   */
+    padding:12px 28px;
+    font-size:16px;
+    font-weight:600;
+    color:#fff;
+    text-decoration:none;
+    background:linear-gradient(135deg,#99001f 0%,#c92b3a 100%);
+    border:none;
+    border-radius:50px;            /* pill button */
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+    transition:.25s ease;
+}
+
+/* Efecto hover & focus */
+.btn-cta:hover,
+.btn-cta:focus{
+    transform:translateY(-2px) scale(1.03);
+    box-shadow:0 6px 16px rgba(0,0,0,.30);
+    background:linear-gradient(135deg,#b3142e 0%,#e94555 100%);
+}
+
+/* Efecto “click” */
+.btn-cta:active{
+    transform:translateY(0) scale(0.98);
+    box-shadow:0 3px 10px rgba(0,0,0,.20);
+}
+
   </style>
 </head>
 <body>
@@ -522,9 +553,12 @@
   </tbody>
 </table>
 
-<p style="text-align:center; margin-top: 20px;">
-  <a href="index.html" class="btn-cta" style="padding: 10px 20px; font-size: 16px;">Volver al Inicio</a>
+<p style="text-align:center; margin-top:40px;">
+  <a href="index.html" class="btn-cta">
+      <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
+  </a>
 </p>
+
 </main>
 
 <div id="footer-container"></div>
