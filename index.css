@@ -1,0 +1,40 @@
+    body{
+        margin:0;
+        font-family:Arial,Helvetica,sans-serif;}
+
+    /* --------- CARRUSEL --------- */
+    .carousel-hero{position:relative;width:100%;height:500px;margin-top:10px;overflow:hidden;}
+    .carousel-slide{position:absolute;width:100%;height:100%;background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease-in-out;}
+    .carousel-slide.active{opacity:1;z-index:0;}
+
+    .hero-content{position:absolute;bottom:130px;left:10px;z-index:2;display:flex;flex-direction:column;align-items:flex-start;}
+    .text-bg{background:rgba(0,0,0,.7);padding:10px 20px;border-radius:5px;margin-bottom:10px;color:#fff;}
+    .hero-content h2{margin:0;font-size:20px;}
+    .hero-content h3{margin:0;font-size:55px;font-weight:700;text-shadow:2px 2px 4px rgba(0,0,0,.5);}
+
+    /* --------- ÍCONOS DESTACADOS --------- */
+    .hero-icons{background:#fff;padding:25px;border-radius:10px;display:flex;flex-wrap:wrap;justify-content:center;box-shadow:0 4px 8px rgba(0,0,0,.2);width:90%;max-width:1100px;margin:30px auto;}
+    .icon-box{text-align:center;flex:1 1 150px;margin:10px;}
+    .icon-box i{font-size:28px;color:#99001f;margin-bottom:10px;}
+    .icon-box p{margin:0;font-size:14px;line-height:1.4;color:#333;}
+
+    /* --------- SECCIONES --------- */
+    .presentation,.programs,.contact-section{padding:40px 5%;}
+    .presentation h3,.programs h3,.contact-info h3{color:#99001f;margin-top:0;}
+
+    /* --------- MENÚ DE PROGRAMAS --------- */
+    .program-item{background:#99001f;color:#fff;padding:15px;border-bottom:1px solid #fff;cursor:pointer;transition:background .3s;}
+    .program-item:hover{background:#3c3b3c;}
+    .program-item.active{background:#2b2a2b;}
+
+    /* --------- BOTÓN VER MÁS --------- */
+    .btn-vermas{display:inline-block;margin-top:15px;padding:10px 20px;background:#28a745;color:#fff;font-weight:bold;border-radius:5px;text-decoration:none;transition:background .3s;}
+    .btn-vermas:hover{background:#218838;}
+
+    /* --------- FORMULARIO CONTACTO --------- */
+    .contact-container{display:flex;flex-wrap:wrap;gap:40px;justify-content:center;}
+    .contact-info,.contact-form{flex:1 1 320px;}
+    .form-group{margin-bottom:15px;}
+    .form-input{width:100%;padding:10px;border:1px solid #ccc;border-radius:4px;}
+    .form-textarea{resize:vertical;}
+    .btn-submit{background:#99001f;color:#fff;border:none;padding:10px 20px;border-radius:4px;cursor:pointer;font-weight:bold;}

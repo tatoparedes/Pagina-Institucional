@@ -1,58 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Instituto Tecnológico Trujillo</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        crossorigin="anonymous" />
-          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    /* --------- ESTILOS GENERALES --------- */
-    body{
-        margin:0;
-        font-family:Arial,Helvetica,sans-serif;}
+    #header-container {
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden;
+      height: auto !important;
+    }
 
-    /* --------- CARRUSEL --------- */
-    .carousel-hero{position:relative;width:100%;height:500px;margin-top:10px;overflow:hidden;}
-    .carousel-slide{position:absolute;width:100%;height:100%;background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease-in-out;}
-    .carousel-slide.active{opacity:1;z-index:0;}
 
-    .hero-content{position:absolute;bottom:130px;left:10px;z-index:2;display:flex;flex-direction:column;align-items:flex-start;}
-    .text-bg{background:rgba(0,0,0,.7);padding:10px 20px;border-radius:5px;margin-bottom:10px;color:#fff;}
-    .hero-content h2{margin:0;font-size:20px;}
-    .hero-content h3{margin:0;font-size:55px;font-weight:700;text-shadow:2px 2px 4px rgba(0,0,0,.5);}
-
-    /* --------- ÍCONOS DESTACADOS --------- */
-    .hero-icons{background:#fff;padding:25px;border-radius:10px;display:flex;flex-wrap:wrap;justify-content:center;box-shadow:0 4px 8px rgba(0,0,0,.2);width:90%;max-width:1100px;margin:30px auto;}
-    .icon-box{text-align:center;flex:1 1 150px;margin:10px;}
-    .icon-box i{font-size:28px;color:#99001f;margin-bottom:10px;}
-    .icon-box p{margin:0;font-size:14px;line-height:1.4;color:#333;}
-
-    /* --------- SECCIONES --------- */
-    .presentation,.programs,.contact-section{padding:40px 5%;}
-    .presentation h3,.programs h3,.contact-info h3{color:#99001f;margin-top:0;}
-
-    /* --------- MENÚ DE PROGRAMAS --------- */
-    .program-item{background:#99001f;color:#fff;padding:15px;border-bottom:1px solid #fff;cursor:pointer;transition:background .3s;}
-    .program-item:hover{background:#3c3b3c;}
-    .program-item.active{background:#2b2a2b;}
-
-    /* --------- BOTÓN VER MÁS --------- */
-    .btn-vermas{display:inline-block;margin-top:15px;padding:10px 20px;background:#28a745;color:#fff;font-weight:bold;border-radius:5px;text-decoration:none;transition:background .3s;}
-    .btn-vermas:hover{background:#218838;}
-
-    /* --------- FORMULARIO CONTACTO --------- */
-    .contact-container{display:flex;flex-wrap:wrap;gap:40px;justify-content:center;}
-    .contact-info,.contact-form{flex:1 1 320px;}
-    .form-group{margin-bottom:15px;}
-    .form-input{width:100%;padding:10px;border:1px solid #ccc;border-radius:4px;}
-    .form-textarea{resize:vertical;}
-    .btn-submit{background:#99001f;color:#fff;border:none;padding:10px 20px;border-radius:4px;cursor:pointer;font-weight:bold;}
+    .carousel-hero {
+      visibility: hidden;
+    }
   </style>
 </head>
+
 <body>
 
   <div id="header-container"></div>
@@ -62,60 +34,131 @@
 
     <!-- ---------- CARRUSEL ---------- -->
     <div class="carousel-hero">
-      <div class="carousel-slide active"  style="background-image:url('img/imagencarrusel1.jpg')">
-        <div class="hero-content"><div class="text-bg"><h2>Programa de Estudios</h2></div><div class="text-bg"><h3>Asistencia Administrativa</h3></div></div>
+      <div class="carousel-slide active" style="background-image:url('img/imagencarrusel1.jpg')">
+        <div class="hero-content">
+          <div class="text-bg">
+            <h2>Programa de Estudios</h2>
+          </div>
+          <div class="text-bg">
+            <h3>Asistencia Administrativa</h3>
+          </div>
+        </div>
       </div>
-      <div class="carousel-slide"        style="background-image:url('img/imagencarrusel2.jpg')">
-        <div class="hero-content"><div class="text-bg"><h2>Programa de Estudios</h2></div><div class="text-bg"><h3>Contabilidad</h3></div></div>
+      <div class="carousel-slide" style="background-image:url('img/imagencarrusel2.jpg')">
+        <div class="hero-content">
+          <div class="text-bg">
+            <h2>Programa de Estudios</h2>
+          </div>
+          <div class="text-bg">
+            <h3>Contabilidad</h3>
+          </div>
+        </div>
       </div>
-      <div class="carousel-slide"        style="background-image:url('img/imagencarrusel3.jpg')">
-        <div class="hero-content"><div class="text-bg"><h2>Programa de Estudios</h2></div><div class="text-bg"><h3>Diseño y Programación Web</h3></div></div>
+      <div class="carousel-slide" style="background-image:url('img/imagencarrusel3.jpg')">
+        <div class="hero-content">
+          <div class="text-bg">
+            <h2>Programa de Estudios</h2>
+          </div>
+          <div class="text-bg">
+            <h3>Diseño y Programación Web</h3>
+          </div>
+        </div>
       </div>
-      <div class="carousel-slide"        style="background-image:url('img/imagencarrusel4.jpg')">
-        <div class="hero-content"><div class="text-bg"><h2>Programa de Estudios</h2></div><div class="text-bg"><h3>Enfermería Técnica</h3></div></div>
+      <div class="carousel-slide" style="background-image:url('img/imagencarrusel4.jpg')">
+        <div class="hero-content">
+          <div class="text-bg">
+            <h2>Programa de Estudios</h2>
+          </div>
+          <div class="text-bg">
+            <h3>Enfermería Técnica</h3>
+          </div>
+        </div>
       </div>
-      <div class="carousel-slide"        style="background-image:url('img/imagencarrusel5.jpg')">
-        <div class="hero-content"><div class="text-bg"><h2>Programa de Estudios</h2></div><div class="text-bg"><h3>Guía Oficial de Turismo</h3></div></div>
+      <div class="carousel-slide" style="background-image:url('img/imagencarrusel5.jpg')">
+        <div class="hero-content">
+          <div class="text-bg">
+            <h2>Programa de Estudios</h2>
+          </div>
+          <div class="text-bg">
+            <h3>Guía Oficial de Turismo</h3>
+          </div>
+        </div>
       </div>
-      <div class="carousel-slide"        style="background-image:url('img/imagencarrusel6.jpg')">
-        <div class="hero-content"><div class="text-bg"><h2>Programa de Estudios</h2></div><div class="text-bg"><h3>Laboratorio Clínico y Anatomía Patológica</h3></div></div>
+      <div class="carousel-slide" style="background-image:url('img/imagencarrusel6.jpg')">
+        <div class="hero-content">
+          <div class="text-bg">
+            <h2>Programa de Estudios</h2>
+          </div>
+          <div class="text-bg">
+            <h3>Laboratorio Clínico y Anatomía Patológica</h3>
+          </div>
+        </div>
       </div>
-      <div class="carousel-slide"        style="background-image:url('img/imagencarrusel7.png')">
-        <div class="hero-content"><div class="text-bg"><h2>Programa de Estudios</h2></div><div class="text-bg"><h3>Marketing</h3></div></div>
+      <div class="carousel-slide" style="background-image:url('img/imagencarrusel7.png')">
+        <div class="hero-content">
+          <div class="text-bg">
+            <h2>Programa de Estudios</h2>
+          </div>
+          <div class="text-bg">
+            <h3>Marketing</h3>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- ---------- ÍCONOS DESTACADOS ---------- -->
     <div class="hero-icons">
-      <div class="icon-box"><i class="fa-solid fa-wallet"></i><p>No pagas<br>mensualidad</p></div>
-      <div class="icon-box"><i class="fa-solid fa-graduation-cap"></i><p>Convalida con<br>universidades</p></div>
-      <div class="icon-box"><i class="fa-solid fa-certificate"></i><p>Título a nombre de<br>la Nación</p></div>
-      <div class="icon-box"><i class="fa-solid fa-chalkboard-user"></i><p>Docentes<br>calificados</p></div>
-      <div class="icon-box"><i class="fa-solid fa-check-circle"></i><p>Calidad en el<br>Servicio Educativo</p></div>
-      <div class="icon-box"><i class="fa-solid fa-server"></i><p>Tecnología e<br>Infraestructura</p></div>
+      <div class="icon-box"><i class="fa-solid fa-wallet"></i>
+        <p>No pagas<br>mensualidad</p>
+      </div>
+      <div class="icon-box"><i class="fa-solid fa-graduation-cap"></i>
+        <p>Convalida con<br>universidades</p>
+      </div>
+      <div class="icon-box"><i class="fa-solid fa-certificate"></i>
+        <p>Título a nombre de<br>la Nación</p>
+      </div>
+      <div class="icon-box"><i class="fa-solid fa-chalkboard-user"></i>
+        <p>Docentes<br>calificados</p>
+      </div>
+      <div class="icon-box"><i class="fa-solid fa-check-circle"></i>
+        <p>Calidad en el<br>Servicio Educativo</p>
+      </div>
+      <div class="icon-box"><i class="fa-solid fa-server"></i>
+        <p>Tecnología e<br>Infraestructura</p>
+      </div>
     </div>
 
     <!-- ---------- PRESENTACIÓN ---------- -->
     <section class="presentation">
-      <h3 style="max-width: 1200px; margin: 0 auto; display:flex; flex-wrap:wrap; gap: 20px;">Formando Profesionales Exitosos desde 1979</h3>
-      <p style="max-width: 1200px; margin: 0 auto; display:flex; flex-wrap:wrap; gap: 20px; text-align: justify;">El Instituto de Educación Superior Tecnológico Público “TRUJILLO”, fue creado el 27 de abril de 1979, mediante R.M. Nº 0469-79-ED, que dispone la creación de la Escuela Superior de Educación Profesional (ESEP) de TRUJILLO, iniciando sus labores académicas el 04 de noviembre del mismo año con las áreas profesionales de: Educación, Turismo y Administración. Luego, el Instituto fue elevado a la categoría de ESEP de II ciclo, ofertándose las Especialidades Profesionales de: Tecnología Sanitaria Rural, Administración de Negocios, Contabilidad Empresarial y Promoción Turística. En 1984, el Ministerio de Educación por R.M. Nº 110-84-ED, adecúa a la Escuela Superior de Educación Profesional de TRUJILLO a INSTITUTO SUPERIOR TECNOLÓGICO ESTATAL “TRUJILLO”, ofertando (5) Carreras Profesionales: Técnica en Laboratorio Clínico, Guía Oficial de Turismo, Administración de Servicios de Hostelería, Contabilidad, y Secretariado Ejecutivo.</p>
+      <h3 style="max-width: 1200px; margin: 0 auto; display:flex; flex-wrap:wrap; gap: 20px;">Formando Profesionales
+        Exitosos desde 1979</h3>
+      <p style="max-width: 1200px; margin: 0 auto; display:flex; flex-wrap:wrap; gap: 20px; text-align: justify;">El
+        Instituto de Educación Superior Tecnológico Público “TRUJILLO”, fue creado el 27 de abril de 1979, mediante R.M.
+        Nº 0469-79-ED, que dispone la creación de la Escuela Superior de Educación Profesional (ESEP) de TRUJILLO,
+        iniciando sus labores académicas el 04 de noviembre del mismo año con las áreas profesionales de: Educación,
+        Turismo y Administración. Luego, el Instituto fue elevado a la categoría de ESEP de II ciclo, ofertándose las
+        Especialidades Profesionales de: Tecnología Sanitaria Rural, Administración de Negocios, Contabilidad
+        Empresarial y Promoción Turística. En 1984, el Ministerio de Educación por R.M. Nº 110-84-ED, adecúa a la
+        Escuela Superior de Educación Profesional de TRUJILLO a INSTITUTO SUPERIOR TECNOLÓGICO ESTATAL “TRUJILLO”,
+        ofertando (5) Carreras Profesionales: Técnica en Laboratorio Clínico, Guía Oficial de Turismo, Administración de
+        Servicios de Hostelería, Contabilidad, y Secretariado Ejecutivo.</p>
     </section>
 
     <!-- ---------- PROGRAMAS DE ESTUDIO 3 ---------- -->
     <section class="programs">
       <h3>Nuestros Programas de Estudio</h3>
-      <div  style="max-width: 1200px; margin: 0 auto; display:flex; flex-wrap:wrap; gap: 20px;">
+      <div style="max-width: 1200px; margin: 0 auto; display:flex; flex-wrap:wrap; gap: 20px;">
 
         <!-- Menú lateral -->
         <div style="max-width: 1200px;">
           <ul id="program-list" style="list-style:none;padding:0;margin:0;">
             <li class="program-item active" data-program="asistencia">› Asistencia Administrativa</li>
-            <li class="program-item"        data-program="contabilidad">› Contabilidad</li>
-            <li class="program-item"        data-program="diseno">› Diseño y Programación Web</li>
-            <li class="program-item"        data-program="enfermeria">› Enfermería Técnica</li>
-            <li class="program-item"        data-program="guia">› Guía Oficial de Turismo</li>
-            <li class="program-item"        data-program="laboratorio">› Laboratorio Clínico y Anatomía Patológica</li>
-            <li class="program-item"        data-program="marketing">› Marketing</li>
+            <li class="program-item" data-program="contabilidad">› Contabilidad</li>
+            <li class="program-item" data-program="diseno">› Diseño y Programación Web</li>
+            <li class="program-item" data-program="enfermeria">› Enfermería Técnica</li>
+            <li class="program-item" data-program="guia">› Guía Oficial de Turismo</li>
+            <li class="program-item" data-program="laboratorio">› Laboratorio Clínico y Anatomía Patológica</li>
+            <li class="program-item" data-program="marketing">› Marketing</li>
           </ul>
         </div>
 
@@ -123,7 +166,12 @@
         <div id="program-content" style="flex:1;min-width:300px;">
           <h2 id="program-title" style="color:#99001f;">Asistencia Administrativa</h2>
           <p id="program-description" style="text-align:justify;line-height:1.6;">
-            El programa de estudios en Asistencia Administrativa forma profesionales técnicos competentes para ejecutar tareas administrativas en organizaciones públicas y privadas. Los egresados son capaces de organizar documentos, redactar informes, brindar atención al cliente, coordinar reuniones, utilizar herramientas de ofimática, manejar archivos y apoyar en procesos contables y logísticos. Su formación está orientada a la eficiencia, la responsabilidad y la ética, siendo piezas clave en el funcionamiento de cualquier institución.
+            El programa de estudios en Asistencia Administrativa forma profesionales técnicos competentes para ejecutar
+            tareas administrativas en organizaciones públicas y privadas. Los egresados son capaces de organizar
+            documentos, redactar informes, brindar atención al cliente, coordinar reuniones, utilizar herramientas de
+            ofimática, manejar archivos y apoyar en procesos contables y logísticos. Su formación está orientada a la
+            eficiencia, la responsabilidad y la ética, siendo piezas clave en el funcionamiento de cualquier
+            institución.
           </p>
           <a id="program-link" href="asistencia-admin.html" class="btn-vermas" target="_blank">Ver más</a>
         </div>
@@ -146,9 +194,10 @@
         <div class="contact-form">
           <h3>Envíanos un mensaje</h3>
           <form class="form-contact">
-            <div class="form-group"><input type="text"  class="form-input" placeholder="Nombre completo"       required></div>
-            <div class="form-group"><input type="email" class="form-input" placeholder="Correo electrónico"    required></div>
-            <div class="form-group"><input type="tel"   class="form-input" placeholder="Teléfono"></div>
+            <div class="form-group"><input type="text" class="form-input" placeholder="Nombre completo" required></div>
+            <div class="form-group"><input type="email" class="form-input" placeholder="Correo electrónico" required>
+            </div>
+            <div class="form-group"><input type="tel" class="form-input" placeholder="Teléfono"></div>
             <div class="form-group">
               <select class="form-input" required>
                 <option value="">Programa de interés</option>
@@ -161,87 +210,18 @@
                 <option value="marketing">Marketing</option>
               </select>
             </div>
-            <div class="form-group"><textarea class="form-input form-textarea" rows="4" placeholder="Mensaje" required></textarea></div>
+            <div class="form-group"><textarea class="form-input form-textarea" rows="4" placeholder="Mensaje"
+                required></textarea></div>
             <button type="submit" class="btn-submit">Enviar mensaje</button>
           </form>
         </div>
       </div>
     </section>
-
   </main>
-
   <div id="footer-container"></div>
-
-  <!-- ---------- JS: CARRUSEL ---------- -->
-  <script>
-    let currentSlide=0;
-    const slides=document.querySelectorAll('.carousel-slide');
-    const showSlide=i=>slides.forEach((s,idx)=>s.classList.toggle('active',idx===i));
-    const nextSlide=()=>{currentSlide=(currentSlide+1)%slides.length;showSlide(currentSlide);};
-    setInterval(nextSlide,5000);showSlide(currentSlide);
-  </script>
-
-  <!-- ---------- JS: PROGRAMAS DINÁMICOS ---------- -->
-  <script>
-    const programData={
-      asistencia:{
-        title:"Asistencia Administrativa",
-        description:"El programa de estudios en Asistencia Administrativa forma profesionales técnicos competentes para ejecutar tareas administrativas en organizaciones públicas y privadas. Los egresados son capaces de organizar documentos, redactar informes, brindar atención al cliente, coordinar reuniones, utilizar herramientas de ofimática, manejar archivos y apoyar en procesos contables y logísticos. Su formación está orientada a la eficiencia, la responsabilidad y la ética, siendo piezas clave en el funcionamiento de cualquier institución.",
-        link:"asistencia-admin.html"
-      },
-      contabilidad:{
-        title:"Contabilidad",
-        description:"El programa de Contabilidad prepara técnicos especialistas en el registro, análisis e interpretación de operaciones financieras y tributarias. Los egresados están capacitados para aplicar normas contables vigentes, elaborar estados financieros, calcular impuestos, controlar costos y apoyar la toma de decisiones dentro de empresas e instituciones públicas. Su formación incluye dominio de software contable, manejo documental y comprensión del sistema financiero, con un enfoque práctico y actualizado.",
-        link:"contabilidad.html"
-      },
-      diseno:{
-        title:"Diseño y Programación Web",
-        description:"Este programa está enfocado en formar profesionales técnicos que dominen las herramientas y lenguajes de programación para el desarrollo de sitios web interactivos, responsivos y funcionales. Los egresados son capaces de diseñar interfaces atractivas (UI/UX), codificar en HTML, CSS, JavaScript y trabajar con bases de datos y frameworks modernos. Además, están preparados para gestionar proyectos web, optimizar rendimiento y garantizar una experiencia de usuario de calidad, integrándose con facilidad al mundo digital.",
-        link:"diseno-web.html"
-      },
-      enfermeria:{
-        title:"Enfermería Técnica",
-        description:"El programa de Enfermería Técnica capacita a profesionales para brindar atención integral en salud, trabajando en conjunto con el equipo médico y aplicando protocolos clínicos. Los estudiantes desarrollan competencias en atención al paciente, procedimientos básicos y especializados, promoción de la salud, apoyo en cirugías menores, cuidado del adulto mayor, del niño y del paciente crítico. La formación se basa en principios éticos, humanísticos y científicos, con prácticas en centros hospitalarios y clínicas.",
-        link:"enfermeria.html"
-      },
-      guia:{
-        title:"Guía Oficial de Turismo",
-        description:"Este programa forma guías turísticos con sólidos conocimientos en historia, cultura, patrimonio y geografía del Perú. Los egresados están preparados para planificar, liderar y conducir rutas turísticas de manera segura, atractiva y sostenible. Además, desarrollan habilidades comunicativas, dominio de idiomas extranjeros, técnicas de interpretación del patrimonio y conocimientos en primeros auxilios. Su rol es clave en la promoción del turismo y la identidad nacional.",
-        link:"guia-turismo.html"
-      },
-      laboratorio:{
-        title:"Laboratorio Clínico y Anatomía Patológica",
-        description:"Este programa desarrolla competencias para realizar procedimientos de análisis clínicos y de anatomía patológica que permitan contribuir al diagnóstico médico. Los egresados aprenden técnicas de recolección y procesamiento de muestras biológicas, uso de equipos de laboratorio, preparación de tejidos, coloración histológica y manejo de bioseguridad. Su formación está orientada a la precisión científica, el trabajo en equipo y el respeto de normas sanitarias vigentes.",
-        link:"laboratorio-clinico.html"
-      },
-      marketing:{
-        title:"Marketing",
-        description:"El programa de Marketing forma profesionales capaces de diseñar e implementar estrategias comerciales, digitales y tradicionales para posicionar marcas y productos. Los egresados manejan herramientas de investigación de mercados, análisis del consumidor, publicidad, diseño de campañas, branding y ventas. Están preparados para innovar en entornos competitivos y dinámicos, adaptándose a las tendencias del marketing digital y utilizando plataformas tecnológicas para captar y fidelizar clientes.",
-        link:"marketing.html"
-      }
-    };
-
-    /* Manejo de clics en el menú */
-    document.querySelectorAll('.program-item').forEach(li=>{
-      li.addEventListener('click',()=>{
-        /* Cambiar resaltado */
-        document.querySelectorAll('.program-item').forEach(el=>el.classList.remove('active'));
-        li.classList.add('active');
-
-        /* Datos */
-        const key=li.dataset.program;
-        const data=programData[key];
-
-        /* Actualizar contenido */
-        document.getElementById('program-title').textContent=data.title;
-        document.getElementById('program-description').textContent=data.description;
-        const link=document.getElementById('program-link');
-        link.href=data.link;
-        link.target="_blank";          /* Abre en pestaña nueva */
-      });
-    });
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
 </body>
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
 </html>
