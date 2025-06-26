@@ -1,74 +1,181 @@
-<nav class="navbar navbar-fixed">
-    <button class="hamburger-btn" id="hamburger-btn">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-    </button>
+<!DOCTYPE html>
+<html lang="es">
 
-    <ul class="main-menu" id="menu">
-        <li class="main-menu-item"><a href="./index.html" class="main-menu-link active">Inicio</a></li>
-        <li class="main-menu-item"><a href="#" class="main-menu-link">Nosotros</a>
-        <ul class="submenu">
-            <li class="submenu-item"><a href="./presentacion.html" class="submenu-link">Presentación</a></li>
-            <li class="submenu-item"><a href="./resena.html" class="submenu-link">Reseña Histórica</a></li>
-            <li class="submenu-item"><a href="./vision.html" class="submenu-link">Misión, Visión y Valores</a></li>
-            <li class="submenu-item"><a href="./organigrama.html" class="submenu-link">Organigrama</a></li>
-            <li class="submenu-item"><a href="./planajerarquica.html" class="submenu-link">Plana Jerárquica</a></li>
-            <li class="submenu-item"><a href="./planadocente.html" class="submenu-link">Plana Docente</a></li>
-            <li class="submenu-item"><a href="#" class="submenu-link">Áreas y Unidades</a></li>
-        </ul>
-        </li>
-        <li class="main-menu-item"><a href="#" class="main-menu-link">Admisión</a>
-        <ul class="submenu">
-            <li class="submenu-item"><a href="./admision.html" class="submenu-link">Admisión</a></li>
-            <li class="submenu-item"><a href="#" class="submenu-link">Matrícula</a></li>
-            <li class="submenu-item"><a href="./becas.html" class="submenu-link">Becas</a></li>
-        </ul>
-        </li>
-        <li class="main-menu-item"><a href="#" class="main-menu-link">Programa de Estudio</a>
-        <ul class="submenu">
-            <li class="submenu-item"><a href="asistencia-admin.html" class="submenu-link">Asistencia Administrativa</a></li>
-            <li class="submenu-item"><a href="contabilidad.html" class="submenu-link">Contabilidad</a></li>
-            <li class="submenu-item"><a href="diseno-web.html" class="submenu-link">Diseño y Programación Web</a></li>
-            <li class="submenu-item"><a href="enfermeria.html" class="submenu-link">Enfermería Técnica</a></li>
-            <li class="submenu-item"><a href="guia-turismo.html" class="submenu-link">Guía Oficial de Turismo</a></li>
-            <li class="submenu-item"><a href="laboratorio-clinico.html" class="submenu-link">Laboratorio Clínico y Anatomía Patológica</a></li>
-            <li class="submenu-item"><a href="marketing.html" class="submenu-link">Marketing</a></li>
-            <li class="submenu-item"><a href="efsrt.html" class="submenu-link">EFSRT</a></li>
-        </ul>
-        </li>
-        <li class="main-menu-item"><a href="#" class="main-menu-link">Transparencia</a>
-        <ul class="submenu">
-            <li class="submenu-item"><a href="./docgestion.html" class="submenu-link">Documentos de Gestión</a></li>                        
-            <li class="submenu-item"><a href="./estadisticas.html" class="submenu-link">Estadísticas</a></li>
-            <li class="submenu-item"><a href="./donaciones.html" class="submenu-link">Inversiones y Donaciones</a></li>
-            <li class="submenu-item"><a href="./licenciamiento.html" class="submenu-link">Licenciamiento</a></li>
-            <li class="submenu-item"><a href="#" class="submenu-link">Documentos de Transparencia</a></li>
-            <li class="submenu-item"><a href="#" class="submenu-link">Libro de Reclamaciones</a></li>
-        </ul>
-        </li>
-        <li class="main-menu-item"><a href="#" class="main-menu-link">Trámites</a>
-        <ul class="submenu">
-            <li class="submenu-item"><a href="./tasasinternas.html" class="submenu-link">Tasa Internas</a></li>
-            <li class="submenu-item"><a href="#" class="submenu-link">Contactenos</a></li>
-        </ul>
-        </li>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instituto Trujillo</title>
 
-        <li class="main-menu-item"><a href="#" class="main-menu-link">Servicios</a>
-        <ul class="submenu">
-            <li class="submenu-item"><a href="https://iestptrujillo.microsite-ebooks724.com/v1/login/?il=&pg=" class="submenu-link">Biblioteca GRE-La Libertad</a></li>
-            <li class="submenu-item"><a href="https://biblioteca.iestp-trujillo.edu.pe" class="submenu-link">Biblioteca Virtual Institucional</a></li>
-            <li class="submenu-item"><a href="https://biblioteca.iestp-trujillo.edu.pe" class="submenu-link">Bolsa Laboral</a></li>
-            <li class="submenu-item"><a href="https://iestp-trujillo.edu.pe/aula_virtual" class="submenu-link">Aula Virtual</a></li>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .navbar-nav .nav-link {
+      color: #99001f !important;
+      font-weight: 500;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #99001f !important;
+    }
+
+    .dropdown-menu {
+      background-color: #99001f !important;
+      border: none;
+    }
+
+    .dropdown-item {
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+      background-color: #fff !important;
+      color: #99001f !important;
+    }
+
+    @media (min-width: 992px) {
+      .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+
+    .navbar-brand img {
+      height: 120px;
+    }
+
+    .top-bar {
+      background-color: #f8f9fa;
+      padding: 5px 20px;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .contact-info span {
+      margin-right: 15px;
+      color: #333;
+    }
+
+    .contact-info img {
+      height: 16px;
+      margin-right: 5px;
+    }
+
+    .navbar-toggler {
+      border-color: #99001f;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(153,0,31,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-light sticky-top shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="img/banner.png" alt="Logo" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="./index.html">Inicio</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Nosotros</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="./presentacion.html">Presentación</a></li>
+              <li><a class="dropdown-item" href="./resena.html">Reseña Histórica</a></li>
+              <li><a class="dropdown-item" href="./vision.html">Misión, Visión y Valores</a></li>
+              <li><a class="dropdown-item" href="./organigrama.html">Organigrama</a></li>
+              <li><a class="dropdown-item" href="./planajerarquica.html">Plana Jerárquica</a></li>
+              <li><a class="dropdown-item" href="./planadocente.html">Plana Docente</a></li>
+              <li><a class="dropdown-item" href="#">Áreas y Unidades</a></li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Admisión</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="./admision.html">Admisión</a></li>
+              <li><a class="dropdown-item" href="#">Matrícula</a></li>
+              <li><a class="dropdown-item" href="./becas.html">Becas</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Programa de Estudio</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="asistencia-admin.html">Asistencia Administrativa</a></li>
+              <li><a class="dropdown-item" href="contabilidad.html">Contabilidad</a></li>
+              <li><a class="dropdown-item" href="diseno-web.html">Diseño y Programación Web</a></li>
+              <li><a class="dropdown-item" href="enfermeria.html">Enfermería Técnica</a></li>
+              <li><a class="dropdown-item" href="guia-turismo.html">Guía Oficial de Turismo</a></li>
+              <li><a class="dropdown-item" href="laboratorio-clinico.html">Laboratorio Clínico</a></li>
+              <li><a class="dropdown-item" href="marketing.html">Marketing</a></li>
+              <li><a class="dropdown-item" href="efsrt.html">EFSRT</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Transparencia</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="./docgestion.html">Documentos de Gestión</a></li>
+              <li><a class="dropdown-item" href="./estadisticas.html">Estadísticas</a></li>
+              <li><a class="dropdown-item" href="./donaciones.html">Inversiones y Donaciones</a></li>
+              <li><a class="dropdown-item" href="./licenciamiento.html">Licenciamiento</a></li>
+              <li><a class="dropdown-item" href="#">Documentos de Transparencia</a></li>
+              <li><a class="dropdown-item" href="#">Libro de Reclamaciones</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Trámites</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="./tasasinternas.html">Tasa Internas</a></li>
+              <li><a class="dropdown-item" href="#">Contáctenos</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Servicios</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://iestptrujillo.microsite-ebooks724.com/v1/login/?il=&pg=">Biblioteca GRE-La Libertad</a></li>
+              <li><a class="dropdown-item" href="https://biblioteca.iestp-trujillo.edu.pe">Biblioteca Virtual</a></li>
+              <li><a class="dropdown-item" href="https://biblioteca.iestp-trujillo.edu.pe">Bolsa Laboral</a></li>
+              <li><a class="dropdown-item" href="https://iestp-trujillo.edu.pe/aula_virtual">Aula Virtual</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Otros</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="./linksinstituionales.html">Enlaces Institucionales</a></li>
+              <li><a class="dropdown-item" href="./galeria.html">Galería</a></li>
+              <li><a class="dropdown-item" href="./noticias.html">Noticias</a></li>
+            </ul>
+          </li>
 
         </ul>
-        </li>
-        <li class="main-menu-item"><a href="#" class="main-menu-link">Otros</a>
-        <ul class="submenu">
-            <li class="submenu-item"><a href="./linksinstituionales.html" class="submenu-link">Enlaces Institucionales</a></li>
-            <li class="submenu-item"><a href="./galeria.html" class="submenu-link">Galería</a></li>
-            <li class="submenu-item"><a href="./noticias.html" class="submenu-link">Noticias</a></li>
-        </ul>
-        </li>
-    </ul>
-</nav>
+      </div>
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
