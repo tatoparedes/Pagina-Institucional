@@ -1,0 +1,189 @@
+  /* ---- CONTENEDOR GENERAL ---- */
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+
+    /* ---- TITULOS ---- */
+    h1,
+    .hero-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ---- ACORDEÓN ---- */
+    .accordion {
+      width: 100%;
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid #e0e0e0;
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      padding: 20px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+      position: relative;
+    }
+
+    .accordion-header:hover {
+      background: linear-gradient(to right, #e9ecef, #dde1e6);
+    }
+
+    .accordion-header::after {
+  content: none; /* ya no usaremos after */
+}
+
+.accordion-header::before {
+  content: '+';
+  font-size: 1.5rem;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-header::before {
+  transform: rotate(45deg);
+}
+
+
+    .accordion-item.active .accordion-header::after {
+      transform: rotate(45deg);
+    }
+
+    .accordion-item.active .accordion-header {
+      background: linear-gradient(to right, #c44a62, #c44a62);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background-color: #f8f9fa;
+    }
+
+    .accordion-content-inner {
+      padding: 25px;
+    }
+
+    /* ---- TABLAS ---- */
+    .stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .stats-table th,
+    .stats-table td {
+      padding: 14px 12px;
+      text-align: center;
+      border: 1px solid #dee2e6;
+    }
+
+    .stats-table th {
+      background-color: #99001f;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .stats-table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .stats-table tr:last-child {
+      background-color: #e9ecef;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .long-text {
+      text-align: left;
+      max-width: 300px;
+    }
+
+    /* ---- GRÁFICOS ---- */
+    .chart-container {
+      margin-top: 20px;
+      height: 300px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .chart-bar {
+      width: 50px;
+      background: linear-gradient(to top, #6c1a1a, #c54a4a);
+      margin: 0 10px;
+      position: relative;
+      border-radius: 5px 5px 0 0;
+      transition: height 0.5s ease;
+    }
+
+    .chart-label {
+      position: absolute;
+      bottom: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .chart-value {
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: bold;
+      color: #191970;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 768px) {
+      .container {
+        margin: 15px;
+      }
+
+      h1,
+      .hero-content h2 {
+        font-size: 2rem;
+      }
+
+      .accordion-header {
+        padding: 15px;
+        font-size: 1.1rem;
+      }
+
+      .stats-table th,
+      .stats-table td {
+        padding: 10px 8px;
+        font-size: 0.9rem;
+      }
+
+      .chart-container {
+        height: 250px;
+      }
+
+      .chart-bar {
+        width: 30px;
+      }
+    }
