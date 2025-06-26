@@ -40,7 +40,25 @@ body {
   font-size: 14px;
   background-color: white;
   flex-wrap: wrap;
+  min-height: auto !important;
+  height: auto !important;
+  max-height: 60px !important; /* evita expansión en móvil */
+  overflow: hidden;
+
 }
+.contact-info {
+  height: auto !important;
+  min-height: unset !important;
+  max-height: none !important;
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  line-height: 1.2;
+  gap: 4px;
+}
+
 
 .contact-info span {
   margin-right: 20px;
@@ -50,8 +68,11 @@ body {
 
 .contact-info img {
   height: 16px;
-  margin-right: 6px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
 }
+
 
 .social-icons a {
   margin-left: 5px;
@@ -99,24 +120,42 @@ body {
   font-weight: 400;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .top-bar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 0 !important;
+    gap: 0;
   }
 
-  .branding {
+  .contact-info {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: hidden;
+    line-height: 1.2;
+    gap: 2px;
+  }
+
+  .contact-info span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
     text-align: center;
   }
 
-  .logo-header {
-    margin-right: 0;
-    margin-bottom: 10px;
+  .contact-info img {
+    height: 16px;
+    margin-right: 6px;
   }
 }
-
 
 /* Navbar */
 .navbar {
