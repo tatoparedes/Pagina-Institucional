@@ -4,9 +4,252 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Instituto Tecnológico Trujillo</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <script src="script.js" defer></script>
 </head>
+
+<style>
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Programs Section */
+.programs {
+    margin-bottom: 40px;
+}
+
+.programs h3 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+    position: relative;
+}
+
+.programs h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.program-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    padding: 0 10px;
+}
+
+.program-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.program-card p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 0.95em;
+    text-align: justify;
+}
+
+/* Iconos principales (Visión y Misión) */
+.icon-container-main {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+}
+
+.icon-container-main:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.icon-container-main i {
+    color: white;
+    font-size: 28px;
+    transition: all 0.3s ease;
+}
+
+.icon-container-main:hover i {
+    transform: rotate(360deg);
+}
+
+/* Iconos de misión con gradiente diferente */
+.icon-container-mission {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+    transition: all 0.3s ease;
+}
+
+.icon-container-mission:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(245, 87, 108, 0.6);
+}
+
+.icon-container-mission i {
+    color: white;
+    font-size: 28px;
+    transition: all 0.3s ease;
+}
+
+.icon-container-mission:hover i {
+    transform: rotate(360deg);
+}
+
+/* Iconos de valores */
+.icon-container-values {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    border: 2px solid rgba(255,255,255,0.3);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.icon-container-values:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transform: scale(1.15);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.icon-container-values i {
+    color: #555;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.icon-container-values:hover i {
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Header de cada card */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card-header h4 {
+    margin: 0;
+    color: #333;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .program-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .hero-content h2 {
+        font-size: 2em;
+    }
+    
+    .programs h3 {
+        font-size: 1.6em;
+    }
+    
+    .card-header {
+        gap: 12px;
+    }
+    
+    .icon-container-main,
+    .icon-container-mission {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .icon-container-main i,
+    .icon-container-mission i {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .program-card {
+        padding: 20px;
+    }
+    
+    .hero {
+        padding: 40px 15px;
+    }
+}
+</style>
+
 <body>
 
   <div id="header-container"></div>
@@ -28,43 +271,89 @@
         <h3>Visión y Misión</h3>
         <div class="program-list">
         <div class="program-card">
-            <h4>Visión</h4>
+            <div class="card-header">
+                <div class="icon-container-main">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h4>Visión</h4>
+            </div>
             <p>Al 2028, seremos una institución de educación superior licenciada y con programas de estudios acreditados, líder en formación de profesionales técnicos competentes, emprendedores e innovadores con principios éticos, comprometidos con la sociedad y el medio ambiente, contribuyendo al desarrollo sostenible de la Región La Libertad y del país.</p>
         </div>                
         <div class="program-card">
-            <h4>Misión</h4>
+            <div class="card-header">
+                <div class="icon-container-mission">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h4>Misión</h4>
+            </div>
             <p>Somos una institución de educación superior que brinda formación integral, con principios y valores éticos y morales, respetando la identidad e interculturalidad, y que está a la vanguardia de la tecnología con una formación de calidad académica, formando profesionales técnicos emprendedores e innovadores contribuyendo al desarrollo, local, regional y nacional.</p>
+        </div>
         </div>
     </section>
     <section class="programs">
         <h3>Valores</h3>
         <div class="program-list">
         <div class="program-card">
-            <h4>Mejora continua</h4>
+            <div class="card-header">
+                <div class="icon-container-values">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4>Mejora continua</h4>
+            </div>
             <p>Se trabaja constantemente en la búsqueda del bien, y en lograr ser competitivos y productivos, desde el diseño y planificación, seguimiento y monitoreo, y la evaluación y retroalimentación para la mejora de nuestras acciones, y así cumplir con ciclos de mejora continua que fortalece el compromiso con la calidad.</p>
         </div>
         <div class="program-card">
-            <h4>Tolerancia</h4>
+            <div class="card-header">
+                <div class="icon-container-values">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h4>Tolerancia</h4>
+            </div>
             <p>Se trabaja respetando las ideas, opiniones y actitudes de los miembros de la comunidad educativa. También, se practica la escucha, la aceptación y se valora las distintas formas de entender, siempre que no atente con los derechos fundamentales de las personas.</p>
         </div>
         <div class="program-card">
-            <h4>Honestidad</h4>
+            <div class="card-header">
+                <div class="icon-container-values">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h4>Honestidad</h4>
+            </div>
             <p>Se trabaja fortaleciendo el valor moral fundamental que permite entablar relaciones interpersonales basadas en la confianza, la sinceridad y la justicia. Evitando la incongruencia entre lo que se hace y lo que se piensa.</p>
         </div>
         <div class="program-card">
-            <h4>Responsabilidad</h4>
+            <div class="card-header">
+                <div class="icon-container-values">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4>Responsabilidad</h4>
+            </div>
             <p>Se trabaja cumpliendo los deberes u obligaciones institucionales predicando con el ejemplo en el desarrollo eficiente de las diversas actividades.</p>
         </div>
         <div class="program-card">
-            <h4>Solidaridad</h4>
+            <div class="card-header">
+                <div class="icon-container-values">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h4>Solidaridad</h4>
+            </div>
             <p>Se refiere a compartir, a aplicar a los demás lo que creemos es bueno para uno. Y se refiere no solo a lograr bienes materiales, sino sentimientos, expresa que no sobra nadie. Es empeñarse en el bien común, pensar que todos somos responsables de todos.</p>
         </div>
         <div class="program-card">
-            <h4>Excelencia</h4>
+            <div class="card-header">
+                <div class="icon-container-values">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4>Excelencia</h4>
+            </div>
             <p>Haremos nuestro trabajo con calidad y rigurosidad, dando nuestra mejor capacidad para cumplir la misión institucional que nos hemos fijado.</p>
         </div>
         <div class="program-card">
-            <h4>Puntualidad</h4>
+            <div class="card-header">
+                <div class="icon-container-values">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h4>Puntualidad</h4>
+            </div>
             <p>La puntualidad es una actitud donde las normas y costumbres establecen horarios para cada una de nuestras actividades institucionales.</p>
         </div>
         <!-- Puedes agregar más programas aquí 2-->
@@ -77,5 +366,3 @@
 
 </body>
 </html>
-
-
