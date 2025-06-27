@@ -5,14 +5,556 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Instituto Tecnológico Trujillo</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
-              <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos principales para el body y contenido */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Sección Hero */
+        .hero {
+            background: linear-gradient(135deg, #191970 0%, #99001f 100%);
+            border-radius: 25px;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(116, 0, 0, 0.212);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h2 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.027);
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 2rem;
+            color: #ffffff;
+            font-weight: 300;
+            margin: 0;
+            opacity: 0.95;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.068);
+        }
+
+        /* Contenedor wrapper para la presentación con sidebar */
+        .content-wrapper {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 50px;
+            align-items: flex-start;
+        }
+
+        /* Sección de presentación */
+        .presentation {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 15px 35px rgba(25, 25, 112, 0.08);
+            border: 2px solid #f0f0f0;
+            position: relative;
+            transition: all 0.3s ease;
+            flex: 2;
+        }
+
+        .presentation:hover {
+            box-shadow: 0 20px 45px rgba(25, 25, 112, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .presentation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #191970 0%, #99001f 100%);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .presentation h3 {
+            font-size: 2.8rem;
+            color: #191970;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 25px;
+        }
+
+        .presentation h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #99001f, #191970);
+            border-radius: 2px;
+        }
+
+        .presentation p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 25px;
+            text-align: justify;
+            text-indent: 2em;
+            position: relative;
+            padding: 15px 20px;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .presentation p:hover {
+            border-left-color: #99001f;
+            background: linear-gradient(90deg, rgba(153, 0, 31, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(153, 0, 31, 0.1);
+        }
+
+        .presentation p:first-of-type {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #191970;
+            border-left: 5px solid #99001f;
+            background: linear-gradient(90deg, rgba(25, 25, 112, 0.014) 0%, rgba(255, 255, 255, 1) 100%);
+            padding: 25px;
+            border-radius: 0 15px 15px 0;
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .presentation p:first-of-type::before {
+            content: '🎓';
+            font-size: 1.8rem;
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+
+        /* Sidebar con imagen */
+        .sidebar {
+            flex: 1;
+            min-width: 280px;
+            position: sticky;
+            top: 20px;
+        }
+
+        .image-container {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(25, 25, 112, 0.08);
+            border: 2px solid #f0f0f0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #191970 0%, #99001f 100%);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .image-container:hover {
+            box-shadow: 0 20px 45px rgba(25, 25, 112, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .institution-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(25, 25, 112, 0.15);
+            border: 3px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #191970, #99001f) border-box;
+            transition: all 0.4s ease;
+            margin-bottom: 20px;
+        }
+
+        .institution-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(25, 25, 112, 0.25);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #666;
+            font-style: italic;
+            padding: 15px;
+            background: linear-gradient(90deg, rgba(25, 25, 112, 0.05) 0%, rgba(153, 0, 31, 0.05) 100%);
+            border-radius: 10px;
+            border-left: 4px solid #99001f;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Sección de videos mejorada */
+        .videos-section {
+            background: linear-gradient(135deg, rgba(25, 25, 112, 0.03) 0%, rgba(153, 0, 31, 0.03) 100%);
+            border-radius: 25px;
+            padding: 60px 50px;
+            box-shadow: 0 20px 40px rgba(25, 25, 112, 0.1);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .videos-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #99001f 0%, #191970 50%, #99001f 100%);
+            border-radius: 25px 25px 0 0;
+        }
+
+        .videos-section::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(25, 25, 112, 0.02) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .videos-section>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .videos-section h3 {
+            font-size: 2.8rem;
+            background: linear-gradient(135deg, #191970 0%, #99001f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 25px;
+            text-shadow: none;
+        }
+
+        .videos-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 5px;
+            background: linear-gradient(90deg, #011985, #191970, #210099);
+            border-radius: 3px;
+            box-shadow: 0 3px 10px rgba(25, 25, 112, 0.3);
+        }
+
+        .videos-section h3::before {
+            content: '🎬';
+            margin-right: 20px;
+            font-size: 2.5rem;
+            filter: drop-shadow(2px 2px 4px rgba(25, 25, 112, 0.3));
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 35px;
+        }
+
+        .video-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(25, 25, 112, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: #ffffff;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .video-container::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(135deg, #7e0000 0%, #99001f 50%, #dadae6 100%);
+            border-radius: 23px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .video-container:hover::before {
+            opacity: 1;
+        }
+
+        .video-container:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(25, 25, 112, 0.25);
+        }
+
+        .video-iframe {
+            width: 100%;
+            height: 280px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .video-container:hover .video-iframe {
+            transform: scale(1.01);
+        }
+
+        .video-title {
+            padding: 25px;
+            background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+            color: rgb(129, 0, 0);
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.15rem;
+            position: relative;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .video-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .video-title::after {
+            content: '▶';
+            position: absolute;
+            top: 50%;
+            right: 25px;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .video-container:hover .video-title::after {
+            opacity: 1;
+            transform: translateY(-50%) translateX(5px);
+        }
+
+        /* Animaciones */
+        .hero,
+        .content-wrapper,
+        .videos-section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .sidebar {
+                position: static;
+                max-width: 100%;
+            }
+
+            .videos-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 25px;
+            }
+
+            .videos-section {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 15px;
+            }
+
+            .hero {
+                padding: 40px 25px;
+            }
+
+            .hero-content h2 {
+                font-size: 2.8rem;
+            }
+
+            .hero-content p {
+                font-size: 1.5rem;
+            }
+
+            .presentation {
+                padding: 30px 25px;
+            }
+
+            .presentation h3 {
+                font-size: 2.2rem;
+            }
+
+            .videos-section {
+                padding: 30px 20px;
+            }
+
+            .videos-section h3 {
+                font-size: 2.3rem;
+            }
+
+            .videos-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .video-iframe {
+                height: 220px;
+            }
+
+            .institution-image {
+                height: 250px;
+            }
+
+            .image-container {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.3rem;
+            }
+
+            .presentation h3 {
+                font-size: 1.9rem;
+            }
+
+            .videos-section h3 {
+                font-size: 2rem;
+            }
+
+            .presentation p {
+                font-size: 1rem;
+                padding: 12px 15px;
+            }
+
+            .video-iframe {
+                height: 200px;
+            }
+
+            .videos-section {
+                padding: 25px 15px;
+            }
+
+            .video-title {
+                padding: 20px;
+                font-size: 1rem;
+            }
+
+            .institution-image {
+                height: 220px;
+            }
+
+            .image-container {
+                padding: 15px;
+            }
+
+            .sidebar {
+                min-width: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div id="header-container"></div>
-  <div id="menu-container"></div>
+    <div id="menu-container"></div>
+
     <main class="main-content">
         <!-- Banner de bienvenida -->
         <section class="hero">
@@ -22,47 +564,96 @@
             </div>
         </section>
 
-  <div id="header-container"></div>
- <div id="menu-container"></div>
-        <!-- Presentación institucional -->
-        <section class="presentation">
-            <h3>Formando Profesionales Exitosos desde 1979</h3>
-            <p>El Instituto de Educación Superior Tecnológico Público “TRUJILLO”, fue creado el 27 de abril de 1979,
-                mediante R.M. Nº 0469-79-ED, que dispone la creación de la Escuela Superior de Educación Profesional
-                (ESEP) de TRUJILLO, iniciando sus labores académicas el 04 de noviembre del mismo año con las áreas
-                profesionales de: Educación, Turismo y Administración.</p>
-            <p>Luego, el Instituto fue elevado a la categoría de ESEP de II ciclo, ofertándose las Especialidades
-                Profesionales de: Tecnología Sanitaria Rural, Administración de Negocios, Contabilidad Empresarial y
-                Promoción Turística.</p>
-            <p>En 1984, el Ministerio de Educación por R.M. Nº 110-84-ED, adecúa a la Escuela Superior de Educación
-                Profesional de TRUJILLO a INSTITUTO SUPERIOR TECNOLÓGICO ESTATAL “TRUJILLO”, ofertando (5) Carreras
-                Profesionales: Técnica en Laboratorio Clínico, Guía Oficial de Turismo, Administración de Servicios de
-                Hostelería, Contabilidad, y Secretariado Ejecutivo..</p>
-            <p>En el año 1994, el ISTE “TRUJILLO”, mediante R.M. Nº 0675-94-ED, está autorizado para ofertar 06 Carreras
-                Profesionales: Computación e Informática, Contabilidad, Enfermería Técnica, Técnica en Laboratorio
-                Clínico, Secretariado Ejecutivo, Guía Oficial de Turismo; y, en 1,998 el IESTP “TRUJILLO”, oferta la
-                Carrera Profesional Técnica de Relaciones Públicas, resultado de la extinción del ISTE “AMAUTA”</p>
-            <p>Nuestra institución se encuentra revalidada por el Ministerio de Educación mediante R.N. Nº 074-2005-ED,
-                y sus Carreras Profesionales aplica el Nuevo Diseño Curricular por competencias con el Sistema Modular,
-                los planes de estudios están basado en créditos que permite al egresado continuar estudios en
-                universidades nacionales y privadas. Mantiene convenios con entidades públicas y privadas para la
-                realización de prácticas pre profesionales de nuestros estudiantes y está asociado a la Cámara de
-                Comercio. Además, posee una infraestructura moderna con equipo informático de alta tecnología, oficina
-                de consejería con atención psicológica, auditorio, y equipamiento de audiovisuales y cuenta con docentes
-                debidamente capacitados.</p>
+        <!-- Contenedor principal con sidebar -->
+        <div class="content-wrapper">
+            <!-- Presentación institucional -->
+            <section class="presentation">
+                <h3>Formando Profesionales Exitosos desde 1979</h3>
+                <p>El Instituto de Educación Superior Tecnológico Público "TRUJILLO", fue creado el 27 de abril de 1979,
+                    mediante R.M. Nº 0469-79-ED, que dispone la creación de la Escuela Superior de Educación Profesional
+                    (ESEP) de TRUJILLO, iniciando sus labores académicas el 04 de noviembre del mismo año con las áreas
+                    profesionales de: Educación, Turismo y Administración.</p>
+                <p>Luego, el Instituto fue elevado a la categoría de ESEP de II ciclo, ofertándose las Especialidades
+                    Profesionales de: Tecnología Sanitaria Rural, Administración de Negocios, Contabilidad Empresarial y
+                    Promoción Turística.</p>
+                <p>En 1984, el Ministerio de Educación por R.M. Nº 110-84-ED, adecúa a la Escuela Superior de Educación
+                    Profesional de TRUJILLO a INSTITUTO SUPERIOR TECNOLÓGICO ESTATAL "TRUJILLO", ofertando (5) Carreras
+                    Profesionales: Técnica en Laboratorio Clínico, Guía Oficial de Turismo, Administración de Servicios
+                    de
+                    Hostelería, Contabilidad, y Secretariado Ejecutivo.</p>
+                <p>En el año 1994, el ISTE "TRUJILLO", mediante R.M. Nº 0675-94-ED, está autorizado para ofertar 06
+                    Carreras
+                    Profesionales: Computación e Informática, Contabilidad, Enfermería Técnica, Técnica en Laboratorio
+                    Clínico, Secretariado Ejecutivo, Guía Oficial de Turismo; y, en 1,998 el IESTP "TRUJILLO", oferta la
+                    Carrera Profesional Técnica de Relaciones Públicas, resultado de la extinción del ISTE "AMAUTA"</p>
+                <p>Nuestra institución se encuentra revalidada por el Ministerio de Educación mediante R.N. Nº
+                    074-2005-ED,
+                    y sus Carreras Profesionales aplica el Nuevo Diseño Curricular por competencias con el Sistema
+                    Modular,
+                    los planes de estudios están basado en créditos que permite al egresado continuar estudios en
+                    universidades nacionales y privadas. Mantiene convenios con entidades públicas y privadas para la
+                    realización de prácticas pre profesionales de nuestros estudiantes y está asociado a la Cámara de
+                    Comercio. Además, posee una infraestructura moderna con equipo informático de alta tecnología,
+                    oficina
+                    de consejería con atención psicológica, auditorio, y equipamiento de audiovisuales y cuenta con
+                    docentes
+                    debidamente capacitados.</p>
+                <!-- Sidebar con imagen -->
+                <div class="sidebar">
+                    <div class="image-container">
+                        <img src="/fotos/FOTOINSTITUTO1.jpeg" alt="Instituto Tecnológico Trujillo"
+                            class="institution-image">
+                        <p class="image-caption">Instituto Tecnológico Trujillo - Formando profesionales desde 1979</p>
+                    </div>
+                </div>
+            </section>
 
+
+        </div>
+
+        <!-- Sección de videos -->
+        <section class="videos-section">
+            <h3>Videos Institucionales</h3>
+            <div class="videos-grid">
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/w6-zmRg9jvI?si=OTtYp7JcJmBe0S76"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="video-title">Historia del Instituto Tecnológico Trujillo</div>
+                </div>
+
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/OiJARuSPaLc?si=OgwpjtEXKaSs13mV"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="video-title">Examen de Admisión Ordinario IESTP TRUJILLO 2025</div>
+                </div>
+
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_Fug7eSdGnU?si=wmPew0mMoPB2sTdc"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="video-title">Ceremonia de Titulación IESTP "Trujillo"</div>
+                </div>
+
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/LLyd1FFvRaY?si=BqxfBJOYnXyQAvIG"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="video-title">PROGRAMA DE BIENVENIDA AL CACHIMBO 2025</div>
+                </div>
+            </div>
         </section>
-
-
     </main>
 
     <div id="footer-container"></div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
-</html>
-
 
 </html>
