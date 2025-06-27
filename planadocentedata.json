@@ -1,0 +1,33 @@
+{
+  "Asistencia": {
+    "nombre": "Bienvenido a Tech-Store",
+    "grado": "Tecnología al mejor precio",
+    "cv": "Tecnología al mejor precio",
+    "foto": "Tecnología al mejor precio"
+  },
+  "Desarrollo": [
+    {
+      "nombre": "Laptops",
+      "items": [
+        { "nombre": "Lenovo IdeaPad 5", "precio": 3200, "stock": 10 },
+        { "nombre": "ASUS VivoBook 14", "precio": 2950, "stock": 5 }
+      ]
+    },
+    {
+      "nombre": "Accesorios",
+      "items": [
+        { "nombre": "Mouse inalámbrico", "precio": 80, "stock": 25 },
+        { "nombre": "Teclado mecánico",   "precio": 260, "stock": 12 }
+      ]
+    }
+  ],
+  "testimonios": [
+    { "autor": "Ana Torres",  "mensaje": "¡Servicio rápido y productos de calidad!" },
+    { "autor": "Luis Pérez",  "mensaje": "Encontré todo lo que necesitaba y barato." }
+  ],
+  "footer": {
+    "direccion": "Av. Tecnológica 123 – Lima, Perú",
+    "email": "contacto@tech-store.pe",
+    "telefono": "+51 987 654 321"
+  }
+}
