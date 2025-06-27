@@ -10,346 +10,348 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Carreras y Carrusel de Profesores */
-       .carreras-container {
-    margin-top: 40px;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
+        .carreras-container {
+            margin-top: 40px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
 
-.carrera-section {
-    margin-bottom: 50px;
-    position: relative;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 2px solid #99001f;
-    animation: fadeInUp 0.6s ease-out;
-}
+        .carrera-section {
+            margin-bottom: 50px;
+            position: relative;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid #99001f;
+            animation: fadeInUp 0.6s ease-out;
+        }
 
-.carrera-title {
-    color: #99001f;
-    background: linear-gradient(135deg, #99001f, #99001f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    border-bottom: 3px solid transparent;
-    border-image: linear-gradient(90deg, #99001f, #99001f) 1;
-    padding-bottom: 15px;
-    margin-bottom: 30px;
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    position: relative;
-}
+        .carrera-title {
+            color: #99001f;
+            background: linear-gradient(135deg, #99001f, #99001f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            border-bottom: 3px solid transparent;
+            border-image: linear-gradient(90deg, #99001f, #99001f) 1;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            position: relative;
+        }
 
-.carrera-title::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: #99001f;
-    border-radius: 2px;
-}
+        .carrera-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #99001f;
+            border-radius: 2px;
+        }
 
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-    padding: 20px 50px;
-    background: #f2f2f2;  /* plomo clarito */
-    border-radius: 15px;
-}
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 50px;
+            background: #f2f2f2;
+            /* plomo clarito */
+            border-radius: 15px;
+        }
 
-.profesores-carousel {
-    display: flex;
-    transition: transform 0.5s ease;
-    gap: 25px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    padding: 15px 0;
-}
+        .profesores-carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 25px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            padding: 15px 0;
+        }
 
-.profesores-carousel::-webkit-scrollbar {
-    display: none;
-}
+        .profesores-carousel::-webkit-scrollbar {
+            display: none;
+        }
 
-.profesor-card {
-    flex: 0 0 280px;
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(153, 0, 31, 0.15);
-    overflow: hidden;
-    transition: all 0.3s ease;
-    border: 2px solid #99001f;
-    position: relative;
-}
+        .profesor-card {
+            flex: 0 0 280px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(153, 0, 31, 0.15);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 2px solid #99001f;
+            position: relative;
+        }
 
-.profesor-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: #99001f;
-}
+        .profesor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #99001f;
+        }
 
-.profesor-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(153, 0, 31, 0.25);
-}
+        .profesor-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(153, 0, 31, 0.25);
+        }
 
-.profesor-img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-bottom: 2px solid #99001f;
-    transition: transform 0.3s ease;
-}
+        .profesor-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-bottom: 2px solid #99001f;
+            transition: transform 0.3s ease;
+        }
 
-.profesor-card:hover .profesor-img {
-    transform: scale(1.05);
-}
+        .profesor-card:hover .profesor-img {
+            transform: scale(1.05);
+        }
 
-.profesor-info {
-    padding: 20px;
-    background: #ffffff;
-}
+        .profesor-info {
+            padding: 20px;
+            background: #ffffff;
+        }
 
-.profesor-nombre {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 5px;
-    line-height: 1.3;
-    color: #191970;  /* Azul medianoche sólido */
-}
+        .profesor-nombre {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            line-height: 1.3;
+            color: #191970;
+            /* Azul medianoche sólido */
+        }
 
-.profesor-profesion {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 15px;
-    font-style: italic;
-}
+        .profesor-profesion {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
 
-.profesor-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid #99001f;
-}
+        .profesor-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #99001f;
+        }
 
-.cv-btn {
-    background: #99001f;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(153, 0, 31, 0.3);
-    border: none;
-    cursor: pointer;
-}
+        .cv-btn {
+            background: #99001f;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(153, 0, 31, 0.3);
+            border: none;
+            cursor: pointer;
+        }
 
-.cv-btn:hover {
-    background: #b30027;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(153, 0, 31, 0.4);
-}
+        .cv-btn:hover {
+            background: #b30027;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(153, 0, 31, 0.4);
+        }
 
-.social-links a {
-    color: #99001f;
-    margin-left: 12px;
-    font-size: 20px;
-    transition: all 0.3s;
-    padding: 8px;
-    border-radius: 50%;
-    background: rgba(153, 0, 31, 0.1);
-}
+        .social-links a {
+            color: #99001f;
+            margin-left: 12px;
+            font-size: 20px;
+            transition: all 0.3s;
+            padding: 8px;
+            border-radius: 50%;
+            background: rgba(153, 0, 31, 0.1);
+        }
 
-.social-links a:hover {
-    color: white;
-    background: #99001f;
-    transform: scale(1.1);
-}
+        .social-links a:hover {
+            color: white;
+            background: #99001f;
+            transform: scale(1.1);
+        }
 
-.carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 45px;
-    height: 45px;
-    background: #99001f;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(153, 0, 31, 0.3);
-    border: 2px solid white;
-}
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            background: #99001f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(153, 0, 31, 0.3);
+            border: 2px solid white;
+        }
 
-.carousel-arrow:hover {
-    background: #b30027;
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 6px 20px rgba(153, 0, 31, 0.4);
-}
+        .carousel-arrow:hover {
+            background: #b30027;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(153, 0, 31, 0.4);
+        }
 
-.carousel-prev {
-    left: 10px;
-}
+        .carousel-prev {
+            left: 10px;
+        }
 
-.carousel-next {
-    right: 10px;
-}
+        .carousel-next {
+            right: 10px;
+        }
 
-/* Docentes en cuadrícula */
-.docentes-grid-section {
-    margin: 40px 0;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 2px solid #99001f;
-}
+        /* Docentes en cuadrícula */
+        .docentes-grid-section {
+            margin: 40px 0;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid #99001f;
+        }
 
-.docentes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-}
+        .docentes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
 
-.docente-card {
-    min-width: 340px;
-    min-height: 120px;
-    display: flex;
-    background: #ffffff;
-    border: 2px solid #99001f;
-    border-radius: 15px;
-    padding: 20px;
-    gap: 20px;
-    align-items: flex-start;
-    box-shadow: 0 5px 20px rgba(153, 0, 31, 0.1);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
+        .docente-card {
+            min-width: 340px;
+            min-height: 120px;
+            display: flex;
+            background: #ffffff;
+            border: 2px solid #99001f;
+            border-radius: 15px;
+            padding: 20px;
+            gap: 20px;
+            align-items: flex-start;
+            box-shadow: 0 5px 20px rgba(153, 0, 31, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
-.docente-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: #99001f;
-}
+        .docente-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #99001f;
+        }
 
-.docente-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(153, 0, 31, 0.2);
-    border-color: #b30027;
-}
+        .docente-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(153, 0, 31, 0.2);
+            border-color: #b30027;
+        }
 
-.docente-foto {
-    width: 110px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 1px solid #000000;
-    transition: transform 0.3s ease;
-}
+        .docente-foto {
+            width: 110px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #000000;
+            transition: transform 0.3s ease;
+        }
 
-.docente-card:hover .docente-foto {
-    transform: scale(1.05);
-}
+        .docente-card:hover .docente-foto {
+            transform: scale(1.05);
+        }
 
-.docente-info {
-    word-wrap: break-word;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
-    flex: 1;
-}
+        .docente-info {
+            word-wrap: break-word;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            flex: 1;
+        }
 
-.docente-info h3 {
-    font-size: 16px;
-    margin: 0 0 8px;
-    color: #191970;  /* Azul medianoche sólido */
-    font-weight: 700;
-}
+        .docente-info h3 {
+            font-size: 16px;
+            margin: 0 0 8px;
+            color: #191970;
+            /* Azul medianoche sólido */
+            font-weight: 700;
+        }
 
-.docente-info p {
-    font-size: 14px;
-    margin: 0 0 12px;
-    color: #666;
-    line-height: 1.4;
-}
+        .docente-info p {
+            font-size: 14px;
+            margin: 0 0 12px;
+            color: #666;
+            line-height: 1.4;
+        }
 
-.link-descarga {
-    font-size: 14px;
-    color: #99001f;
-    text-decoration: none;
-    margin-bottom: 8px;
-    display: inline-block;
-    padding: 5px 12px;
-    background: rgba(153, 0, 31, 0.1);
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    font-weight: 600;
-}
+        .link-descarga {
+            font-size: 14px;
+            color: #99001f;
+            text-decoration: none;
+            margin-bottom: 8px;
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(153, 0, 31, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
 
-.link-descarga:hover {
-    background: #99001f;
-    color: white;
-    transform: translateX(5px);
-}
+        .link-descarga:hover {
+            background: #99001f;
+            color: white;
+            transform: translateX(5px);
+        }
 
-.docentes-grid-carousel {
-    display: flex;
-    gap: 25px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    padding: 10px 0;
-}
+        .docentes-grid-carousel {
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            padding: 10px 0;
+        }
 
-.docentes-grid-carousel::-webkit-scrollbar {
-    display: none;
-}
+        .docentes-grid-carousel::-webkit-scrollbar {
+            display: none;
+        }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
 
-.profesor-card:nth-child(even) {
-    animation-delay: 0.1s;
-}
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.profesor-card:nth-child(odd) {
-    animation-delay: 0.2s;
-}
+        .profesor-card:nth-child(even) {
+            animation-delay: 0.1s;
+        }
 
-
+        .profesor-card:nth-child(odd) {
+            animation-delay: 0.2s;
+        }
     </style>
     <script src="script.js" defer></script>
 </head>
@@ -391,8 +393,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Eliana Arlin Barrantes Miranda</h3>
                                 <p><i class="fas fa-envelope"></i> ebarrantesm@iestp-trujillo.edu.pe</p>
-                                <a href="./cv/HV_BARRANTESMIRANDA_Eliana_A.A.pdf" target="_blank" class="link-descarga" ><i
-                                        class="fas fa-download"></i> Hoja de vida</a>
+                                <a href="./cv/HV_BARRANTESMIRANDA_Eliana_A.A.pdf" target="_blank"
+                                    class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
                             </div>
                         </div>
 
@@ -412,7 +414,7 @@
                                 <h3><i class="fas fa-user"></i> LIC. Susy Estela Gamero Morales</h3>
                                 <p><i class="fas fa-envelope"></i> valza@istrfa.edu.pe</p>
                                 <a href="./cv/asistencia/HV_GAMEROMORALES.pdf" target="_blank" class="link-descarga"><i
-                                        class="fas fa-download" ></i> Hoja de vida</a>
+                                        class="fas fa-download"></i> Hoja de vida</a>
                             </div>
                         </div>
                         <div class="docente-card">
@@ -459,8 +461,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Berta Teolinda Cabello Mancisidor</h3>
                                 <p><i class="fas fa-envelope"></i> cabellomancisidorb@iestp-trujillo.edu.pe</p>
-                                <a href="./cv/contabilidad/HV-BERTATEOLINDACABELLO.pdf" class="link-descarga"><i
-                                        class="fas fa-download"></i> Hoja de vida</a>
+                                <a href="./cv/contabilidad/HV-BERTATEOLINDACABELLO.pdf" target="_blank"
+                                    class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
                             </div>
                         </div>
 
@@ -469,7 +471,7 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> DR. César Ubaldo Ruiz Ochoa</h3>
                                 <p><i class="fas fa-envelope"></i> ruizochoac@iestptrujillo.net</p>
-                                <a href="./cv/contabilidad/DOCENTE-CESAR RUIZ OCHOA-HOJA DE VIDA.pdf"
+                                <a href="./cv/contabilidad/DOCENTE-CESAR RUIZ OCHOA-HOJA DE VIDA.pdf" target="_blank"
                                     class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
                             </div>
                         </div>
@@ -479,7 +481,7 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Emel Efraín Morales Meléndez</h3>
                                 <p><i class="fas fa-envelope"></i> emelefrainmorales@gmail.com</p>
-                                <a href="./cv/contabilidad/CV EMEL MORALES MELENDEZ.pdf" class="link-descarga"><i
+                                <a href="./cv/contabilidad/" target="_blank" class="link-descarga"><i
                                         class="fas fa-download"></i> Hoja de vida</a>
                             </div>
                         </div>
@@ -489,7 +491,7 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC.Isabel Frías Sánchez</h3>
                                 <p><i class="fas fa-envelope"></i> friassanchezi@iestptrujillo.net</p>
-                                <a href="./cv/contabilidad/HOJA DE VIDA JAVIER MIGUEL JULCA VASQUEZ (1).pdf"
+                                <a href="./cv/contabilidad/HOJA DE VIDA ISABEL FRÍAS SÁNCHEZ.pdf" target="_blank"
                                     class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
                             </div>
                         </div>
@@ -499,18 +501,11 @@
                                 <h3><i class="fas fa-user"></i> LIC. Javier Miguel Julca Vásquez</h3>
                                 <p><i class="fas fa-envelope"></i> javierjulcaj@iestptrujillo.net</p>
                                 <a href="./cv/contabilidad/HOJA DE VIDA JAVIER MIGUEL JULCA VASQUEZ (1).pdf"
-                                    class="link-descarga"><i class="fas fa-download"></i> Hoja de vida</a>
+                                    target="_blank" class="link-descarga"><i class="fas fa-download"></i> Hoja de
+                                    vida</a>
                             </div>
                         </div>
-                        <div class="docente-card">
-                            <img src="./fotos/Zacarias-conta1.jpg" alt="Isabel Frías" class="docente-foto">
-                            <div class="docente-info">
-                                <h3><i class="fas fa-user"></i> LIC. Carlos Augusto Zacarías Nomura</h3>
-                                <p><i class="fas fa-envelope"></i> zacariasnomurac@iestp-trujillo.edu.pe</p>
-                                <a href="./cv/contabilidad/HV-CarlosZacaríasNomura.pdf" class="link-descarga"><i
-                                        class="fas fa-download"></i> Hoja de vida</a>
-                            </div>
-                        </div>
+
                     </div>
 
                     <div class="carousel-arrow carousel-next"
@@ -536,7 +531,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> ING. Sarita Carolina Paredes Romero</h3>
                                 <p><i class="fas fa-envelope"></i> paredesromeros@iestptrujillo.net</p>
-                                <a href="./cv/diseño/HV-SaritaParedes.pdf" class="link-descarga">
+                                <a href="./cv/diseño/2. Sarita Carolina Paredes Romero/2. Sarita Carolina Paredes Romero.pdf"
+                                    target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -547,7 +543,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> ING. Pedro Oswaldo Beltrán Canessa</h3>
                                 <p><i class="fas fa-envelope"></i> jgutierrez@iestp-trujillo.edu.pe</p>
-                                <a href="cv/laura-vega.pdf" class="link-descarga">
+                                <a href="cv/diseño/6. Pedro Esgardo León Alva/6. Pedro Esgardo León Alva.pdf"
+                                    target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -559,7 +556,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> MG. Maria de los Milagros Bravo Urtecho</h3>
                                 <p><i class="fas fa-envelope"></i> kreyes@iestp-trujillo.edu.pe</p>
-                                <a href="cv/miguel-rios.pdf" class="link-descarga">
+                                <a href="cv/diseño/3. María de los Milagros Bravo Urtecho/3. María de los Milagros Bravo Urtecho.pdf"
+                                    target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -570,7 +568,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> ING. Edwin Estuardo Paredes Vásquez</h3>
                                 <p><i class="fas fa-envelope"></i> ejemplo@iestp-trujillo.edu.pe</p>
-                                <a href="cv/miguel-rios.pdf" class="link-descarga">
+                                <a href="cv/diseño/1. Miguel Angel Prieto Campos/1. Miguel Angel Prieto Campos.pdf"
+                                    target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -581,7 +580,7 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> ING. Paul Stivan Águlo Alcalde</h3>
                                 <p><i class="fas fa-envelope"></i> ejemplo@iestp-trujillo.edu.pe</p>
-                                <a href="cv/miguel-rios.pdf" class="link-descarga">
+                                <a href="cv/miguel-rios.pdf" target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -592,7 +591,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> ING. Nestor David Hilario Castro</h3>
                                 <p><i class="fas fa-envelope"></i> ejemplo@iestp-trujillo.edu.pe</p>
-                                <a href="cv/miguel-rios.pdf" class="link-descarga">
+                                <a href="cv/diseño/4. David Deciderio Gil Meza/4. David Deciderio Gil Meza.pdf"
+                                    target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -603,7 +603,7 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> ECON. Ronald Arnaldo Perez Hernandes</h3>
                                 <p><i class="fas fa-envelope"></i> ejemplo@iestp-trujillo.edu.pe</p>
-                                <a href="cv/miguel-rios.pdf" class="link-descarga">
+                                <a href="cv/diseño/" target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -614,7 +614,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> ING. Humberto Pedro Jiménez Jara</h3>
                                 <p><i class="fas fa-envelope"></i> ejemplo@iestp-trujillo.edu.pe</p>
-                                <a href="cv/miguel-rios.pdf" class="link-descarga">
+                                <a href="cv/diseño/5. Humberto Pedro Jiménez Jara/5. Humberto Pedro Jiménez Jara.pdf"
+                                    target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -625,7 +626,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Pedro Esgardo León Alva</h3>
                                 <p><i class="fas fa-envelope"></i> ejemplo@iestp-trujillo.edu.pe</p>
-                                <a href="cv/miguel-rios.pdf" class="link-descarga">
+                                <a href="cv/diseño/6. Pedro Esgardo León Alva/6. Pedro Esgardo León Alva.pdf"
+                                    target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -636,7 +638,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> ING. David Deciderio Gil Mesa</h3>
                                 <p><i class="fas fa-envelope"></i> ejemplo@iestp-trujillo.edu.pe</p>
-                                <a href="cv/miguel-rios.pdf" class="link-descarga">
+                                <a href="cv/diseño/4. David Deciderio Gil Meza/4. David Deciderio Gil Meza.pdf"
+                                    target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -665,7 +668,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Justa Rosa Suárez Ramos</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Gestión de Calidad</p>
-                                <a href="./cv/SUAREZRAMOSRosa_Formato_Hoja de Vida_2025.pdf" class="link-descarga">
+                                <a href="./cv/enfermeria/LIC. JUSTA ROSA SUÁREZ RAMOS/SUAREZRAMOSRosa_Formato_Hoja de Vida_2025.pdf"
+                                    target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -676,7 +680,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Mrgui Suguey Neyra Caballero</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Gestión de Seguridad</p>
-                                <a href="./cv/NEYRACABALLEROMargui_Hoja de Vida_2025 (1).pdf" class="link-descarga">
+                                <a href="./cv/enfermeria/LIC. MARGUI SUGUEY NEYRA CABALLERO/NEYRACABALLEROMargui_Hoja de Vida_2025 (1).pdf"
+                                    target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -688,7 +693,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. María Antonieta Caballero Palacios</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Gestión de Calidad</p>
-                                <a href="./cv/CABALLERO PALACIOS ANTONIETA_Hoja de Vida_2025.pdf" class="link-descarga">
+                                <a href="./cv/enfermeria/LIC. MARÍA ANTONIETA CABALLERO PALACIOS/CABALLERO PALACIOS ANTONIETA_Hoja de Vida_2025.pdf"
+                                    target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -700,7 +706,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. María Mercedes Castillo Jara</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Gestión de Calidad</p>
-                                <a href="./cv/CASTILLOJARAMaria_Hoja de Vida_2025.pdf" class="link-descarga">
+                                <a href="./cv/enfermeria/LIC. MARÍA MERCEDES CASTILLO JARA/CASTILLOJARAMaria_Hoja de Vida_2025.pdf"
+                                    target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -711,7 +718,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Luis Abraham Perez Tamayo</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Gestión de Calidad</p>
-                                <a href="./cv/SUAREZRAMOSRosa_Formato_Hoja de Vida_2025.pdf" class="link-descarga">
+                                <a href="./cv/enfermeria/LIC.LUIS ABRAHAM PEREZ TAMAYO/PEREZTAMAYOLuis_Hoja de Vida_2025.pdf"
+                                    target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -722,7 +730,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Jovani Janet Aguirre Saavedra</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Gestión de Calidad</p>
-                                <a href="./cv/SUAREZRAMOSRosa_Formato_Hoja de Vida_2025.pdf" class="link-descarga">
+                                <a href="./cv/enfermeria/MG. JOVANY JANET AGUIRRE SAAVEDRA/Hoja de Vida_2025 JJAS.pdf"
+                                    target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -751,7 +760,7 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. José Urquizo</h3>
                                 <p><i class="fas fa-envelope"></i> Guía Oficial de Turismo</p>
-                                <a href="cv/pedro-castillo.pdf" class="link-descarga">
+                                <a href="cv/guia-oficial/" target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -762,7 +771,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Yvonne Colmenares</h3>
                                 <p><i class="fas fa-envelope"></i> Guía Oficial de Turismo</p>
-                                <a href="cv/pedro-castillo.pdf" class="link-descarga">
+                                <a href="cv/guia-oficial/HV-COLMENARESRODRÍGUEZYVONNE.pdf" target="_blank"
+                                    class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -773,7 +783,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Vilma Fajardo</h3>
                                 <p><i class="fas fa-envelope"></i> Guía Oficial de Turismo</p>
-                                <a href="cv/pedro-castillo.pdf" class="link-descarga">
+                                <a href="cv/guia-oficial/HV-FAJARDOPIZANGOVILMARAQUEL.pdf" target="_blank"
+                                    class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -784,7 +795,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Edelmira Janampa</h3>
                                 <p><i class="fas fa-envelope"></i> Guía Oficial de Turismo</p>
-                                <a href="cv/pedro-castillo.pdf" class="link-descarga">
+                                <a href="cv/guia-oficial/HV-JANAMPAVIDALEDELMIRALEONOR.pdf" target="_blank"
+                                    class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -795,7 +807,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Lourdes López</h3>
                                 <p><i class="fas fa-envelope"></i> Guía Oficial de Turismo</p>
-                                <a href="cv/pedro-castillo.pdf" class="link-descarga">
+                                <a href="cv/guia-oficial/HV-LOPEZORBEGOSOLOURDES.pdf" target="_blank"
+                                    class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -806,7 +819,7 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> MG. Basílides Angulo</h3>
                                 <p><i class="fas fa-envelope"></i> Mg. en Gestión Turística</p>
-                                <a href="cv/lucia-morales.pdf" class="link-descarga">
+                                <a href="cv/guia-oficial/" target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -835,7 +848,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> Tec. Med. Bertha Guzmán</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Microbiología</p>
-                                <a href="cv/miguel-vargas.pdf" class="link-descarga">
+                                <a href="cv/laboratorio/BERTHA GUZMAN _Hoja de Vida_2025.pdf" target="_blank"
+                                    class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -846,7 +860,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> Tec. Med. Cesar Barrantes</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Microbiología</p>
-                                <a href="cv/miguel-vargas.pdf" class="link-descarga">
+                                <a href="cv/laboratorio/Cesar Valentino Barrantes Cachi_Hoja de Vida_2025.pdf"
+                                    target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -857,7 +872,8 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> Tec. Med. Karla Torres</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Microbiología</p>
-                                <a href="cv/miguel-vargas.pdf" class="link-descarga">
+                                <a href="cv/laboratorio/Karla Torres_ Hoja de vida_2025.pdf" target="_blank"
+                                    class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -868,7 +884,7 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> Mg. Silvia Ortiz</h3>
                                 <p><i class="fas fa-envelope"></i> Tecnóloga Médica en Patología Clínica</p>
-                                <a href="cv/silvia-ortiz.pdf" class="link-descarga">
+                                <a href="cv/laboratorio/" target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -897,7 +913,7 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Carmen Huerta</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Marketing Digital</p>
-                                <a href="cv/HV CARMEN 2025.pdf" class="link-descarga">
+                                <a href="cv/HV CARMEN 2025.pdf" target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -908,7 +924,7 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Humberto Guevara</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Marketing Digital</p>
-                                <a href="cv/HV HUMBERTO.pdf" class="link-descarga">
+                                <a href="cv/HV HUMBERTO.pdf" target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -919,7 +935,7 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Javier Gil</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Marketing Digital</p>
-                                <a href="cv/HV JAVIER GIL.pdf" class="link-descarga">
+                                <a href="cv/HV JAVIER GIL.pdf" target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -930,7 +946,7 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Lolo Guzmán</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Marketing Digital</p>
-                                <a href="cv/HV LOLO.pdf" class="link-descarga">
+                                <a href="cv/HV LOLO.pdf" target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -941,7 +957,7 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Mirtha Gómez</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Marketing Digital</p>
-                                <a href="cv/HV MIRTHA.pdf" class="link-descarga">
+                                <a href="cv/HV MIRTHA.pdf" target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -952,7 +968,7 @@
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> LIC. Roxana Huamanchumo</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Marketing Digital</p>
-                                <a href="cv/HV ROXSANA.pdf" class="link-descarga">
+                                <a href="cv/HV ROXSANA.pdf" target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -964,7 +980,7 @@
                                 <h3><i class="fas fa-user"></i> MG. Segundo Bravo</h3>
                                 <p><i class="fas fa-envelope"></i> Mg. en Dirección de Marketing, Consultor de Branding
                                 </p>
-                                <a href="cv/HV SEGUNDO.pdf" class="link-descarga">
+                                <a href="cv/HV SEGUNDO.pdf" target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -976,7 +992,7 @@
                                 <h3><i class="fas fa-user"></i> MG. Wilmer Flores</h3>
                                 <p><i class="fas fa-envelope"></i> Mg. en Dirección de Marketing, Consultor de Branding
                                 </p>
-                                <a href="cv/HV WILMER.pdf" class="link-descarga">
+                                <a href="cv/HV WILMER.pdf" target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>
@@ -1007,7 +1023,7 @@
                                 <h3><i class="fas fa-user"></i> Carlos Augusto Zacarias</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Empleabilidad y Orientación Laboral
                                 </p>
-                                <a href="cv/HV_CARLOS_ZACARIAS.pdf" class="link-descarga">
+                                <a href="cv/HV_CARLOS_ZACARIAS.pdf" target="_blank" class="link-descarga">
                                     <i class="fas fa-download"></i> Hoja de vida
                                 </a>
                             </div>

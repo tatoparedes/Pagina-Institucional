@@ -1,39 +1,349 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Instituto Tecnológico Trujillo</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MD2d3oGzH8yPt9bEOeRl6N6a1C/3RAcY1B9zVeyELn8MvGmjmr9Q9r+n6gdcvxPVKFS4OAr0h01AIjHx+NjPug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-MD2d3oGzH8yPt9bEOeRl6N6a1C/3RAcY1B9zVeyELn8MvGmjmr9Q9r+n6gdcvxPVKFS4OAr0h01AIjHx+NjPug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <style>
+    /* Estilos principales para el body y contenido */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        min-height: 100vh;
+        color: #333;
+    }
+
+    .main-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        position: relative;
+    }
+
+    /* Sección Hero */
+    .hero {
+        background: linear-gradient(135deg, #191970 0%, #99001f 100%);
+        border-radius: 25px;
+        padding: 60px 40px;
+        margin-bottom: 40px;
+        text-align: center;
+        box-shadow: 0 25px 50px rgba(25, 25, 112, 0.2);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.3;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-content h2 {
+        font-size: 4rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        letter-spacing: -1px;
+    }
+
+    .hero-content p {
+        font-size: 2rem;
+        color: #ffffff;
+        font-weight: 300;
+        margin: 0;
+        opacity: 0.95;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Container principal */
     .container {
-    width: 80%; /* Ajusta el ancho del contenedor según lo necesites    */
-    margin: 0 auto; /* Centra el contenedor en la página   */
-}
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto 40px auto;
+        padding: 0 20px;
+    }
 
-.presentation {
-    padding: 20px;
-}
+    /* Sección de presentación */
+    .presentation {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 50px;
+        box-shadow: 0 15px 35px rgba(25, 25, 112, 0.08);
+        border: 2px solid #f0f0f0;
+        position: relative;
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+    }
 
-.content {
-    display: flex;
-    align-items: flex-start; /* Alinea verticalmente los elementos */
-    justify-content: space-between; /* Deja espacio entre el texto y la imagen */
-}
+    .presentation:hover {
+        box-shadow: 0 20px 45px rgba(25, 25, 112, 0.12);
+        transform: translateY(-2px);
+    }
 
-.text {
-    flex: 1; /* El texto ocupa el espacio restante */
-}
+    .presentation::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, #191970 0%, #99001f 100%);
+        border-radius: 20px 20px 0 0;
+    }
 
-.right-img {
-    margin-left: 20px;
-    width: 500px; /* Ajusta el tamaño de la imagen según necesites */
-}
+    .presentation h3 {
+        font-size: 2.5rem;
+        color: #191970;
+        text-align: center;
+        margin-bottom: 40px;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 25px;
+    }
+
+    .presentation h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 4px;
+        background: linear-gradient(90deg, #99001f, #191970);
+        border-radius: 2px;
+    }
+
+    /* Contenido con layout flex */
+    .content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .text {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .text p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #444;
+        margin-bottom: 20px;
+        text-align: justify;
+        position: relative;
+        padding: 15px 20px;
+        border-left: 4px solid transparent;
+        transition: all 0.3s ease;
+        border-radius: 0 10px 10px 0;
+    }
+
+    .text p:hover {
+        border-left-color: #99001f;
+        background: linear-gradient(90deg, rgba(153, 0, 31, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(153, 0, 31, 0.1);
+    }
+
+    .text p:first-of-type {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: #191970;
+        border-left: 5px solid #99001f;
+        background: linear-gradient(90deg, rgba(25, 25, 112, 0.08) 0%, rgba(255, 255, 255, 1) 100%);
+        padding: 25px;
+        border-radius: 0 15px 15px 0;
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+    .text p:first-of-type::before {
+        content: '📚';
+        font-size: 1.8rem;
+        margin-right: 15px;
+        vertical-align: middle;
+    }
+
+    /* Párrafos con checkmarks */
+    .text p:contains('☑') {
+        font-size: 1.1rem;
+        padding: 12px 20px;
+        margin-bottom: 15px;
+        border-left: 3px solid #28a745;
+        background: linear-gradient(90deg, rgba(40, 167, 69, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+    }
+
+    .text p:contains('☑'):hover {
+        border-left-color: #28a745;
+        transform: translateX(3px);
+    }
+
+    /* Imagen a la derecha */
+    .right-img {
+        width: 350px;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(25, 25, 112, 0.15);
+        border: 3px solid transparent;
+        background: linear-gradient(white, white) padding-box,
+            linear-gradient(135deg, #191970, #99001f) border-box;
+        transition: all 0.4s ease;
+        flex-shrink: 0;
+    }
+
+    .right-img:hover {
+        transform: scale(1.03) translateY(-5px);
+        box-shadow: 0 25px 50px rgba(25, 25, 112, 0.25);
+    }
+
+    /* Animaciones */
+    .hero,
+    .container {
+        animation: fadeInUp 0.8s ease-out;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .content {
+            gap: 30px;
+        }
+
+        .right-img {
+            width: 300px;
+            height: 240px;
+        }
+
+        .presentation {
+            padding: 40px 35px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .main-content {
+            padding: 15px;
+        }
+
+        .container {
+            padding: 0 15px;
+        }
+
+        .hero {
+            padding: 40px 25px;
+        }
+
+        .hero-content h2 {
+            font-size: 2.8rem;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+        }
+
+        .content {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .right-img {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .presentation {
+            padding: 30px 25px;
+        }
+
+        .presentation h3 {
+            font-size: 2.2rem;
+        }
+
+        .text p {
+            font-size: 1.1rem;
+            padding: 12px 15px;
+        }
+
+        .text p:first-of-type {
+            font-size: 1.2rem;
+            padding: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-content h2 {
+            font-size: 2.2rem;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+        }
+
+        .presentation h3 {
+            font-size: 1.9rem;
+        }
+
+        .presentation {
+            padding: 25px 20px;
+        }
+
+        .text p {
+            font-size: 1rem;
+            padding: 10px 12px;
+        }
+
+        .text p:first-of-type {
+            font-size: 1.1rem;
+            padding: 18px;
+        }
+
+        .right-img {
+            height: 220px;
+        }
+
+        .container {
+            padding: 0 10px;
+        }
+    }
 </style>
+
 <body>
 
     <div id="header-container"></div>
@@ -52,54 +362,63 @@
 
         <!-- Presentación institucional -->
         <section class="container">
-        <div class="presentation">
-            <h3>Ordinaria</h3>
-            <div class="content">
-                <div class="text">
-                    <p>La Admisión Ordinaria está dirigida a los egresados de educación secundaria que desean ingresar a nuestra institución para continuar su formación académica y profesional. A través de este proceso, los postulantes podrán acceder a una educación de calidad en diversas carreras técnicas y profesionales, con el respaldo de un plan educativo innovador y accesible.</p>
-                    <p>Requisitos:</p>
-                    <p>☑ Certificados originales de estudios secundarios</p>
-                    <p>☑ Copia de DNI</p>
-                    <p>☑ 1 foto tamaño carné a color.</p>
-                    <p>☑ Pago por derecho de inscripción</p>
+            <div class="presentation">
+                <h3>Ordinaria</h3>
+                <div class="content">
+                    <div class="text">
+                        <p>La Admisión Ordinaria está dirigida a los egresados de educación secundaria que desean
+                            ingresar a nuestra institución para continuar su formación académica y profesional. A través
+                            de este proceso, los postulantes podrán acceder a una educación de calidad en diversas
+                            carreras técnicas y profesionales, con el respaldo de un plan educativo innovador y
+                            accesible.</p>
+                        <p>Requisitos:</p>
+                        <p>☑ Certificados originales de estudios secundarios</p>
+                        <p>☑ Copia de DNI</p>
+                        <p>☑ 1 foto tamaño carné a color.</p>
+                        <p>☑ Pago por derecho de inscripción</p>
+                    </div>
+                    <!-- Imagen a la derecha dentro del contenedor -->
+                    <img src="./img/ad" alt="Imagen de Admisión" class="right-img">
                 </div>
-                <!-- Imagen a la derecha dentro del contenedor -->
-                <img src="./img/admision.jpg" alt="Imagen de Admisión" class="right-img">
             </div>
-        </div>
-    </section>
-    <section class="container">
-        <div class="presentation">
-            <h3>Por exoneración</h3>
-            <div class="content">
-                <div class="text">
-                    <p>Requisitos:</p>
-                    <p>☑ Egresados de Educación Secundaria que han ocupado el 1º y 2º puesto durante los dos últimos años dentro del ámbito local y Regional.</p>
-                    <p>☑ Deportistas calificados, acreditados por el Instituto Peruano del Deporte.</p>
-                    <p>☑ Estudiantes talentosos.</p>
-                    <p>☑ Los discapacitados.</p>
-                    <p>☑ Los que están cumpliendo servicio militar obligatorio.</p>
-                    <p>☑ Las personas víctimas del terrorismo, con acreditación comprobada Ley 28592. Plan integral de reparaciones PIR.</p>
+        </section>
+        <section class="container">
+            <div class="presentation">
+                <h3>Por exoneración</h3>
+                <div class="content">
+                    <div class="text">
+                        <p>Requisitos:</p>
+                        <p>☑ Egresados de Educación Secundaria que han ocupado el 1º y 2º puesto durante los dos últimos
+                            años dentro del ámbito local y Regional.</p>
+                        <p>☑ Deportistas calificados, acreditados por el Instituto Peruano del Deporte.</p>
+                        <p>☑ Estudiantes talentosos.</p>
+                        <p>☑ Los discapacitados.</p>
+                        <p>☑ Los que están cumpliendo servicio militar obligatorio.</p>
+                        <p>☑ Las personas víctimas del terrorismo, con acreditación comprobada Ley 28592. Plan integral
+                            de reparaciones PIR.</p>
+                    </div>
+                    <!-- Imagen a la derecha dentro del contenedor -->
+                    <img src="./img/exoneracion.jpg" alt="Imagen de Admisión" class="right-img">
                 </div>
-                <!-- Imagen a la derecha dentro del contenedor -->
-                <img src="./img/exoneracion.jpg" alt="Imagen de Admisión" class="right-img">
             </div>
-        </div>
-    </section>
-    <section class="container">
-        <div class="presentation">
-            <h3>Por ingreso extraordinario</h3>
-            <div class="content">
-                <div class="text">
-                    <p>El Ingreso Extraordinario es un proceso autorizado por el MINEDU, dirigido a estudiantes que han sido beneficiarios de becas, programas de movilidad académica o convenios especiales, permitiendo su ingreso directo a la institución.</p>
-                
+        </section>
+        <section class="container">
+            <div class="presentation">
+                <h3>Por ingreso extraordinario</h3>
+                <div class="content">
+                    <div class="text">
+                        <p>El Ingreso Extraordinario es un proceso autorizado por el MINEDU, dirigido a estudiantes que
+                            han sido beneficiarios de becas, programas de movilidad académica o convenios especiales,
+                            permitiendo su ingreso directo a la institución.</p>
+
+                    </div>
+                    <img src="./img/beca.webp" alt="Imagen de Admisión" class="right-img">
                 </div>
-                <img src="./img/beca.webp" alt="Imagen de Admisión" class="right-img">
             </div>
-        </div>
-    </section>
+        </section>
     </main>
-    <div id="footer-container"></div>
+    <div id="footer-container" ></div>
 </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </html>
