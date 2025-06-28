@@ -51,11 +51,9 @@ document.addEventListener('DOMContentLoaded', function () {
             new Chart(ctx, {
               type: 'bar',
               data: {
-                labels: ['2023-I', '2023-II', '2024-I', '2024-II'],
+                labels: ['2023-I', '2023-II', '2024-I', '2024-II', '2025-I'],
                 datasets: [
-                  { label: 'Asistencia Administrativa', data: [29, 23, 23, 21], backgroundColor: 'rgba(54, 162, 235, 0.6)' },
-                  { label: 'Contabilidad', data: [40, 39, 38, 36], backgroundColor: 'rgba(75, 192, 192, 0.6)' },
-                  { label: 'Diseño y Programación Web', data: [35, 32, 25, 24], backgroundColor: 'rgba(255, 99, 132, 0.6)' }
+                  { label: 'Matriculados', data: [623, 596, 624, 580, 582], backgroundColor: 'rgba(54, 162, 235, 0.6)' }
                 ]
               },
               options: {
