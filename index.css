@@ -42,7 +42,7 @@
 
     /* --------- RESPONSIVE MÓVIL --------- */
     @media (max-width: 768px){
-        .carousel-hero{height:250px;border-width:2px;margin-top:115px;z-index:1;}
+        .carousel-hero{height:250px;border-width:2px;margin-top:10px;z-index:1;}
         .carousel-hero:hover{transform:none;}
         .hero-content{bottom:-190px;}
         .hero-content h3{font-size:24px;}

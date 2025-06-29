@@ -512,7 +512,7 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
-    margin-top: 115px;
+    margin-top: 10px;
     z-index: 1;
   }
 
