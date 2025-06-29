@@ -355,6 +355,7 @@ body {
   box-shadow: 0 25px 50px rgba(116, 0, 0, 0.212);
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .hero::before {
@@ -510,6 +511,11 @@ body {
 }
 /* Responsive */
 @media (max-width: 768px) {
+  .hero {
+    margin-top: 115px;
+    z-index: 1;
+  }
+
   .hero-content h2 {
     font-size: 26px;
   }
@@ -648,6 +654,10 @@ body {
 
   .footer-section {
     margin: 20px 0;
+  }
+
+  .social {
+    height: 80px;
   }
 
   .social-icons {
@@ -922,6 +932,7 @@ body {
             display: flex;
             gap: 15px;
             margin-top: 25px;
+            color: #191970;
         }
         
         .btn {
@@ -941,9 +952,9 @@ body {
         }
         
         .download-btn {
-            background: #3498db;
+            background: #191970;
             color: white;
-            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+            box-shadow: 0 4px 10px rgba(25, 25, 112, 0.3);
         }
 
         .ver-convenio {
@@ -953,17 +964,19 @@ body {
         }
         
         .download-btn:hover {
-            background: #2980b9;
-            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+            background: #807380;
+            color: #fff;
+            box-shadow: 0 6px 15px rgba(68, 68, 67, 0.4);
         }
         
         .preview-btn {
-            background: #ecf0f1;
-            color: #2c3e50;
+            background: #191970;
+            color: white;
         }
         
         .preview-btn:hover {
-            background: #d5dbdb;
+            background: #807380;
+            color: #fff;
         }
         
         @media (max-width: 768px) {
@@ -1223,7 +1236,7 @@ body {
   width: 100%;
   height: 400px;
   border-radius: 20px;
-
+  border:2px solid #99001f;box-shadow:0 0 20px rgba(153,0,31,0.3);
   background-size: cover;
   background-position: center;
   margin: 0;
@@ -1231,7 +1244,7 @@ body {
 
 .program-title-container {
   position: absolute;
-  bottom: 100px;
+  bottom: 60px;
   left: 20px;
   display: flex;
   flex-direction: column;
@@ -1248,12 +1261,12 @@ body {
   margin: 0;
   color: white;
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .program-quote-container {
   position: absolute;
-  bottom: 20px;
+  bottom: 5px;
   right: 20px;
   background-color: rgba(0,0,0,0.7);
   padding: 10px 20px;
@@ -1289,5 +1302,34 @@ body {
     bottom: 10px;
     right: 10px;
     padding: 8px 12px;
+  }
+}
+/* Efectos hover para elementos del footer */
+.footer-section ul li {
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.footer-section ul li:hover {
+  background-color: #fff;
+  transform: translateX(5px);
+}
+
+.footer-section ul li:hover a {
+  color: #99001f !important;
+}
+/* Reducir espacio de la sección social en móviles */
+@media (max-width: 768px) {
+  .footer-section.social {
+    margin: 10px 0 5px 0;
+  }
+}
+/* Corregir altura de la sección social en móviles */
+@media (max-width: 768px) {
+  .footer-section.social {
+    flex: none;
+    margin: 10px 0 5px 0;
+    min-height: auto;
   }
 }
