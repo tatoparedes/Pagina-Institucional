@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matrícula - Instituto Tecnológico Trujillo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; }
+    h2, h3 { color: #99001f; text-align: center; margin-top: 20px; }
+
+    /* Container general */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+
+    /* Matrícula Section */
+    .matricula-section,
+    .recuerda-section,
+    .proceso-section {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      margin: 30px 0;
+      padding: 30px;
+    }
+
+    /* Títulos de sección */
+    .matricula-section h3,
+    .recuerda-section h3,
+    .proceso-section h3 {
+      color: #99001f;
+      margin-bottom: 15px;
+    }
+
+    /* Texto de la Matrícula */
+    .matricula-text, .recuerda-text, .proceso-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Botones */
+    .matricula-buttons,
+    .proceso-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .btn-custom {
+      background: #99001f;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.3s;
+      font-size: 16px;
+    }
+
+    .btn-custom:hover {
+      background: #7b0019;
+    }
+
+    /* Proceso de Matrícula */
+    .steps .step {
+      background: #fff5f7;
+      border-left: 5px solid #99001f;
+      padding: 12px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+    }
+
+    .step i { color: #99001f; margin-right: 8px; }
+
+    /* Recuerda Section */
+    .recuerda-section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .recuerda-section h3 {
+      font-size: 24px;
+      color: #99001f;
+    }
+    .recuerda-section p {
+      font-size: 18px;
+      color: #333;
+    }
+
+    /* Imágenes pequeñas con enlaces */
+    .logos-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+      padding: 10px 0;
+    }
+
+    .logos-container img {
+      max-width: 80px; /* Tamaño pequeño para las imágenes */
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .logos-container img:hover {
+      transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+    }
+    /* Sección de contacto */
+.contact-info {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  text-align: center;
+}
+
+.contact-info i {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #99001f;
+}
+
+.contact-info p {
+  font-size: 18px;
+  color: #333;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- Header and Menu -->
+<div id="header-container"></div>
+<div id="menu-container"></div>
+
+<main class="container">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2><i class="fas fa-file-signature"></i> Matrícula</h2>
+    </div>
+  </section>
+
+  <!-- Matrícula Section -->
+  <div class="matricula-section">
+    <h3><i class="fas fa-file-signature"></i> Matrícula</h3>
+    <p class="matricula-text">Es el proceso mediante el cual, una persona es registrada en un programa de estudios de un IES o EEST, con lo cual adquiere la condición de estudiante, previa presentación de los requisitos establecidos. Esto implica el cumplimiento de los deberes y ser sujeto de los derechos establecidos en el reglamento institucional y otros documentos de gestión que se deriven de este.</p>
+
+    <div class="matricula-buttons">
+      <button class="btn-custom" data-bs-toggle="modal" data-bs-target="#modalImagen"><i class="fas fa-calendar"></i> Ver cronograma</button>
+      <!-- Aquí el PDF específico para la sección Matrícula -->
+      <button class="btn-custom" data-bs-toggle="modal" data-bs-target="#modalPDFMatricula"><i class="fas fa-file-pdf"></i> Leer más</button>
+    </div>
+  </div>
+
+  <!-- Recuerda Section -->
+  <div class="recuerda-section">
+    <h3><i class="fas fa-bell"></i> Recuerda</h3>
+    <p class="recuerda-text">Pueden matricularse las personas ingresantes por concurso de admisión, traslado, reserva de matrícula, reincorporación y convalidación. La matrícula se realiza por unidades didácticas, verificando de ser el caso, la aprobación de las unidades didácticas que son prerrequisito, según el plan de estudios y de acuerdo a la ficha de registro de matrícula.</p>
+    <p class="recuerda-text">Los ingresantes podrán reservar matrícula hasta por un máximo de cuatro (04) periodos académicos en IES y EEST públicos. En caso de existir alguna variación en los planes de estudio, se aplicarán los procesos de convalidación que correspondan. En el caso de los ingresantes de IES y EEST públicos que no se reincorporen en el plazo máximo determinado pierden el derecho de matrícula de dicho proceso, lo cual no impide que vuelvan a postular en otro proceso.</p>
+    <button class="btn-custom" data-bs-toggle="modal" data-bs-target="#modalPDF2"><i class="fas fa-file-pdf"></i> Leer más</button>
+  </div>
+
+  <!-- Proceso de Matrícula Section -->
+  <div class="proceso-section">
+    <h3><i class="fas fa-tasks"></i> Proceso de Matrícula</h3>
+    <p class="proceso-text"><strong>PERIODO LECTIVO 2023-II</strong></p>
+    <p class="proceso-text">La matrícula en el IESTP «TRUJILLO» se realiza usando el Sistema de Gestión Académica REGISTRA proporcionado por el Ministerio de Educación. Los pasos que debes seguir para registrar exitosamente tu matrícula se muestran a continuación:</p>
+    <div class="steps">
+      <div class="step"><i class="fas fa-arrow-right"></i> Buscar en Google REGISTRA MINEDU</div>
+      <div class="step"><i class="fas fa-arrow-right"></i> Acceder Como Estudiante</div>
+      <div class="step"><i class="fas fa-arrow-right"></i> Rellene sus Datos e inicie Sesión</div>
+      <div class="step"><i class="fas fa-arrow-right"></i> Click en Reportes, seleccionar Historia Académico, click en Mostrar Reporte e Imprimir Historial</div>
+      <div class="step"><i class="fas fa-arrow-right"></i> Cancelar derecho de Matrícula EN CAJA TRUJILLO</div>
+      <div class="step"><i class="fas fa-arrow-right"></i> Registrar tu matrícula en la Oficina de Secretaría Académica</div>
+    </div>
+    <div class="proceso-buttons">
+      <button class="btn-custom" data-bs-toggle="modal" data-bs-target="#modalPDFProceso"><i class="fas fa-file-pdf"></i> Leer más</button>
+    </div>
+  </div>
+
+  <!-- Cards with Images and Links -->
+  <div class="logos-container">
+    <a href="http://www.minedu.gob.pe" target="_blank">
+      <img src="img/logoMinedu.png" alt="Ministerio de Educación" />
+    </a>
+    <a href="https://registra.minedu.gob.pe/#!/" target="_blank">
+      <img src="img/logoRegistra (1).png" alt="Registra" />
+    </a>
+    <a href="https://www.gob.pe/regionlalibertad-gre" target="_blank">
+      <img src="img/logoGrell.png" alt="Gerencia Regional de Educación" />
+    </a>
+  </div>
+
+</main>
+
+<!-- Modal para el cronograma -->
+<div class="modal fade" id="modalImagen" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <!-- Imagen del cronograma -->
+        <img src="img/CronogramaMatricula.png" alt="Cronograma de matrícula" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal PDF para Matrícula -->
+<div class="modal fade" id="modalPDFMatricula" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <iframe src="PLAN/rvm-n-049-2022-minedu.pdf" height="600"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Modal PDF para Proceso de Matrícula -->
+<div class="modal fade" id="modalPDFProceso" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <iframe src="PLAN/Proceso-de-Matricula-2024-II.pdf" height="600"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Modal PDF para Recuerda -->
+<div class="modal fade" id="modalPDF2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <iframe src="PLAN/rvm-n-049-2022-minedu.pdf" height="600"></iframe>
+    </div>
+  </div>
+</div>
+<!-- Sección de contacto -->
+<div class="contact-info">
+  <i class="fas fa-phone-alt"></i>
+  <p>(044) 233351</p>
+  <i class="fas fa-envelope"></i>
+  <p>secretariaacademica@iestptrujillo.net</p>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
