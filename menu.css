@@ -59,3 +59,21 @@
     .navbar-toggler-icon {
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(153,0,31,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
+
+    /* Evitar desbordamiento de menús desplegables */
+    .dropdown-menu {
+      min-width: 250px;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu-end {
+      right: 0 !important;
+      left: auto !important;
+      transform: none !important;
+    }
+
+    /* Asegurar que los últimos dropdowns no se desborden */
+    .navbar-nav .nav-item:nth-last-child(-n+2) .dropdown-menu {
+      right: 0;
+      left: auto;
+    }
