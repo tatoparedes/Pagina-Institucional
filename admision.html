@@ -1,424 +1,236 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Instituto Tecnológico Trujillo</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-MD2d3oGzH8yPt9bEOeRl6N6a1C/3RAcY1B9zVeyELn8MvGmjmr9Q9r+n6gdcvxPVKFS4OAr0h01AIjHx+NjPug=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="script.js" defer></script>
-</head>
-<style>
-    /* Estilos principales para el body y contenido */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admisión - Instituto Tecnológico Trujillo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background: #ffffff;
-        min-height: 100vh;
-        color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f5;
+      color: #333;
     }
-
-    .main-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-        position: relative;
+    h2, h3 {
+      color: #99001f;
+      text-align: center;
+      margin: 20px 0 10px;
     }
-
-    /* Sección Hero */
-    .hero {
-        background: linear-gradient(135deg, #191970 0%, #99001f 100%);
-        border-radius: 25px;
-        padding: 60px 40px;
-        margin-bottom: 40px;
-        text-align: center;
-        box-shadow: 0 25px 50px rgba(25, 25, 112, 0.2);
-        position: relative;
-        overflow: hidden;
+    .section {
+      background: #fff;
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-
-    .hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-        opacity: 0.3;
+    .section-text p {
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 10px;
     }
-
-    .hero-content {
-        position: relative;
-        z-index: 2;
+    .steps .step {
+      background: #fff5f7;
+      border-left: 5px solid #99001f;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
     }
-
-    .hero-content h2 {
-        font-size: 4rem;
-        font-weight: 700;
-        color: #ffffff;
-        margin-bottom: 15px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        letter-spacing: -1px;
+    .step i {
+      color: #99001f;
+      margin-right: 8px;
     }
-
-    .hero-content p {
-        font-size: 2rem;
-        color: #ffffff;
-        font-weight: 300;
-        margin: 0;
-        opacity: 0.95;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin: 20px 0;
     }
-
-    /* Container principal */
-    .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto 40px auto;
-        padding: 0 20px;
+    .contact-item {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
     }
-
-    /* Sección de presentación */
-    .presentation {
-        background: #ffffff;
-        border-radius: 20px;
-        padding: 50px;
-        box-shadow: 0 15px 35px rgba(25, 25, 112, 0.08);
-        border: 2px solid #f0f0f0;
-        position: relative;
-        transition: all 0.3s ease;
-        margin-bottom: 30px;
+    .contact-item i {
+      color: #99001f;
+      margin-right: 8px;
+      font-size: 20px;
     }
-
-    .presentation:hover {
-        box-shadow: 0 20px 45px rgba(25, 25, 112, 0.12);
-        transform: translateY(-2px);
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
     }
-
-    .presentation::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 5px;
-        background: linear-gradient(90deg, #191970 0%, #99001f 100%);
-        border-radius: 20px 20px 0 0;
+    .gallery img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s;
     }
-
-    .presentation h3 {
-        font-size: 2.5rem;
-        color: #191970;
-        text-align: center;
-        margin-bottom: 40px;
-        font-weight: 600;
-        position: relative;
-        padding-bottom: 25px;
+    .gallery img:hover {
+      transform: scale(1.05);
     }
-
-    .presentation h3::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 120px;
-        height: 4px;
-        background: linear-gradient(90deg, #99001f, #191970);
-        border-radius: 2px;
+    /* Modal */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
     }
-
-    /* Contenido con layout flex */
-    .content {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 40px;
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
     }
-
-    .text {
-        flex: 1;
-        min-width: 0;
+    .lightbox .controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      transform: translateY(-50%);
     }
-
-    .text p {
-        font-size: 1.15rem;
-        line-height: 1.8;
-        color: #444;
-        margin-bottom: 20px;
-        text-align: justify;
-        position: relative;
-        padding: 15px 20px;
-        border-left: 4px solid transparent;
-        transition: all 0.3s ease;
-        border-radius: 0 10px 10px 0;
+    .lightbox .controls i {
+      color: #fff;
+      font-size: 30px;
+      cursor: pointer;
+      transition: color 0.3s;
     }
-
-    .text p:hover {
-        border-left-color: #99001f;
-        background: linear-gradient(90deg, rgba(153, 0, 31, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
-        transform: translateX(5px);
-        box-shadow: 0 5px 15px rgba(153, 0, 31, 0.1);
+    .lightbox .controls i:hover {
+      color: #99001f;
     }
-
-    .text p:first-of-type {
-        font-size: 1.25rem;
-        font-weight: 500;
-        color: #191970;
-        border-left: 5px solid #99001f;
-        background: linear-gradient(90deg, rgba(25, 25, 112, 0.08) 0%, rgba(255, 255, 255, 1) 100%);
-        padding: 25px;
-        border-radius: 0 15px 15px 0;
-        margin-bottom: 30px;
-        position: relative;
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 30px;
+      cursor: pointer;
     }
-
-    .text p:first-of-type::before {
-        content: '📚';
-        font-size: 1.8rem;
-        margin-right: 15px;
-        vertical-align: middle;
-    }
-
-    /* Párrafos con checkmarks */
-    .text p:contains('☑') {
-        font-size: 1.1rem;
-        padding: 12px 20px;
-        margin-bottom: 15px;
-        border-left: 3px solid #28a745;
-        background: linear-gradient(90deg, rgba(40, 167, 69, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
-    }
-
-    .text p:contains('☑'):hover {
-        border-left-color: #28a745;
-        transform: translateX(3px);
-    }
-
-    /* Imagen a la derecha */
-    .right-img {
-        width: 350px;
-        height: 280px;
-        object-fit: cover;
-        border-radius: 20px;
-        box-shadow: 0 15px 35px rgba(25, 25, 112, 0.15);
-        border: 3px solid transparent;
-        background: linear-gradient(white, white) padding-box,
-            linear-gradient(135deg, #191970, #99001f) border-box;
-        transition: all 0.4s ease;
-        flex-shrink: 0;
-    }
-
-    .right-img:hover {
-        transform: scale(1.03) translateY(-5px);
-        box-shadow: 0 25px 50px rgba(25, 25, 112, 0.25);
-    }
-
-    /* Animaciones */
-    .hero,
-    .container {
-        animation: fadeInUp 0.8s ease-out;
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 1024px) {
-        .content {
-            gap: 30px;
-        }
-
-        .right-img {
-            width: 300px;
-            height: 240px;
-        }
-
-        .presentation {
-            padding: 40px 35px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .main-content {
-            padding: 15px;
-        }
-
-        .container {
-            padding: 0 15px;
-        }
-
-        .hero {
-            padding: 40px 25px;
-        }
-
-        .hero-content h2 {
-            font-size: 2.8rem;
-        }
-
-        .hero-content p {
-            font-size: 1.5rem;
-        }
-
-        .content {
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .right-img {
-            width: 100%;
-            max-width: 400px;
-            height: 250px;
-            margin: 0 auto;
-            display: block;
-        }
-
-        .presentation {
-            padding: 30px 25px;
-        }
-
-        .presentation h3 {
-            font-size: 2.2rem;
-        }
-
-        .text p {
-            font-size: 1.1rem;
-            padding: 12px 15px;
-        }
-
-        .text p:first-of-type {
-            font-size: 1.2rem;
-            padding: 20px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .hero-content h2 {
-            font-size: 2.2rem;
-        }
-
-        .hero-content p {
-            font-size: 1.3rem;
-        }
-
-        .presentation h3 {
-            font-size: 1.9rem;
-        }
-
-        .presentation {
-            padding: 25px 20px;
-        }
-
-        .text p {
-            font-size: 1rem;
-            padding: 10px 12px;
-        }
-
-        .text p:first-of-type {
-            font-size: 1.1rem;
-            padding: 18px;
-        }
-
-        .right-img {
-            height: 220px;
-        }
-
-        .container {
-            padding: 0 10px;
-        }
-    }
-</style>
-
+  </style>
+</head>
 <body>
 
-    <div id="header-container"></div>
+<div id="header-container"></div>
+<div id="menu-container"></div>
 
-    <!-- Aquí se cargará el menú (opcional) -->
-    <div id="menu-container"></div>
+<main class="main-content">
 
-    <main class="main-content">
-        <!-- Banner de bienvenida -->
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Admisión</h2>
-                <p>2025</p>
-            </div>
-        </section>
+  <section class="hero">
+    <div class="hero-content">
+      <h2><i class="fas fa-university"></i> Admisión 2025</h2>
+    </div>
+  </section>
 
-        <!-- Presentación institucional -->
-        <section class="container">
-            <div class="presentation">
-                <h3>Ordinaria</h3>
-                <div class="content">
-                    <div class="text">
-                        <p>La Admisión Ordinaria está dirigida a los egresados de educación secundaria que desean
-                            ingresar a nuestra institución para continuar su formación académica y profesional. A través
-                            de este proceso, los postulantes podrán acceder a una educación de calidad en diversas
-                            carreras técnicas y profesionales, con el respaldo de un plan educativo innovador y
-                            accesible.</p>
-                        <p>Requisitos:</p>
-                        <p>☑ Certificados originales de estudios secundarios</p>
-                        <p>☑ Copia de DNI</p>
-                        <p>☑ 1 foto tamaño carné a color.</p>
-                        <p>☑ Pago por derecho de inscripción</p>
-                    </div>
-                    <!-- Imagen a la derecha dentro del contenedor -->
-                    <img src="./img/ad" alt="Imagen de Admisión" class="right-img">
-                </div>
-            </div>
-        </section>
-        <section class="container">
-            <div class="presentation">
-                <h3>Por exoneración</h3>
-                <div class="content">
-                    <div class="text">
-                        <p>Requisitos:</p>
-                        <p>☑ Egresados de Educación Secundaria que han ocupado el 1º y 2º puesto durante los dos últimos
-                            años dentro del ámbito local y Regional.</p>
-                        <p>☑ Deportistas calificados, acreditados por el Instituto Peruano del Deporte.</p>
-                        <p>☑ Estudiantes talentosos.</p>
-                        <p>☑ Los discapacitados.</p>
-                        <p>☑ Los que están cumpliendo servicio militar obligatorio.</p>
-                        <p>☑ Las personas víctimas del terrorismo, con acreditación comprobada Ley 28592. Plan integral
-                            de reparaciones PIR.</p>
-                    </div>
-                    <!-- Imagen a la derecha dentro del contenedor -->
-                    <img src="./img/exoneracion.jpg" alt="Imagen de Admisión" class="right-img">
-                </div>
-            </div>
-        </section>
-        <section class="container">
-            <div class="presentation">
-                <h3>Por ingreso extraordinario</h3>
-                <div class="content">
-                    <div class="text">
-                        <p>El Ingreso Extraordinario es un proceso autorizado por el MINEDU, dirigido a estudiantes que
-                            han sido beneficiarios de becas, programas de movilidad académica o convenios especiales,
-                            permitiendo su ingreso directo a la institución.</p>
+  <div class="section section-text">
+    <h3><i class="fas fa-book"></i> Admisión a los programas de estudios</h3>
+    <p>Educatec o el gobierno regional respectivo, según corresponda, aprueba el número de vacantes de los IES y EES públicos, en función a su capacidad institucional, docente y presupuestal, así como en correspondencia con las necesidades de la demanda y la política y prioridades regionales y nacionales.</p>
+  </div>
 
-                    </div>
-                    <img src="./img/beca.webp" alt="Imagen de Admisión" class="right-img">
-                </div>
-            </div>
-        </section>
-    </main>
-    <div id="footer-container" ></div>
-</body>
+  <div class="section section-text">
+    <h3><i class="fas fa-calendar-alt"></i> Convocatoria</h3>
+    <p>Las convocatorias para la admisión a los programas de estudios son responsabilidad de cada IES y EEST. La metodología de admisión la define cada institución, garantizando el cumplimiento de los principios de mérito, transparencia y equidad.</p>
+    <p>Se realiza una vez por año, durante los meses de enero a marzo, siendo la última semana de marzo que se lleva a cabo el <strong>EXAMEN DE ADMISIÓN</strong>.</p>
+  </div>
+
+  <div class="section section-text">
+    <h3><i class="fas fa-pen"></i> Registro</h3>
+    <p>A partir del presente año el registro al proceso de admisión se realiza utilizando el Sistema de Gestión Académica REGISTRA – Módulo admisión.</p>
+  </div>
+
+  <div class="section">
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-phone"></i> 944593559
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i> admision@iestptrujillo.net
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3><i class="fas fa-list-ol"></i> Pasos para registrarte</h3>
+    <div class="steps">
+      <div class="step"><i class="fas fa-check-circle"></i> <strong>01.</strong> Infórmate del cronograma de inscripción al Examen de Admisión.</div>
+      <div class="step"><i class="fas fa-check-circle"></i> <strong>02.</strong> Realiza el pago por derecho de inscripción y canjea tu voucher por un Recibo de Ingreso.</div>
+      <div class="step"><i class="fas fa-check-circle"></i> <strong>03.</strong> Apersónate a la Secretaría Académica para registrarte en el Sistema REGISTRA.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3><i class="fas fa-image"></i> Galería</h3>
+    <div class="gallery">
+      <img src="img/admi1.jpeg" alt="Imagen 1">
+      <img src="img/admi2.jpeg" alt="Imagen 2">
+      <img src="img/admi3.jpeg" alt="Imagen 3">
+      <img src="img/admi4.jpeg" alt="Imagen 4">
+      <img src="img/admi5.jpeg" alt="Imagen 5">
+    </div>
+  </div>
+
+  <!-- Modal Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="">
+    <div class="controls">
+      <i class="fas fa-chevron-left" onclick="prevImage()"></i>
+      <i class="fas fa-chevron-right" onclick="nextImage()"></i>
+    </div>
+  </div>
+
+</main>
+
+<div id="footer-container"></div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+<script>
+  const images = document.querySelectorAll('.gallery img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  let currentIndex = 0;
+
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      currentIndex = index;
+      showLightbox();
+    });
+  });
+
+  function showLightbox() {
+    lightbox.style.display = 'flex';
+    lightboxImg.src = images[currentIndex].src;
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showLightbox();
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showLightbox();
+  }
+</script>
+
+</body>
 </html>
