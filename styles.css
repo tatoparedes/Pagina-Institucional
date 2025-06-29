@@ -254,7 +254,10 @@ body {
 
 /* Contenido principal */
 .main-content {
-  padding: 1px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
 }
 
 /* Botón hamburguesa */
@@ -376,26 +379,48 @@ body {
 
 /* Hero - Banner principal */
 .hero {
-  background: linear-gradient(rgba(14, 13, 13, 0.6), rgba(15, 15, 15, 0.6)), url('img/banner2.jpg') center/cover no-repeat;
-  color: white;
+  background: linear-gradient(135deg, rgba(25, 25, 112, 0.8) 0%, rgba(153, 0, 31, 0.8) 100%), url('img/banner3.png') center/cover no-repeat;
+  border-radius: 25px;
+  padding: 60px 40px;
+  margin-bottom: 40px;
   text-align: center;
-  padding: 120px 10px;
-  margin-top: 5px;
+  box-shadow: 0 25px 50px rgba(116, 0, 0, 0.212);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
 }
 
 .hero-content {
-  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
-
 .hero-content h2 {
-  font-size: 50px;
-  color: white;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.027);
+  letter-spacing: -1px;
 }
 
 .hero-content p {
-  font-size: 30px;
-  color: white;
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 300;
+  margin: 0;
+  opacity: 0.95;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.068);
 }
 
 
@@ -532,6 +557,25 @@ body {
   }
 }
 /*---------FIN SECCION MAIN*--------------*/
+
+/* Animaciones de carga */
+.hero,
+.presentation,
+.programs,
+.team-section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 
@@ -980,6 +1024,26 @@ body {
     margin: 0 auto;
 }
 
+.director-general {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 350px;
+    margin-bottom: 20px;
+}
+
+.team-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .team-row {
+        grid-template-columns: 1fr;
+    }
+}
+
 .team-card {
     background: white;
     border-radius: 10px;
@@ -996,11 +1060,12 @@ body {
 }
 
 .team-photo {
-    width: 100%;
-    height: 450px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: block;
 }
 
 .team-name {
