@@ -352,6 +352,30 @@
         .profesor-card:nth-child(odd) {
             animation-delay: 0.2s;
         }
+        .btn-rojo {
+  background-color: #c7002a;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.btn-rojo:hover {
+  background-color: #a60022;
+}
+.unidad-didactica-section {
+    margin: 40px auto;
+    background: #fdece9;
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 2px solid #99001f;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 1100px;
+}
+
     </style>
 
 </head>
@@ -368,12 +392,26 @@
         <section class="hero">
             <div class="hero-content">
                 <div class="text-bg">
-                    <h2><i class="fas fa-chalkboard-teacher"></i> Profesor
- Plana Docente 2025</h2>
+                    <h2><i class="fas fa-chalkboard-teacher"></i>Plana Docente 2025</h2>
                 </div>
             </div>
         </section>
-
+<br>
+<section class="unidad-didactica-section" style="background-color: #fdece9; padding: 40px 0;">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 300px; max-width: 900px; padding-right: 20px;">
+      <h2 style="color: #000c2c; font-size: 24px; font-weight: bold;">Unidades Didácticas por Docente</h2>
+      <p style="color: #000c2c; font-size: 16px; text-align: justify; margin-top: 10px;">
+        "Nuestras unidades didácticas, diseñadas por docentes expertos, garantizan una enseñanza estructurada y efectiva, adaptada a las necesidades y objetivos educativos de nuestros estudiantes."
+      </p>
+    </div>
+    <div>
+      <a href="./documentos/UNIDADES DIDACTICAS.pdf" target="_blank" class="btn-rojo">
+        VER LISTA →
+      </a>
+    </div>
+  </div>
+</section>
         <!-- Contenedor de carreras -->
         <div class="carreras-container">
 
@@ -1021,6 +1059,17 @@
                             <img src="fotos/Zacarias-conta.png" alt="Carlos Augusto Zacarias" class="docente-foto">
                             <div class="docente-info">
                                 <h3><i class="fas fa-user"></i> Carlos Augusto Zacarias</h3>
+                                <p><i class="fas fa-envelope"></i> Especialista en Empleabilidad y Orientación Laboral
+                                </p>
+                                <a href="cv/HV_CARLOS_ZACARIAS.pdf" target="_blank" class="link-descarga">
+                                    <i class="fas fa-download"></i> Hoja de vida
+                                </a>
+                            </div>
+                        </div>
+                        <div class="docente-card">
+                            <img src="fotos/fotomujer1.png" alt="Karmen Mariela" class="docente-foto">
+                            <div class="docente-info">
+                                <h3><i class="fas fa-user"></i>Dra. Karmen Mariela Torres Carmen</h3>
                                 <p><i class="fas fa-envelope"></i> Especialista en Empleabilidad y Orientación Laboral
                                 </p>
                                 <a href="cv/HV_CARLOS_ZACARIAS.pdf" target="_blank" class="link-descarga">
