@@ -51,9 +51,22 @@ document.addEventListener('DOMContentLoaded', function () {
             new Chart(ctx, {
               type: 'bar',
               data: {
-                labels: ['2023-I', '2023-II', '2024-I', '2024-II', '2025-I'],
+                labels: ['Asistencia Administrativa', 'Contabilidad (Diurno)', 'Contabilidad (Nocturno)', 
+                         'Diseño y Programación Web (Diurno)', 'Diseño y Programación Web (Nocturno)', 
+                         'Enfermería Técnica (Diurno)', 'Guía Oficial de Turismo (Nocturno)', 
+                         'Laboratorio Clínico y Anatomía Patológica (Diurno)', 
+                         'Técnica en Laboratorio Clínico (Diurno)', 'Relaciones Públicas y Marketing (Nocturno)', 
+                         'Marketing (Nocturno)'],
                 datasets: [
-                  { label: 'Matriculados', data: [623, 596, 624, 580, 582], backgroundColor: 'rgba(54, 162, 235, 0.6)' }
+                  {
+                    label: '2023', data: [48, 104, 89, 56, 21, 111, 22, 66, 31, 37, 21], backgroundColor: 'rgba(54, 162, 235, 0.6)'
+                  },
+                  {
+                    label: '2024', data: [61, 108, 88, 74, 20, 109, 30, 90, 0, 0, 44], backgroundColor: 'rgba(75, 192, 192, 0.6)'
+                  },
+                  {
+                    label: '2025', data: [56, 92, 73, 62, 10, 107, 37, 86, 0, 0, 24], backgroundColor: 'rgba(255, 99, 132, 0.6)'
+                  }
                 ]
               },
               options: {
@@ -71,7 +84,9 @@ document.addEventListener('DOMContentLoaded', function () {
             new Chart(ctx, {
               type: 'bar',
               data: {
-                labels: ['Asistencia Administrativa', 'Contabilidad', 'Computación e Informática', 'Diseño y Programación Web', 'Enfermería Técnica', 'Guía Oficial de Turismo', 'Laboratorio Clínico y Anatomía Patológica', 'Técnica en Laboratorio Clínico', 'Secretariado Ejecutivo', 'Relaciones Públicas y Marketing'],
+                labels: ['Asistencia Administrativa', 'Contabilidad', 'Computación e Informática', 'Diseño y Programación Web', 
+                         'Enfermería Técnica', 'Guía Oficial de Turismo', 'Laboratorio Clínico y Anatomía Patológica', 
+                         'Técnica en Laboratorio Clínico', 'Secretariado Ejecutivo', 'Relaciones Públicas y Marketing'],
                 datasets: [
                   { label: '2022', data: [0, 39, 20, 0, 56, 4, 0, 27, 19, 4], backgroundColor: 'rgba(54, 162, 235, 0.6)' },
                   { label: '2023', data: [0, 36, 24, 0, 51, 6, 0, 14, 13, 9], backgroundColor: 'rgba(75, 192, 192, 0.6)' },
