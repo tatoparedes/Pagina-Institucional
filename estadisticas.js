@@ -51,21 +51,30 @@ document.addEventListener('DOMContentLoaded', function () {
             new Chart(ctx, {
               type: 'bar',
               data: {
-                labels: ['Asistencia Administrativa', 'Contabilidad (Diurno)', 'Contabilidad (Nocturno)', 
-                         'Diseño y Programación Web (Diurno)', 'Diseño y Programación Web (Nocturno)', 
-                         'Enfermería Técnica (Diurno)', 'Guía Oficial de Turismo (Nocturno)', 
-                         'Laboratorio Clínico y Anatomía Patológica (Diurno)', 
-                         'Técnica en Laboratorio Clínico (Diurno)', 'Relaciones Públicas y Marketing (Nocturno)', 
-                         'Marketing (Nocturno)'],
+                labels: [
+                  'Asistencia Administrativa / Secretariado Ejecutivo',
+                  'Contabilidad',
+                  'Computación e Informática / Diseño y Programación Web',
+                  'Enfermería Técnica',
+                  'Guía Oficial de Turismo',
+                  'Laboratorio Clínico y Anatomía Patológica / Técnica en Laboratorio Clínico',
+                  'Relaciones Públicas y Marketing / Marketing'
+                ],
                 datasets: [
                   {
-                    label: '2023', data: [48, 104, 89, 56, 21, 111, 22, 66, 31, 37, 21], backgroundColor: 'rgba(54, 162, 235, 0.6)'
+                    label: '2023',
+                    data: [137, 193, 116, 111, 22, 97, 58], // Datos 2023
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)'
                   },
                   {
-                    label: '2024', data: [61, 108, 88, 74, 20, 109, 30, 90, 0, 0, 44], backgroundColor: 'rgba(75, 192, 192, 0.6)'
+                    label: '2024',
+                    data: [91, 165, 111, 109, 30, 90, 77], // Datos 2024
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)'
                   },
                   {
-                    label: '2025', data: [56, 92, 73, 62, 10, 107, 37, 86, 0, 0, 24], backgroundColor: 'rgba(255, 99, 132, 0.6)'
+                    label: '2025',
+                    data: [56, 196, 72, 107, 37, 86, 24], // Datos 2025
+                    backgroundColor: 'rgba(255, 99, 132, 0.6)'
                   }
                 ]
               },
