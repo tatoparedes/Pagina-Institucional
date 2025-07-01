@@ -77,3 +77,15 @@
       right: 0;
       left: auto;
     }
+
+    /*ajustar logo en modo celular*/
+    @media (max-width: 768px) {
+  .footer-section.social {
+    margin: 10px 0 5px 0;
+  }
+
+  .navbar-brand img {
+      height: 100px;
+    }
+
+}
