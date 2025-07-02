@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
               data: {
                 labels: ['Asistencia Administrativa', 'Contabilidad', 'Diseño y Programación Web', 'Enfermería Técnica', 'Guía Oficial de Turismo', 'Laboratorio Clínico y Anatomía Patológica', 'Marketing'],
                 datasets: [
-                  { label: '2023', data: [27, 40, 35, 40, 8, 40, 21], backgroundColor: 'rgba(54, 162, 235, 0.6)' },
-                  { label: '2024', data: [23, 38, 24, 40, 16, 33, 16], backgroundColor: 'rgba(75, 192, 192, 0.6)' },
-                  { label: '2025', data: [24, 25, 24, 30, 17, 24, 24], backgroundColor: 'rgba(255, 99, 132, 0.6)' }
+                  { label: '2023', data: [27, 77, 45, 40, 8, 40, 21], backgroundColor: 'rgba(54, 162, 235, 0.6)' },
+                  { label: '2024', data: [23, 73, 34, 40, 16, 33, 16], backgroundColor: 'rgba(75, 192, 192, 0.6)' },
+                  { label: '2025', data: [24, 49, 40, 30, 17, 24, 24], backgroundColor: 'rgba(255, 99, 132, 0.6)' }
                 ]
               },
               options: {
@@ -51,21 +51,30 @@ document.addEventListener('DOMContentLoaded', function () {
             new Chart(ctx, {
               type: 'bar',
               data: {
-                labels: ['Asistencia Administrativa', 'Contabilidad (Diurno)', 'Contabilidad (Nocturno)', 
-                         'Diseño y Programación Web (Diurno)', 'Diseño y Programación Web (Nocturno)', 
-                         'Enfermería Técnica (Diurno)', 'Guía Oficial de Turismo (Nocturno)', 
-                         'Laboratorio Clínico y Anatomía Patológica (Diurno)', 
-                         'Técnica en Laboratorio Clínico (Diurno)', 'Relaciones Públicas y Marketing (Nocturno)', 
-                         'Marketing (Nocturno)'],
+                labels: [
+                  'Secretariado Ejecutivo / Asistencia Administrativa',
+                  'Contabilidad',
+                  'Computación e Informática / Diseño y Programación Web',
+                  'Enfermería Técnica',
+                  'Guía Oficial de Turismo',
+                  'Técnica en Laboratorio Clínico / Laboratorio Clínico y Anatomía Patológica',
+                  'Relaciones Públicas y Marketing / Marketing'
+                ],
                 datasets: [
                   {
-                    label: '2023', data: [48, 104, 89, 56, 21, 111, 22, 66, 31, 37, 21], backgroundColor: 'rgba(54, 162, 235, 0.6)'
+                    label: '2023',
+                    data: [136, 377, 177, 216, 42, 178, 111], // Datos 2023
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)'
                   },
                   {
-                    label: '2024', data: [61, 108, 88, 74, 20, 109, 30, 90, 0, 0, 44], backgroundColor: 'rgba(75, 192, 192, 0.6)'
+                    label: '2024',
+                    data: [119, 376, 174, 214, 59, 177, 85], // Datos 2024
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)'
                   },
                   {
-                    label: '2025', data: [56, 92, 73, 62, 10, 107, 37, 86, 0, 0, 24], backgroundColor: 'rgba(255, 99, 132, 0.6)'
+                    label: '2025',
+                    data: [56, 165, 86, 107, 37, 86, 45], // Datos 2025
+                    backgroundColor: 'rgba(255, 99, 132, 0.6)'
                   }
                 ]
               },
@@ -84,13 +93,13 @@ document.addEventListener('DOMContentLoaded', function () {
             new Chart(ctx, {
               type: 'bar',
               data: {
-                labels: ['Asistencia Administrativa', 'Contabilidad', 'Computación e Informática', 'Diseño y Programación Web', 
-                         'Enfermería Técnica', 'Guía Oficial de Turismo', 'Laboratorio Clínico y Anatomía Patológica', 
-                         'Técnica en Laboratorio Clínico', 'Secretariado Ejecutivo', 'Relaciones Públicas y Marketing'],
+                labels: ['Secretariado Ejecutivo / Asistencia Administrativa', 'Contabilidad', 'Computación e Informática / Diseño y Programación Web', 
+                         'Enfermería Técnica', 'Guía Oficial de Turismo', 'Técnica en Laboratorio Clínico / Laboratorio Clínico y Anatomía Patológica', 
+                         'Relaciones Públicas y Marketing'],
                 datasets: [
-                  { label: '2022', data: [0, 39, 20, 0, 56, 4, 0, 27, 19, 4], backgroundColor: 'rgba(54, 162, 235, 0.6)' },
-                  { label: '2023', data: [0, 36, 24, 0, 51, 6, 0, 14, 13, 9], backgroundColor: 'rgba(75, 192, 192, 0.6)' },
-                  { label: '2024', data: [2, 32, 21, 6, 49, 6, 2, 27, 17, 13], backgroundColor: 'rgba(255, 99, 132, 0.6)' }
+                  { label: '2022', data: [19, 39, 20, 56, 4, 27, 4], backgroundColor: 'rgba(54, 162, 235, 0.6)' },
+                  { label: '2023', data: [13, 36, 24, 51, 6, 14, 9], backgroundColor: 'rgba(75, 192, 192, 0.6)' },
+                  { label: '2024', data: [19, 32, 27, 49, 6, 29, 13], backgroundColor: 'rgba(255, 99, 132, 0.6)' }
                 ]
               },
               options: {

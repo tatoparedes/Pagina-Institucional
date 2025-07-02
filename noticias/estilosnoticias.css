@@ -52,10 +52,10 @@
     opacity: 0.8;
   }
   
-  /* Imagen principal */
+  /* Imagen principal - Más grande */
   .imagen-principal {
     width: 100%;
-    height: 300px;
+    height: 550px;
     object-fit: cover;
     border-radius: 16px;
     margin-bottom: 2.5rem;
@@ -255,7 +255,7 @@
     }
     
     .imagen-principal {
-      height: 250px;
+      height: 420px;
     }
     
     .galeria-imagenes {
@@ -270,6 +270,18 @@
   @media (max-width: 480px) {
     .titulo-principal {
       font-size: 1.8rem;
+    }
+    
+    .imagen-principal {
+      height: 350px;
+    }
+    
+    .galeria-imagenes {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .imagen-galeria {
+      height: 150px;
     }
     
     .destacado {
