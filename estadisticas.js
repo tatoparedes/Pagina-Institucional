@@ -63,17 +63,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 datasets: [
                   {
                     label: '2023',
-                    data: [137, 193, 116, 111, 22, 97, 58], // Datos 2023
+                    data: [136, 377, 177, 216, 42, 178, 111], // Datos 2023
                     backgroundColor: 'rgba(54, 162, 235, 0.6)'
                   },
                   {
                     label: '2024',
-                    data: [91, 165, 111, 109, 30, 90, 77], // Datos 2024
+                    data: [119, 376, 174, 214, 59, 177, 85], // Datos 2024
                     backgroundColor: 'rgba(75, 192, 192, 0.6)'
                   },
                   {
                     label: '2025',
-                    data: [56, 196, 72, 107, 37, 86, 24], // Datos 2025
+                    data: [56, 165, 86, 107, 37, 86, 45], // Datos 2025
                     backgroundColor: 'rgba(255, 99, 132, 0.6)'
                   }
                 ]
