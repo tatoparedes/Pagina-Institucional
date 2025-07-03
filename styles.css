@@ -1374,3 +1374,11 @@ body {
   border-bottom: 2px solid #ffd700; /* Línea de subrayado en color amarillo */
   padding-bottom: 20px; /* Espaciado para el subrayado */
 }
+.licenciamiento-img {
+  position: relative;
+  top: -260px; /* Ajusta este valor para subir la imagen */
+  left: 50%; /* Centra horizontalmente */
+  transform: translateX(-50%); /* Ajusta para centrarla exactamente */
+  display: block; /* Elimina el espacio debajo de la imagen */
+  width: 1400px;
+}
