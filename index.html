@@ -53,7 +53,7 @@
       </div>
       <div class="carousel-slide" style="background-image:url('img/banner-guiaturismo.png')">
         <div class="hero-content">
-            <div class="text-bg">
+          <div class="text-bg">
             <h3><i class="fas fa-globe"></i> Guía Oficial de Turismo</h3>
           </div>
         </div>
@@ -161,27 +161,35 @@
 
         <div class="contact-form">
           <h3>Envíanos un mensaje</h3>
-          <form class="form-contact">
-            <div class="form-group"><input type="text" class="form-input" placeholder="Nombre completo" required></div>
-            <div class="form-group"><input type="email" class="form-input" placeholder="Correo electrónico" required>
-            </div>
-            <div class="form-group"><input type="tel" class="form-input" placeholder="Teléfono"></div>
+          <form class="form-contact" method="post" action="./index.php">
             <div class="form-group">
-              <select class="form-input" required>
+              <input type="text" class="form-input" name="nombre" placeholder="Nombre completo" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-input" name="correo" placeholder="Correo electrónico" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" class="form-input" name="telefono" placeholder="Teléfono">
+            </div>
+            <div class="form-group">
+              <select class="form-input" name="programa" required>
                 <option value="">Programa de interés</option>
                 <option value="asistencia">Asistencia Administrativa</option>
                 <option value="contabilidad">Contabilidad</option>
                 <option value="diseno">Diseño y Programación Web</option>
                 <option value="enfermeria">Enfermería Técnica</option>
                 <option value="guia">Guía Oficial de Turismo</option>
-                <option value="laboratorio">Laboratorio Clínico</option>
+                <option value="laboratorio">Laboratorio Clínico y Anatomía Patológica</option>
                 <option value="marketing">Marketing</option>
               </select>
             </div>
-            <div class="form-group"><textarea class="form-input form-textarea" rows="4" placeholder="Mensaje"
-                required></textarea></div>
+            <div class="form-group">
+              <textarea class="form-input form-textarea" name="mensaje" rows="4" placeholder="Mensaje"
+                required></textarea>
+            </div>
             <button type="submit" class="btn-submit">Enviar mensaje</button>
           </form>
+
         </div>
       </div>
     </section>

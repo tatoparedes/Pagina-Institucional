@@ -10,8 +10,179 @@
   <script src="script.js" defer></script>
 </head>
 <style>
-  p{
-    text-align: justify
+  .body{ font-family: 'Arial', sans-serif;
+  }
+
+  /* Estilo de los títulos de las carreras */
+  .presentation ul li {
+    font-size: 1.2rem;
+    color: #99001f;
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /* Efecto al pasar el mouse */
+  .presentation ul li:hover {
+    color: #ffffff;
+    background-color: #191970;
+    transform: translateX(10px);
+  }
+
+  /* Estilo de la lista */
+  .presentation ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+  }
+
+  /* Estilo general para el texto */
+  .presentation p {
+    font-size: 1rem;
+    color: #2c3e50;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  /* Agregamos un borde de color para la primera lista */
+  .presentation ul li:first-child {
+    border-left: 5px solid #000399;
+  }
+
+  /* Estilo de presentación de la institución */
+  .presentation {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 50%, #f8f9ff 100%);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(25, 25, 112, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .presentation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #191970, #99001f, #191970);
+    border-radius: 20px 20px 0 0;
+  }
+
+  .presentation h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #191970;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(25, 25, 112, 0.15);
+    position: relative;
+    padding-bottom: 20px;
+  }
+
+  .presentation h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #99001f, #ff0040);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(153, 0, 31, 0.3);
+  }
+
+  .presentation p:first-of-type {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #191970;
+    background: linear-gradient(135deg, rgba(25, 25, 112, 0.05), rgba(153, 0, 31, 0.05));
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid #99001f;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(25, 25, 112, 0.08);
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .presentation {
+      padding: 60px 15px;
+      margin: 20px 10px;
+    }
+
+    .presentation h3 {
+      font-size: 2rem;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+    }
+
+    .presentation p {
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 0 5px;
+    }
+
+    .presentation p:first-of-type {
+      font-size: 1.05rem;
+      padding: 20px;
+    }
+
+    .presentation ul {
+      padding: 25px 30px;
+    }
+
+    .presentation ul li {
+      font-size: 1rem;
+      padding-left: 20px;
+    }
+
+    .presentation p:last-of-type {
+      font-size: 1rem;
+      padding: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .presentation {
+      padding: 40px 10px;
+      margin: 15px 5px;
+    }
+
+    .presentation h3 {
+      font-size: 1.7rem;
+      letter-spacing: 0.5px;
+    }
+
+    .presentation p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .presentation ul {
+      padding: 20px 25px;
+    }
+
+    .presentation ul li {
+      font-size: 0.95rem;
+      padding-left: 18px;
+    }
+
+    .presentation ul li::before {
+      font-size: 1rem;
+    }
   }
 </style>
 
@@ -33,9 +204,9 @@
 
     <!-- Presentación institucional -->
     <section class="presentation">
-      <h3>Instituto de Educación Superior Tecnológico Público “TRUJILLO”</h3>
+      <h3>Instituto de Educación Superior Tecnológico Público "TRUJILLO"</h3>
 
-      <p>El Instituto de Educación Superior Tecnológico Público “TRUJILLO” fue creado el 27 de abril de 1979, mediante
+      <p>El Instituto de Educación Superior Tecnológico Público "TRUJILLO" fue creado el 27 de abril de 1979, mediante
         R.M. Nº 0469-79-ED, que dispone la creación de la Escuela Superior de Educación Profesional (ESEP) de TRUJILLO,
         iniciando sus labores académicas el 04 de noviembre del mismo año con las áreas profesionales de: Educación,
         Turismo y Administración.</p>
@@ -45,24 +216,24 @@
         Turística.</p>
 
       <p>En 1984, el Ministerio de Educación por R.M. Nº 110-84-ED, adecúa a la Escuela Superior de Educación
-        Profesional de TRUJILLO a INSTITUTO SUPERIOR TECNOLÓGICO ESTATAL “TRUJILLO”, ofertando cinco (5) Carreras
+        Profesional de TRUJILLO a INSTITUTO SUPERIOR TECNOLÓGICO ESTATAL "TRUJILLO", ofertando cinco (5) Carreras
         Profesionales: Técnica en Laboratorio Clínico, Guía Oficial de Turismo, Administración de Servicios de
         Hostelería, Contabilidad, y Secretariado Ejecutivo.</p>
 
-      <p>En el año 1994, el ISTE “TRUJILLO”, mediante R.M. Nº 0675-94-ED, está autorizado para ofertar seis (6) Carreras
+      <p>En el año 1994, el ISTE "TRUJILLO", mediante R.M. Nº 0675-94-ED, está autorizado para ofertar seis (6) Carreras
         Profesionales:</p>
 
-<ul>
-  <li>Computación e Informática </li>
-  <li>Contabilidad</li>
-  <li>Enfermería Técnica</li>
-  <li>Técnica en Laboratorio Clínico</li>
-  <li>Secretariado Ejecutivo</li>
-  <li>Guía Oficial de Turismo</li>
-</ul>
+      <ul>
+        <li>Computación e Informática</li>
+        <li>Contabilidad</li>
+        <li>Enfermería Técnica</li>
+        <li>Técnica en Laboratorio Clínico</li>
+        <li>Secretariado Ejecutivo</li>
+        <li>Guía Oficial de Turismo</li>
+      </ul>
 
-      <p>En el año 1998, el Instituto de Educación Superior Tecnológico Público “TRUJILLO” oferta la Carrera Profesional
-        Técnica de Relaciones Públicas, resultado de la extinción del ISTE “AMAUTA”.</p>
+      <p>En el año 1998, el Instituto de Educación Superior Tecnológico Público "TRUJILLO" oferta la Carrera Profesional
+        Técnica de Relaciones Públicas, resultado de la extinción del ISTE "AMAUTA".</p>
 
       <p>Desde el año 2005, nuestra institución se encuentra revalidada por el Ministerio de Educación mediante R.M. Nº
         074-2005-ED, y sus Carreras Profesionales aplican el Diseño Curricular por Competencias.</p>
@@ -79,8 +250,9 @@
         <li>Contabilidad</li>
         <li>Diseño y Programación Web</li>
         <li>Enfermería Técnica</li>
-        <li>Marketing</li>
+        <li>Guía Oficial de Turismo</li>
         <li>Laboratorio Clínico y Anatomía Patológica</li>
+        <li>Marketing</li>
       </ul>
 
       <p>En el año 2023, el programa de estudios de Guía Oficial de Turismo obtiene el informe favorable para su
