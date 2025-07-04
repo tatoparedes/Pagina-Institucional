@@ -1,221 +1,412 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Instituto Tecnológico Trujillo</title>
-    <link rel="stylesheet" href="styles.css" />
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instituto Tecnológico Trujillo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="script.js" defer></script>
 </head>
+<style>
+  .team-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.team-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #191970;
+  margin-bottom: 50px;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(25, 25, 112, 0.1);
+}
+
+.team-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(90deg, #99001f, #ff0040);
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(153, 0, 31, 0.3);
+}
+
+.director-general {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 20px;
+  padding: 50px 40px;
+  margin-bottom: 60px;
+  box-shadow: 0 15px 40px rgba(25, 25, 112, 0.15);
+  border: 2px solid #e8ecf0;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.director-general::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #191970, #99001f, #191970);
+}
+
+.team-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Centrar los dos últimos elementos */
+.team-row:nth-last-child(1) {
+  justify-content: center;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.team-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+  border-radius: 15px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e8ecf0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  max-width: 350px;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #99001f, #ff0040);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover::before {
+  transform: translateX(0);
+}
+
+.team-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(25, 25, 112, 0.2);
+}
+
+.team-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 25px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 8px 20px rgba(153, 0, 31, 0.25);
+  transition: all 0.3s ease;
+}
+
+.team-card:hover .team-photo {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(153, 0, 31, 0.35);
+}
+
+.team-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #191970;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.team-position {
+  font-size: 1rem;
+  color: #99001f;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  position: relative;
+  font-family: 'Arial Black', Arial, sans-serif;
+  text-shadow: 1px 1px 2px rgba(153, 0, 31, 0.15);
+}
+
+.team-position::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #99001f, #ff0040);
+  border-radius: 1px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-card:hover .team-position::after {
+  opacity: 1;
+}
+
+/* Estilos especiales para la directora general */
+.director-general .team-photo {
+  width: 160px;
+  height: 160px;
+  border: 6px solid #ffffff;
+  box-shadow: 0 10px 30px rgba(153, 0, 31, 0.3);
+}
+
+.director-general .team-name {
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(25, 25, 112, 0.1);
+}
+
+.director-general .team-position {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  color: #99001f;
+  text-shadow: 1px 1px 3px rgba(153, 0, 31, 0.2);
+  font-family: 'Arial Black', Arial, sans-serif;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .team-section {
+    padding: 40px 15px;
+  }
+
+  .team-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+  }
+
+  .team-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .team-row:nth-last-child(1) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-card {
+    max-width: 100%;
+  }
+
+  .director-general {
+    padding: 40px 30px;
+    margin-bottom: 40px;
+  }
+
+  .director-general .team-photo {
+    width: 140px;
+    height: 140px;
+  }
+
+  .director-general .team-name {
+    font-size: 1.6rem;
+  }
+
+  .director-general .team-position {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-title {
+    font-size: 1.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .team-name {
+    font-size: 1.2rem;
+  }
+
+  .team-position {
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+  }
+
+  .director-general .team-name {
+    font-size: 1.4rem;
+  }
+
+  .director-general .team-position {
+    font-size: 1rem;
+  }
+}
+</style>
+
 <body>
 
-    <div id="header-container"></div>
-    <div id="menu-container"></div>
+  <div id="header-container"></div>
+  <div id="menu-container"></div>
 
-<main class="main-content">
+  <main class="main-content">
     <!-- Banner de bienvenida -->
     <section class="hero">
-        <div class="hero-content">
-          <h2><i class="fa-solid fa-people-roof"></i> Plana Jerárquica 2025</h2>
-        </div>
+      <div class="hero-content">
+        <h2><i class="fa-solid fa-people-roof"></i> Plana Jerárquica 2025</h2>
+      </div>
     </section>
 
-    <div class="team-section">
-      <h2 class="team-title">Nuestro Equipo</h2>
-      
-      <!-- Dirección General -->
-      <div class="team-card director-general">
-        <img src="img/maria-hidalgo.jpeg" alt="Dra. Maria Elena Hidalgo Coba" class="team-photo">
-        <h3 class="team-name">Dra. Maria Elena Hidalgo Coba</h3>
-        <p class="team-position">Dirección General</p>
-        <div class="team-social">
-          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-      
-      <!-- Primera fila - Jefaturas principales -->
-      <div class="team-row">
+    <section>
+      <div class="team-section">
+        <h2 class="team-title">Nuestro Equipo</h2>
 
-        <div class="team-card">
-          <img src="img/sarita-paredes.jpeg" alt="Ing. Sarita Carolina Paredes Romero" class="team-photo">
-          <h3 class="team-name">Ing. Sarita Carolina Paredes Romero</h3>
-          <p class="team-position">Jefatura de Unidad Académica</p>
-          <div class="team-social">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <!-- DIRECCIÓN GENERAL -->
+        <div class="team-card director-general">
+          <img src="img/maria-hidalgo.jpeg" alt="Dra. Maria Elena Hidalgo Coba" class="team-photo">
+          <h3 class="team-name">Dra. Maria Elena Hidalgo Coba</h3>
+          <p class="team-position">DIRECCIÓN GENERAL</p>
+        </div>
+
+        <!-- PRIMERA FILA - JEFATURAS PRINCIPALES -->
+        <div class="team-row">
+
+          <div class="team-card">
+            <img src="img/sarita-paredes.jpeg" alt="Ing. Sarita Carolina Paredes Romero" class="team-photo">
+            <h3 class="team-name">Ing. Sarita Carolina Paredes Romero</h3>
+            <p class="team-position">JEFATURA DE UNIDAD ACADÉMICA</p>
+          </div>
+
+          <div class="team-card">
+            <img src="img/javier-julca.png" alt="C.P.C. Javier Miguel Julca Vasquez" class="team-photo">
+            <h3 class="team-name">Mg. Javier Miguel Julca Vásquez </h3>
+            <p class="team-position">JEFATURA DE ÁREA DE ADMINISTRACIÓN</p>
+          </div>
+
+          <div class="team-card">
+            <img src="img/david-gil.jpeg" alt="Mg. Davil Deciderio Gil Mesa" class="team-photo">
+            <h3 class="team-name">Mg. Davil Deciderio Gil Mesa</h3>
+            <p class="team-position">SECRETARÍA ACADÉMICA</p>
           </div>
         </div>
 
-        <div class="team-card">
-          <img src="img/javier-julca.png" alt="C.P.C. Javier Miguel Julca Vasquez" class="team-photo">
-          <h3 class="team-name">Mg. Javier Miguel Julca Vásquez </h3>
-          <p class="team-position">Jefatura de Área de Administración</p>
-          <div class="team-social">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <!-- SEGUNDA FILA -->
+        <div class="team-row">
+
+          <div class="team-card">
+            <img src="img/fotomujer1.png" alt="Dra. Ely Raquel Torres Diaz" class="team-photo">
+            <h3 class="team-name">Dra. Ely Raquel Torres Diaz</h3>
+            <p class="team-position">JEFATURA DE UNIDAD DE BIENESTAR Y EMPLEABILIDAD</p>
+          </div>
+
+          <div class="team-card">
+            <img src="img/lolo-guzman.png" alt="Lic. Lolo Javier Guzman Valverde" class="team-photo">
+            <h3 class="team-name">Lic. Lolo Javier Guzman Valverde</h3>
+            <p class="team-position">JEFATURA DE UNIDAD DE FORMACIÓN CONTINUA</p>
+          </div>
+
+          <div class="team-card">
+            <img src="img/vilma-fajardo.jpg" alt="Lic. Vilma Raquel Fajardo Pizango" class="team-photo">
+            <h3 class="team-name">Lic. Vilma Raquel Fajardo Pizango</h3>
+            <p class="team-position">JEFATURA DE UNIDAD DE INVESTIGACIÓN</p>
+          </div>
+
+
+        </div>
+
+        <!-- TERCERA FILA -->
+        <div class="team-row">
+
+          <div class="team-card">
+            <img src="img/fotomujer1.png" alt="Mg. Elvira del Rosario Sánchez Díaz" class="team-photo">
+            <h3 class="team-name">Mg. Elvira del Rosario Sánchez Díaz</h3>
+            <p class="team-position">COORDINACIÓN DEL ÁREA DE CALIDAD</p>
+          </div>
+
+          <div class="team-card">
+            <img src="./fotos/Silvia.jpg" alt="Dra. Silvia Carola Ortiz Cáceres" class="team-photo">
+            <h3 class="team-name">Dra. Silvia Carola Ortiz Cáceres</h3>
+            <p class="team-position">COORDINACIÓN ÁREA ACADÉMICA DE ASISTENCIA ADMINISTRATIVA</p>
+          </div>
+
+          <div class="team-card">
+            <img src="./fotos/EdgarNino.jpg" alt="Mg. Edgard Gilberto Niño Salazar" class="team-photo">
+            <h3 class="team-name">Mg. Edgard Gilberto Niño Salazar</h3>
+            <p class="team-position">COORDINACIÓN ÁREA ACADÉMICA DE CONTABILIDAD</p>
           </div>
         </div>
 
-        <div class="team-card">
-          <img src="img/david-gil.jpeg" alt="Mg. Davil Deciderio Gil Mesa" class="team-photo">
-          <h3 class="team-name">Mg. Davil Deciderio Gil Mesa</h3>
-          <p class="team-position">Secretaria Académica</p>
-          <div class="team-social">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Segunda fila -->
-      <div class="team-row">
+        <!-- CUARTA FILA -->
+        <div class="team-row">
 
-        <div class="team-card">
-          <img src="img/fotomujer1.png" alt="Dra. Ely Raquel Torres Diaz" class="team-photo">
-          <h3 class="team-name">Dra. Ely Raquel Torres Diaz</h3>
-          <p class="team-position">Jefatura de Unidad de Bienestar y Empleabilidad</p>
-          <div class="team-social">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
+          <div class="team-card">
+            <img src="img/HumbertoJime.jpg" alt="Mg. Humberto Pedro Jiménez Jara" class="team-photo">
+            <h3 class="team-name">Mg. Humberto Pedro Jiménez Jara</h3>
+            <p class="team-position">COORDINACIÓN ÁREA ACADÉMICA DE DISEÑO Y PROGRAMACIÓN WEB</p>
 
-        <div class="team-card">
-          <img src="img/lolo-guzman.png" alt="Lic. Lolo Javier Guzman Valverde" class="team-photo">
-          <h3 class="team-name">Lic. Lolo Javier Guzman Valverde</h3>
-          <p class="team-position">Jefatura de Unidad de Formación Continua</p>
-          <div class="team-social">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+
+          <div class="team-card">
+            <img src="./fotos/justa.jpg" alt="Lic. Justa Rosa Suárez Ramos" class="team-photo">
+            <h3 class="team-name">Lic. Justa Rosa Suárez Ramos</h3>
+            <p class="team-position">COORDINACIÓN ÁREA ACADÉMICA DE ENFERMERÍA TÉCNICA</p>
+
+          </div>
+
+          <div class="team-card">
+            <img src="fotos/vidal.jpg" alt="Dra. Edelmira Leonor Janampa Vidal" class="team-photo">
+            <h3 class="team-name">Dra. Edelmira Leonor Janampa Vidal</h3>
+            <p class="team-position">COORDINACIÓN ÁREA ACADÉMICA DE GUÍA OFICIAL DE TURISMO</p>
+
           </div>
         </div>
 
-        <div class="team-card">
-          <img src="img/vilma-fajardo.jpg" alt="Lic. Vilma Raquel Fajardo Pizango" class="team-photo">
-          <h3 class="team-name">Lic. Vilma Raquel Fajardo Pizango</h3>
-          <p class="team-position">Jefatura de Unidad de Investigación</p>
-          <div class="team-social">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <!-- QUINTA FILA -->
+        <div class="team-row">
+
+          <div class="team-card">
+            <img src="fotos/milagrosflorian.jpg" alt="Blga. Mblga. Milagros Caridad Florián More" class="team-photo">
+            <h3 class="team-name">Blga. Mblga. Milagros Caridad Florián More</h3>
+            <p class="team-position">COORDINACIÓN ÁREA ACADÉMICA DE LABORATORIO CLÍNICO Y ANATOMÍA PATOLÓGICA</p>
+
           </div>
-        </div>
 
-        
-      </div>
-      
-      <!-- Tercera fila -->
-      <div class="team-row">
+          <div class="team-card">
+            <img src="fotos/carmen.jpg" alt="Lic. Carmen Marcela Huerta Silva" class="team-photo">
+            <h3 class="team-name">Lic. Carmen Marcela Huerta Silva</h3>
+            <p class="team-position">COORDINACIÓN ÁREA ACADÉMICA DE MARKETING</p>
 
-        <div class="team-card">
-          <img src="img/fotomujer1.png" alt="Mg. Elvira del Rosario Sánchez Díaz" class="team-photo">
-          <h3 class="team-name">Mg. Elvira del Rosario Sánchez Díaz</h3>
-          <p class="team-position">Coordinación del Área de Calidad</p>
-          <div class="team-social">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <img src="./fotos/Silvia.jpg" alt="Dra. Silvia Carola Ortiz Cáceres" class="team-photo">
-          <h3 class="team-name">Dra. Silvia Carola Ortiz Cáceres</h3>
-          <p class="team-position">Coordinación Área Académica de Asistencia Administrativa</p>
-          <div class="team-social">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <img src="./fotos/EdgarNino.jpg" alt="Mg. Edgard Gilberto Niño Salazar" class="team-photo">
-          <h3 class="team-name">Mg. Edgard Gilberto Niño Salazar</h3>
-          <p class="team-position">Coordinación Área Académica de Contabilidad</p>
-          <div class="team-social">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
-      
-      <!-- Cuarta fila -->
-      <div class="team-row">
-
-        <div class="team-card">
-          <img src="img/HumbertoJime.jpg"  alt="Mg. Humberto Pedro Jiménez Jara" class="team-photo">
-          <h3 class="team-name">Mg. Humberto Pedro Jiménez Jara</h3>
-          <p class="team-position">Coordinación Área Académica de Diseño y Programación Web</p>
-          <div class="team-social">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <img src="./fotos/justa.jpg" alt="Lic. Justa Rosa Suárez Ramos" class="team-photo">
-          <h3 class="team-name">Lic. Justa Rosa Suárez Ramos</h3>
-          <p class="team-position">Coordinación Área Académica de Enfermería Técnica</p>
-          <div class="team-social">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <img src="fotos/vidal.jpg" alt="Dra. Edelmira Leonor Janampa Vidal" class="team-photo">
-          <h3 class="team-name">Dra. Edelmira Leonor Janampa Vidal</h3>
-          <p class="team-position">Coordinación Área Académica de Guía Oficial de Turismo</p>
-          <div class="team-social">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Quinta fila -->
-      <div class="team-row">
-
-        <div class="team-card">
-          <img src="fotos/milagrosflorian.jpg" alt="Blga. Mblga. Milagros Caridad Florián More" class="team-photo">
-          <h3 class="team-name">Blga. Mblga. Milagros Caridad Florián More</h3>
-          <p class="team-position">Coordinación Área Académica de Laboratorio Clínico y Anatomía Patológica</p>
-          <div class="team-social">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-
-        <div class="team-card">
-          <img src="fotos/carmen.jpg" alt="Lic. Carmen Marcela Huerta Silva" class="team-photo">
-          <h3 class="team-name">Lic. Carmen Marcela Huerta Silva</h3>
-          <p class="team-position">Coordinación Área Académica de Marketing</p>
-          <div class="team-social">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-</main>
+    </section>
+  </main>
   <div id="footer-container"></div>
 </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </html>
-
-
