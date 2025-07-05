@@ -1,14 +1,9 @@
 <?php
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require 'claves.php';
 
-require __DIR__ . '/phpmailer-master/src/PHPMailer.php';
-require __DIR__ . '/phpmailer-master/src/SMTP.php';
-require __DIR__ . '/phpmailer-master/src/Exception.php';
+require __DIR__ . '/PHPMailer-master/src/PHPMailer.php';
+require __DIR__ . '/PHPMailer-master/src/SMTP.php';
+require __DIR__ . '/PHPMailer-master/src/Exception.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
