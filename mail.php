@@ -15,7 +15,7 @@ $mail = new PHPMailer(true);
 try {
     /* 1) Configuración del servidor */
     $mail->isSMTP();
-    $mail->Host       = 'mail.iestp-trujillo.edu.pe';   // ← host corporativo
+    $mail->Host       = $HostCorreo;   // ← host corporativo
     $mail->Port       = 465;                    // 465 para SSL, 587 para STARTTLS
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // 'ssl'
     // Si tu TI indica STARTTLS:
@@ -36,8 +36,8 @@ try {
     $mensaje = $_POST['mensaje'] ?? '';
 
     /* 2) Configuración de remitente y destinatario */
-    $mail->setFrom('contacto@iestp-trujillo.edu.pe', 'Instituto Trujillo');
-    $mail->addAddress('informes@iestp-trujillo.edu.pe', 'Instituto Trujillo');
+    $mail->setFrom($CorreoFrom, 'Instituto Trujillo');
+    $mail->addAddress($CorreoTo, 'Instituto Trujillo');
 
     
 
