@@ -1,4 +1,5 @@
 <?php
+require 'claves.php';
 require 'phpmailer-master/src/PHPMailer.php';
 require 'phpmailer-master/src/SMTP.php';
 require 'phpmailer-master/src/Exception.php';
@@ -22,8 +23,8 @@ try {
     // $mail->Port = 587;
 
     $mail->SMTPAuth   = true;                   // La mayoría exige autenticación
-    $mail->Username   = 'contacto@iestptrujillo.edu.pe';
-    $mail->Password   = '!&YaW{0dJv9@';
+    $mail->Username   = $UsuarioCorreo;
+    $mail->Password   = $ClaveCorreo;
 
     $mail->CharSet = 'UTF-8';              // Codificación del mensaje
     $mail->Encoding = 'quoted-printable';
@@ -35,8 +36,8 @@ try {
     $mensaje = $_POST['mensaje'] ?? '';
 
     /* 2) Configuración de remitente y destinatario */
-    $mail->setFrom('contacto@iestptrujillo.edu.pe', 'Instituto Trujillo');
-    $mail->addAddress('informes@iestp-trujillo.edu.pe', 'Instituto Trujillo');
+    $mail->setFrom('informes@iestp-trujillo.edu.pe', 'Instituto Trujillo');
+    $mail->addAddress('contacto@iestptrujillo.edu.pe', 'Instituto Trujillo');
 
     
 
