@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require 'claves.php';
 require 'phpmailer-master/src/PHPMailer.php';
 require 'phpmailer-master/src/SMTP.php';
