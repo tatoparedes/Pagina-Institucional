@@ -391,13 +391,12 @@
     </div>
 
     <!-- Modal para imagen completa -->
-    <div id="modal" class="modal" onclick="cerrarModal()">
-        <span class="cerrar" onclick="cerrarModal()">&times;</span>
-        <div class="navegacion-modal anterior" onclick="cambiarImagen(-1)">❮</div>
-        <div class="navegacion-modal siguiente" onclick="cambiarImagen(1)">❯</div>
-        <img class="modal-contenido" id="imagenModal">
-        <div class="contador-imagen" id="contador"></div>
-    </div>
+   <div id="modal" class="modal" style="display: none;" onclick="cerrarModal()">
+    <span class="cerrar" onclick="cerrarModal()">&times;</span>
+    <img id="imagenModal" class="modal-imagen">
+    <div id="contador" class="contador"></div>   
+</div>
+
 
     </main>
 
@@ -407,80 +406,96 @@
     <div id="footer-container"></div>
 
     <script>
-        let imagenActual = 0;
-        let imagenesGrupo = [];
+document.addEventListener('DOMContentLoaded', () => {
+    let imagenActual = 0;
+    let imagenesGrupo = [];
 
-        function abrirModal(imagen) {
-            const modal = document.getElementById('modal');
-            const imagenModal = document.getElementById('imagenModal');
-            const contador = document.getElementById('contador');
+    function abrirModal(imagen) {
+        const modal = document.getElementById('modal');
+        const imagenModal = document.getElementById('imagenModal');
+        const contador = document.getElementById('contador');
 
-            // Obtener todas las imágenes miniatura de la misma sección
-            const seccion = imagen.closest('.evento-seccion');
-            imagenesGrupo = Array.from(seccion.querySelectorAll('.miniatura'));
+        const seccion = imagen.closest('.evento-seccion');
+        imagenesGrupo = Array.from(seccion.querySelectorAll('.miniatura'));
 
-            // Encontrar índice de la imagen clickeada
-            imagenActual = imagenesGrupo.indexOf(imagen);
+        imagenActual = imagenesGrupo.indexOf(imagen);
 
-            // Mostrar imagen y contador
+        if (imagenModal) {
             imagenModal.src = imagen.src;
-            contador.textContent = `${imagenActual + 1} / ${imagenesGrupo.length}`;
+        }
 
+        if (contador) {
+            contador.textContent = `${imagenActual + 1} / ${imagenesGrupo.length}`;
+        }
+
+        if (modal) {
             modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
         }
 
-        function cerrarModal() {
-            const modal = document.getElementById('modal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function cerrarModal() {
+        const modal = document.getElementById('modal');
+        const imagenModal = document.getElementById('imagenModal');
+
+        if (modal) modal.style.display = 'none';
+        if (imagenModal) imagenModal.removeAttribute('src');
+
+        document.body.style.removeProperty('overflow');
+    }
+
+    function cambiarImagen(direccion, ev) {
+        if (ev) ev.stopPropagation();
+
+        imagenActual += direccion;
+
+        if (imagenActual >= imagenesGrupo.length) {
+            imagenActual = 0;
+        }
+        if (imagenActual < 0) {
+            imagenActual = imagenesGrupo.length - 1;
         }
 
-        function cambiarImagen(direccion) {
-            event.stopPropagation();
+        const imagenModal = document.getElementById('imagenModal');
+        const contador = document.getElementById('contador');
 
-            imagenActual += direccion;
-
-            if (imagenActual >= imagenesGrupo.length) {
-                imagenActual = 0;
-            }
-            if (imagenActual < 0) {
-                imagenActual = imagenesGrupo.length - 1;
-            }
-
-            const imagenModal = document.getElementById('imagenModal');
-            const contador = document.getElementById('contador');
-
+        if (imagenModal) {
             imagenModal.src = imagenesGrupo[imagenActual].src;
+        }
+
+        if (contador) {
             contador.textContent = `${imagenActual + 1} / ${imagenesGrupo.length}`;
         }
+    }
 
-        // Cerrar modal con tecla Escape
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') {
-                cerrarModal();
-            }
-            if (event.key === 'ArrowLeft') {
-                cambiarImagen(-1);
-            }
-            if (event.key === 'ArrowRight') {
-                cambiarImagen(1);
-            }
-        });
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            cerrarModal();
+        }
+        if (event.key === 'ArrowLeft') {
+            cambiarImagen(-1);
+        }
+        if (event.key === 'ArrowRight') {
+            cambiarImagen(1);
+        }
+    });
 
-        // Prevenir zoom en las imágenes
-        document.addEventListener('gesturestart', function (e) {
+    // Prevenir zoom táctil en móviles
+    ['gesturestart', 'gesturechange', 'gestureend'].forEach(evt => {
+        document.addEventListener(evt, function (e) {
             e.preventDefault();
-        });
+        }, { passive: false });
+    });
 
-        document.addEventListener('gesturechange', function (e) {
-            e.preventDefault();
-        });
+    // Exponer funciones globalmente
+    window.abrirModal = abrirModal;
+    window.cerrarModal = cerrarModal;
+    window.cambiarImagen = cambiarImagen;
+});
+</script>
 
-        document.addEventListener('gestureend', function (e) {
-            e.preventDefault();
-        });
-    </script>
+
 </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </html>
