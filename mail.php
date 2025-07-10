@@ -72,7 +72,7 @@ try {
         "Hola $nombre:\n\n".
         "Hemos recibido tu mensaje sobre el programa $programa.\n".
         "Nos pondremos contacto contigo a la brevedad.\n\n".
-        "Saludos cordiales,\nIntituto Trujillo";
+        "Saludos cordiales,\Instituto Trujillo";
     $mail->send();            // ← 2.º envío
 
 //    echo 'Mensaje enviado correctamente.';
