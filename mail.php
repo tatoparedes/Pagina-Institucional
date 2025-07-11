@@ -70,7 +70,7 @@ try {
     $mail->Subject = '¡Gracias por contactarnos!';
     $mail->Body    =
         "Hola $nombre:\n\n".
-        "Hemos recibido tu mensaje sobre el programa $programa.\n".
+        "Hemos recibido tu mensaje sobre el programa de estudios de $programa.\n".
         "Nos pondremos contacto contigo a la brevedad.\n\n".
         "Saludos cordiales,\nInstituto Trujillo";
     $mail->send();            // ← 2.º envío
