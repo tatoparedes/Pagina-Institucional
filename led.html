@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Control LED ESP32</title>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+  <h2>Controlar LED vía MQTT</h2>
+  <button onclick="sendCommand('ON','esp32/ledCyan')">Encender Cyan LED</button>
+  <button onclick="sendCommand('OFF','esp32/ledCyan')">Apagar Cyan LED</button>
+   <br>
+   <br>
+   <button onclick="sendCommand('ON','esp32/ledBlue')">Encender Blue LED</button>
+  <button onclick="sendCommand('OFF','esp32/ledBlue')">Apagar Blue LED</button>
+   <br>
+   <br>
+   <button onclick="sendCommand('ON','esp32/ledPurple')">Encender Purple LED</button>
+  <button onclick="sendCommand('OFF','esp32/ledPurple')">Apagar Purple LED</button>
+
+  <script>
+    const client = mqtt.connect("wss://broker.hivemq.com:8884/mqtt");
+
+    client.on("connect", function () {
+      console.log("Conectado al broker");
+    });
+
+    function sendCommand(cmd, topic) {
+      client.publish(topic, cmd);
+    }
+
+   
+
+  </script>
+</body>
+</html>
