@@ -65,3 +65,11 @@
         link.target="_blank";          /* Abre en pestaña nueva */
       });
     });
+ // Mostrar modal al cargar la página
+  window.onload = function() {
+    document.getElementById('modal-banner').style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById('modal-banner').style.display = "none";
+  }
