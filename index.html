@@ -157,52 +157,64 @@
     </section>
 
     <!-- ---------- CONTACTO ---------- -->
-    <section class="contact-section">
-      <div class="contact-container">
-        <div class="contact-info">
-          <h3>Contáctanos</h3>
-          <p>Estamos aquí para ayudarte. Escríbenos para más información sobre nuestros programas.</p>
-          <div class="contact-details">
-            <div class="contact-item"><i class="fas fa-phone"></i> (044) 350009</div>
-            <div class="contact-item"><i class="fas fa-envelope"></i> informes@iestp-trujillo.edu.pe</div>
-            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Trujillo, La Libertad, Perú</div>
-          </div>
-        </div>
+   <section class="contact-section">
+  <div class="contact-container">
 
-        <div class="contact-form">
-          <h3>Envíanos un mensaje</h3>
-          <form class="form-contact" method="post" action="./mail.php">
-            <div class="form-group">
-              <input type="text" class="form-input" name="nombre" placeholder="Nombre completo" required>
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-input" name="correo" placeholder="Correo electrónico" required>
-            </div>
-            <div class="form-group">
-              <input type="tel" class="form-input" name="telefono" placeholder="Teléfono">
-            </div>
-            <div class="form-group">
-              <select class="form-input" name="programa" required>
-                <option value="">Programa de interés</option>
-                <option value="Asistencia Administrativa">Asistencia Administrativa</option>
-                <option value="Contabilidad">Contabilidad</option>
-                <option value="Diseño y Programación Web">Diseño y Programación Web</option>
-                <option value="Enfermería Técnica">Enfermería Técnica</option>
-                <option value="Guía Oficial de Turismo">Guía Oficial de Turismo</option>
-                <option value="Laboratorio Clínico y Anatomía Patológica">Laboratorio Clínico y Anatomía Patológica</option>
-                <option value="Marketing">Marketing</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <textarea class="form-input form-textarea" name="mensaje" rows="4" placeholder="Mensaje"
-                required></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Enviar mensaje</button>
-          </form>
-
-        </div>
+    <!-- Columna izquierda: Información de contacto y mapa -->
+    <div class="contact-info">
+      <h3>Contáctanos</h3>
+      <p>Estamos aquí para ayudarte. Escríbenos para más información sobre nuestros programas.</p>
+      <div class="contact-details">
+        <div class="contact-item"><i class="fas fa-phone"></i> (044) 350009</div>
+        <div class="contact-item"><i class="fas fa-envelope"></i> informes@iestp-trujillo.edu.pe</div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Trujillo, La Libertad, Perú</div>
       </div>
-    </section>
+
+      <!-- Mapa debajo -->
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15605.703428909797!2d-79.0450365!3d-8.1117351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d04b3f8cbcd%3A0x65cf8b2eaa4fe410!2sTrujillo%2C%20Per%C3%BA!5e0!3m2!1ses-419!2spe!4v1651092326460!5m2!1ses-419!2spe"
+          width="450" height="300"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Columna derecha: Formulario -->
+    <div class="contact-form">
+      <h3>Envíanos un mensaje</h3>
+      <form class="form-contact" method="post" action="./mail.php">
+        <div class="form-group">
+          <input type="text" class="form-input" name="nombre" placeholder="Nombre completo" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-input" name="correo" placeholder="Correo electrónico" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" class="form-input" name="telefono" placeholder="Teléfono">
+        </div>
+        <div class="form-group">
+          <select class="form-input" name="programa" required>
+            <option value="">Programa de interés</option>
+            <option value="Asistencia Administrativa">Asistencia Administrativa</option>
+            <option value="Contabilidad">Contabilidad</option>
+            <option value="Diseño y Programación Web">Diseño y Programación Web</option>
+            <option value="Enfermería Técnica">Enfermería Técnica</option>
+            <option value="Guía Oficial de Turismo">Guía Oficial de Turismo</option>
+            <option value="Laboratorio Clínico y Anatomía Patológica">Laboratorio Clínico y Anatomía Patológica</option>
+            <option value="Marketing">Marketing</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea class="form-input form-textarea" name="mensaje" rows="4" placeholder="Mensaje" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Enviar mensaje</button>
+      </form>
+    </div>
+  </div>
+</section>
+
   </main>
   <div id="footer-container"></div>
 </body>
