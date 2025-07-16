@@ -1,52 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Instituto Tecnológico Trujillo</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- CDN de Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instituto Tecnológico Trujillo</title>
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Script -->
+  <script src="script.js" defer></script>
 
-     <style>   
-     h3 {
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: white;
+    }
+
+    h3 {
       color: #99001f;
       font-size: 25px;
       margin-bottom: 10px;
       text-align: center;
     }
 
-   #visor {
-      width: 80vw;   /* 80% del ancho de la pantalla */
-      height: 80vh;  /* 80% del alto de la pantalla */
+    #visor {
+      width: 80vw;   /* 80% del ancho de la ventana */
+      height: 80vh;  /* 80% del alto de la ventana */
       border: none;
-      margin: 10vh auto; /* Centrado vertical y horizontal */
-      display: block;
       background-color: white;
+    }
+
+    .hero-content h2 {
+      text-align: center;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
   <div id="header-container"></div>
-
-  <!-- Aquí se cargará el menú (opcional) -->
   <div id="menu-container"></div>
 
-<main class="main-content">
-    <!-- Banner de bienvenida -->
+  <main class="main-content">
     <section class="hero">
-        <div class="hero-content">
-          <h2><i class="fas fa-chart-line"></i> TUPA 2025</h2>
-        </div>
+      <div class="hero-content">
+        <h2><i class="fas fa-chart-line"></i> TUPA 2025</h2>
+      </div>
     </section>
     <h3>Tasa Internas</h3>
-<iframe id="visor" src="./tasas/tasas-internas.pdf"></iframe>    
-</main>
-<div id="footer-container"></div>
-</body>
+    <iframe id="visor" src="./tasas/tasas-internas.pdf"></iframe>
+  </main>
+
+  <div id="footer-container"></div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
-
-
