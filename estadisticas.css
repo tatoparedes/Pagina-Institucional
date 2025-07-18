@@ -43,7 +43,7 @@
     }
 
     .accordion-header:hover {
-      background: linear-gradient(to right, #c92a5a, #a70d40);
+      background: linear-gradient(to right, #99001f, #99001f);
     }
 
     .accordion-header::after {
@@ -67,7 +67,7 @@
     }
 
     .accordion-item.active .accordion-header {
-      background: linear-gradient(to right, #a70d40, #a70d40);
+      background: linear-gradient(to right, #99001f, #99001f);
     }
 
     .accordion-content {
@@ -148,6 +148,14 @@
       font-size: 0.9rem;
       color: #333;
     }
+     .estudiante-1 {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin: 20px 0;
+        }
 
     .chart-value {
       position: absolute;
