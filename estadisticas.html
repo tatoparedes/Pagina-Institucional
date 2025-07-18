@@ -28,199 +28,248 @@
 
     <!-- Contenido principal -->
     <div class="container">
-    <div class="accordion">
-      <!-- INGRESANTES -->
-      <div class="accordion-item active">
-        <div class="accordion-header"><span>INGRESANTES</span></div>
-        <div class="accordion-content">
-          <div class="accordion-content-inner">
-            <p>Datos detallados de estudiantes ingresantes por programa de estudios y año:</p>
-            <table class="stats-table">
-              <thead>
-                <tr>
-                  <th rowspan="2">PROGRAMAS DE ESTUDIOS</th>
-                  <th colspan="3">N° de Ingresantes</th>
-                </tr>
-                <tr>
-                  <th>2023</th>
-                  <th>2024</th>
-                  <th>2025</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="long-text">Asistencia Administrativa</td>
-                  <td>27</td>
-                  <td>23</td>
-                  <td>24</td>
-                </tr>
-                <tr>
-                  <td class="long-text">Contabilidad</td>
-                  <td>77</td>
-                  <td>73</td>
-                  <td>49</td>
-                </tr>
-                <tr>
-                  <td class="long-text">Diseño y Programación Web</td>
-                  <td>45</td>
-                  <td>34</td>
-                  <td>40</td>
-                </tr>
-                <tr>
-                  <td class="long-text">Enfermería Técnica</td>
-                  <td>40</td>
-                  <td>40</td>
-                  <td>30</td>
-                </tr>
-                <tr>
-                  <td class="long-text">Guía Oficial de Turismo</td>
-                  <td>8</td>
-                  <td>16</td>
-                  <td>17</td>
-                </tr>
-                <tr>
-                  <td class="long-text">Laboratorio Clínico y Anatomía Patológica</td>
-                  <td>40</td>
-                  <td>33</td>
-                  <td>24</td>
-                </tr>
-                <tr>
-                  <td class="long-text">Marketing</td>
-                  <td>21</td>
-                  <td>16</td>
-                  <td>24</td>
-                </tr>
-                <tr>
-                  <th>TOTALES</th>
-                  <th>258</th>
-                  <th>235</th>
-                  <th>208</th>
-                </tr>
-              </tbody>
-            </table>
-            <div class="chart-container" style="height: 400px;">
-              <canvas id="ingresantesChart"></canvas>
+      <div class="accordion">
+        <!-- INGRESANTES -->
+        <div class="accordion-item active">
+          <div class="accordion-header"><span>INGRESANTES</span></div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p class="estudiante-1">Número de ingresantes por año y programa formativo:</p>
+              <table class="stats-table">
+                <thead>
+                  <tr>
+                    <th rowspan="2">PROGRAMAS DE ESTUDIOS</th>
+                    <th colspan="3">N° de Ingresantes</th>
+                  </tr>
+                  <tr>
+                    <th>2023</th>
+                    <th>2024</th>
+                    <th>2025</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="long-text">Asistencia Administrativa</td>
+                    <td>27</td>
+                    <td>23</td>
+                    <td>24</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Contabilidad</td>
+                    <td>77</td>
+                    <td>73</td>
+                    <td>49</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Diseño y Programación Web</td>
+                    <td>45</td>
+                    <td>34</td>
+                    <td>40</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Enfermería Técnica</td>
+                    <td>40</td>
+                    <td>40</td>
+                    <td>30</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Guía Oficial de Turismo</td>
+                    <td>8</td>
+                    <td>16</td>
+                    <td>17</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Laboratorio Clínico y Anatomía Patológica</td>
+                    <td>40</td>
+                    <td>33</td>
+                    <td>24</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Marketing</td>
+                    <td>21</td>
+                    <td>16</td>
+                    <td>24</td>
+                  </tr>
+                  <tr>
+                    <th>TOTALES</th>
+                    <th>258</th>
+                    <th>235</th>
+                    <th>208</th>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="chart-container" style="height: 400px;">
+                <canvas id="ingresantesChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MATRICULADOS -->
+        <div class="accordion-item">
+          <div class="accordion-header"><span>MATRICULADOS</span></div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p class="estudiante-1">Número de matriculados por año y programa formativo:</p>
+              <table class="stats-table">
+                <thead>
+                  <tr>
+                    <th rowspan="2">PROGRAMAS DE ESTUDIOS</th>
+                    <th colspan="3">N° de Matriculados</th>
+                  </tr>
+                  <tr>
+                    <th>2023</th>
+                    <th>2024</th>
+                    <th>2025</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="long-text">Secretariado Ejecutivo/Asistencia Administrativa</td>
+                    <td>65</td>
+                    <td>61</td>
+                    <td>56</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Contabilidad</td>
+                    <td>193</td>
+                    <td>196</td>
+                    <td>165</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Computación e Informática / Diseño y Programación Web</td>
+                    <td>95</td>
+                    <td>94</td>
+                    <td>86</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Enfermería Técnica</td>
+                    <td>111</td>
+                    <td>109</td>
+                    <td>107</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Guía Oficial de Turismo</td>
+                    <td>22</td>
+                    <td>30</td>
+                    <td>37</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Técnica en Laboratorio Clínico/Laboratorio Clínico y Anatomía Patológica</td>
+                    <td>97</td>
+                    <td>90</td>
+                    <td>86</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Relaciones Públicas y Marketing / Marketing</td>
+                    <td>58</td>
+                    <td>44</td>
+                    <td>45</td>
+                  </tr>
+                  <tr>
+                    <th>TOTALES</th>
+                    <th>641</th>
+                    <th>624</th>
+                    <th>582</th>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="chart-container" style="height: 400px;">
+                <canvas id="matriculadosChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+        <!-- EGRESADOS -->
+        <div class="accordion-item">
+          <div class="accordion-header"><span>EGRESADOS</span></div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p class="estudiante-1">Número de egresados por año y programa formativo:</p>
+              <table class="stats-table">
+                <thead>
+                  <tr>
+                    <th>PROGRAMAS DE ESTUDIOS</th>
+                    <th>2022</th>
+                    <th>2023</th>
+                    <th>2024</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="long-text">Secretariado Ejecutivo / Asistencia Administrativa</td>
+                    <td>19</td>
+                    <td>13</td>
+                    <td>19</td>
+                    <td>51</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Contabilidad</td>
+                    <td>39</td>
+                    <td>36</td>
+                    <td>32</td>
+                    <td>107</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Computación e Informática / Diseño y Programación Web</td>
+                    <td>20</td>
+                    <td>24</td>
+                    <td>27</td>
+                    <td>71</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Enfermería Técnica</td>
+                    <td>56</td>
+                    <td>51</td>
+                    <td>49</td>
+                    <td>156</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Guía Oficial de Turismo</td>
+                    <td>4</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>16</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Técnica en Laboratorio Clínico / Laboratorio Clínico y Anatomía Patológica
+                    </td>
+                    <td>27</td>
+                    <td>14</td>
+                    <td>29</td>
+                    <td>70</td>
+                  </tr>
+                  <tr>
+                    <td class="long-text">Relaciones Públicas y Marketing</td>
+                    <td>4</td>
+                    <td>9</td>
+                    <td>13</td>
+                    <td>26</td>
+                  </tr>
+                  <tr>
+                    <th>TOTALES</th>
+                    <th>163</th>
+                    <th>153</th>
+                    <th>175</th>
+                    <th>497</th>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="chart-container" style="height: 400px;">
+                <canvas id="egresadosChart"></canvas>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-<!-- MATRICULADOS -->
-<div class="accordion-item">
-  <div class="accordion-header"><span>MATRICULADOS</span></div>
-  <div class="accordion-content">
-    <div class="accordion-content-inner">
-      <p>Datos detallados de estudiantes matriculados por programa de estudios y año:</p>
-      <table class="stats-table">
-        <thead>
-          <tr>
-            <th rowspan="2">PROGRAMAS DE ESTUDIOS</th>
-            <th colspan="3">N° de Matriculados</th>
-          </tr>
-          <tr>
-            <th>2023</th>
-            <th>2024</th>
-            <th>2025</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="long-text">Secretariado Ejecutivo/Asistencia Administrativa</td>
-            <td>65</td>
-            <td>61</td>
-            <td>56</td>
-          </tr>
-          <tr>
-            <td class="long-text">Contabilidad</td>
-            <td>193</td>
-            <td>196</td>
-            <td>165</td>
-          </tr>          
-          <tr>
-            <td class="long-text">Computación e Informática / Diseño y Programación Web</td>
-            <td>95</td>
-            <td>94</td>
-            <td>86</td>
-          </tr>          
-          <tr>
-            <td class="long-text">Enfermería Técnica</td>
-            <td>111</td>
-            <td>109</td>
-            <td>107</td>
-          </tr>
-          <tr>
-            <td class="long-text">Guía Oficial de Turismo</td>
-            <td>22</td>
-            <td>30</td>
-            <td>37</td>
-          </tr>
-          <tr>
-            <td class="long-text">Técnica en Laboratorio Clínico/Laboratorio Clínico y Anatomía Patológica</td>
-            <td>97</td>
-            <td>90</td>
-            <td>86</td>
-          </tr>
-          <tr>
-            <td class="long-text">Relaciones Públicas y Marketing / Marketing</td>
-            <td>58</td>
-            <td>44</td>
-            <td>45</td>
-          </tr>
-          <tr>
-            <th>TOTALES</th>
-            <th>641</th>
-            <th>624</th>
-            <th>582</th>
-          </tr>
-        </tbody>
-      </table>
-      <div class="chart-container" style="height: 400px;">
-        <canvas id="matriculadosChart"></canvas>
-      </div>
     </div>
-  </div>
-</div>
-
-
-
-
-
-
-      <!-- EGRESADOS -->
-      <div class="accordion-item">
-        <div class="accordion-header"><span>EGRESADOS</span></div>
-        <div class="accordion-content">
-          <div class="accordion-content-inner">
-            <p>Datos de estudiantes egresados por programa de estudios y año:</p>
-            <table class="stats-table">
-              <thead>
-                <tr>
-                  <th>PROGRAMAS DE ESTUDIOS</th>
-                  <th>2022</th>
-                  <th>2023</th>
-                  <th>2024</th>
-                  <th>Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td class="long-text">Secretariado Ejecutivo / Asistencia Administrativa</td><td>19</td><td>13</td><td>19</td><td>51</td></tr>
-                <tr><td class="long-text">Contabilidad</td><td>39</td><td>36</td><td>32</td><td>107</td></tr>
-                <tr><td class="long-text">Computación e Informática / Diseño y Programación Web</td><td>20</td><td>24</td><td>27</td><td>71</td></tr>                
-                <tr><td class="long-text">Enfermería Técnica</td><td>56</td><td>51</td><td>49</td><td>156</td></tr>
-                <tr><td class="long-text">Guía Oficial de Turismo</td><td>4</td><td>6</td><td>6</td><td>16</td></tr>
-                <tr><td class="long-text">Técnica en Laboratorio Clínico / Laboratorio Clínico y Anatomía Patológica</td><td>27</td><td>14</td><td>29</td><td>70</td></tr>                                
-                <tr><td class="long-text">Relaciones Públicas y Marketing</td><td>4</td><td>9</td><td>13</td><td>26</td></tr>
-                <tr><th>TOTALES</th><th>163</th><th>153</th><th>175</th><th>497</th></tr>
-              </tbody>
-            </table>
-            <div class="chart-container" style="height: 400px;">
-              <canvas id="egresadosChart"></canvas>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   </main>
 
   <div id="footer-container"></div>
@@ -228,6 +277,7 @@
   <script src="script.js"></script>
   <script src="estadisticas.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
+
 </body>
+
 </html>
