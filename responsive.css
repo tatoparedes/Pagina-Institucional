@@ -74,12 +74,13 @@
   }
   
   .programa-titulo {
-    font-size: 0.3rem;
+    font-size: 0.8rem;
   }
   
   .hero-icons {
     margin-top: -80px;
     padding: 10px 20px;
+    grid-template-columns: 1fr;
   }
   
   .icon-box {
@@ -102,5 +103,148 @@
   
   .text-bg {
     width: 100%;
+  }
+  
+  /* Ajustes para la sección de presentación */
+  .presentation h3, .programs h3 {
+    font-size: 22px;
+    text-align: center;
+    padding: 0 10px;
+  }
+  
+  .presentation p {
+    display: block !important;
+    text-align: justify;
+    padding: 0 10px;
+  }
+  
+  /* Ajustes para la sección de programas */
+  .programs div[style*="display:flex"] {
+    flex-direction: column;
+  }
+  
+  #program-content {
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+}
+/* Estilos adicionales para mejorar la visualización en móviles */
+@media (max-width: 767px) {
+  .programs-container {
+    flex-direction: column;
+  }
+  
+  .program-menu {
+    max-width: 100% !important;
+    margin-bottom: 20px;
+  }
+  
+  #program-content {
+    padding: 0 10px;
+  }
+  
+  .presentation, .programs {
+    margin: 10px 0;
+    padding: 30px 10px;
+  }
+  
+  /* Ajustar los saltos de línea en el carrusel */
+  .carousel-slide .hero-content br {
+    display: none;
+  }
+  
+  .hero-content {
+    bottom: 20px !important;
+  }
+  
+  .text-bg {
+    padding: 10px 0;
+  }
+}
+
+/* Ajustes específicos para dispositivos muy pequeños */
+@media (max-width: 360px) {
+  .carousel-hero {
+    height: 250px;
+  }
+  
+  .hero-icons {
+    margin-top: -60px;
+  }
+  
+  .icon-box {
+    margin: 5px;
+    padding: 8px;
+  }
+  
+  .icon-box i {
+    font-size: 18px;
+  }
+  
+  .icon-box p {
+    font-size: 11px;
+  }
+}
+/* Corregir espacio en blanco lateral en dispositivos móviles */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-hero {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  max-width: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+@media (max-width: 767px) {
+  .main-content {
+    padding: 20px 0;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .text-bg {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+/* Ajustes adicionales para la sección de contacto en móviles */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 30px 10px;
+    margin: 10px 0;
+  }
+  
+  .contact-container {
+    padding: 0 !important;
+  }
+  
+  .contact-info, .contact-form {
+    padding: 15px 10px !important;
+  }
+  
+  .contact-item {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .form-input {
+    padding: 12px;
+  }
+  
+  .btn-submit {
+    width: 100%;
+  }
+  
+  .map-container {
+    height: 200px;
   }
 }
