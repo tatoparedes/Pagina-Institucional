@@ -66,23 +66,25 @@
       });
     });
  // Mostrar modal al cargar la página
-  window.onload = function() {
-    document.getElementById('modal-banner').style.display = "block";
-  }
+ // Mostrar primer modal al cargar la página
+window.onload = function () {
+  document.getElementById('modal-banner').style.display = "block";
+};
 
-  function closeModal() {
-    document.getElementById('modal-banner').style.display = "none";
-  }
-  // Función para cerrar el primer modal y abrir el segundo
+// Función para cerrar el primer modal y abrir el segundo
 function closeModal() {
-  // Cierra el primer modal
   document.getElementById('modal-banner').style.display = 'none';
-  
-  // Muestra el segundo modal
   document.getElementById('modal-banner-2').style.display = 'block';
 }
 
-// Función para cerrar el segundo modal
+// Función para cerrar el segundo modal y abrir el tercero
 function closeModal2() {
   document.getElementById('modal-banner-2').style.display = 'none';
+  document.getElementById('modal-banner-3').style.display = 'block';
 }
+
+// Función para cerrar el tercer modal
+function closeModal3() {
+  document.getElementById('modal-banner-3').style.display = 'none';
+}
+
