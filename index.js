@@ -73,3 +73,16 @@
   function closeModal() {
     document.getElementById('modal-banner').style.display = "none";
   }
+  // Función para cerrar el primer modal y abrir el segundo
+function closeModal() {
+  // Cierra el primer modal
+  document.getElementById('modal-banner').style.display = 'none';
+  
+  // Muestra el segundo modal
+  document.getElementById('modal-banner-2').style.display = 'block';
+}
+
+// Función para cerrar el segundo modal
+function closeModal2() {
+  document.getElementById('modal-banner-2').style.display = 'none';
+}
