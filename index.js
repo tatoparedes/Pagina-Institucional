@@ -67,6 +67,8 @@
     });
  // Mostrar modal al cargar la página
  // Mostrar primer modal al cargar la página
+
+ /*
 window.onload = function () {
   document.getElementById('modal-banner').style.display = "block";
 };
@@ -92,3 +94,4 @@ function closeModal3() {
 function closeModal4() {
   document.getElementById('modal-banner-4').style.display = 'none';
 }
+*/
