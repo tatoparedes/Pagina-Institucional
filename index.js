@@ -68,7 +68,7 @@
  // Mostrar modal al cargar la página
  // Mostrar primer modal al cargar la página
 
- /*
+ 
 window.onload = function () {
   document.getElementById('modal-banner').style.display = "block";
 };
@@ -82,8 +82,9 @@ function closeModal1() {
 // Función para cerrar el segundo modal y abrir el tercero
 function closeModal2() {
   document.getElementById('modal-banner-2').style.display = 'none';
-  document.getElementById('modal-banner-3').style.display = 'block';
+  //document.getElementById('modal-banner-3').style.display = 'block';
 }
+/*
 
 // Función para cerrar el tercer modal
 function closeModal3() {
