@@ -16,19 +16,29 @@
 </head>
 <!-- Ventana emergente (modal) -->
 <div id="modal-banner-2" class="modal-banner">
-  <div class="modal-content">
+  <div class="modal-content" style="text-align: center; position: relative;">
     <span class="close-button" onclick="closeModal2()">&times;</span>
-    <img src="img/convocatoria.jpg" alt="Banner apertura" style="width:100%; border-radius: 10px;">
-     <a class="button" href="./documentos/CONVOCATORIA.pdf" target="_blank"
-       style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-              background: #99001f; color: #fff; padding: 10px 20px; border-radius: 5px; text-decoration: none;">
-       Ver Más
-    </a>
-    <div style="text-align:center; margin: 15px;">
 
+    <!-- Imagen -->
+    <img src="img/convocatoria.jpg" alt="Banner apertura" style="width:100%; border-radius: 10px;">
+
+    <!-- Contenedor de botones (debajo de la imagen, no encima) -->
+    <div style="display: flex; justify-content: center; gap: 10px; margin-top: -20px;">
+      <a class="button" href="./documentos/CONVOCATORIA.pdf" target="_blank"
+         style="background: #99001f; color: #fff; padding: 10px 20px;
+                border-radius: 5px; text-decoration: none;">
+         Ver Más
+      </a>
+      <a class="button" href="./documentos/Resultados.pdf" target="_blank"
+         style="background: #003366; color: #fff; padding: 10px 20px;
+                border-radius: 5px; text-decoration: none;">
+         Descargar Resultados
+      </a>
     </div>
   </div>
 </div>
+
+
 
 <div id="modal-banner-4" class="modal-banner">
   <div class="modal-content" style="position: relative;">
