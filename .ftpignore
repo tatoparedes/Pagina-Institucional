@@ -1,0 +1,7 @@
+# .ftpignore
+node_modules/
+.git/
+.gitignore
+README.md
+.github/
+ftp-deploy-sync-state.json
