@@ -82,7 +82,7 @@ function closeModal1() {
 // Función para cerrar el segundo modal y abrir el tercero
 function closeModal2() {
   document.getElementById('modal-banner-2').style.display = 'none';
-  document.getElementById('modal-banner-4').style.display = 'block';
+//  document.getElementById('modal-banner-4').style.display = 'block';
 }
 
 
