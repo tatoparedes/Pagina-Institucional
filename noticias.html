@@ -11,250 +11,250 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="script.js" defer></script>
-</head>
-
-<style>
-    .seccion-noticias {
-        padding: 60px 20px;
-        background: #ffffff;
-        min-height: 100vh;
-        font-family: 'Poppins', sans-serif;
-        position: relative;
-    }
-
-    .titulo-seccion {
-        text-align: center;
-        font-size: 3.2rem;
-        font-weight: 800;
-        background: linear-gradient(45deg, #ac000e, #191970);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 50px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .contenedor-todas-noticias {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 25px;
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    .tarjeta-noticia {
-        background: #ffffff;
-        border-radius: 25px;
-        overflow: hidden;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        border: 2px solid transparent;
-        height: 580px;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-    }
-
-    .tarjeta-noticia:hover {
-        transform: translateY(-15px) scale(1.02);
-        box-shadow: 0 25px 50px rgba(255, 71, 87, 0.15);
-        border: 2px solid #aa000e;
-    }
-
-    .tarjeta-noticia::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: #8d0000;
-        border-radius: 25px 25px 0 0;
-    }
-
-    .imagen-noticia {
-        width: 100%;
-        height: 260px;
-        object-fit: cover;
-        background: #8f0101;
-    }
-
-    .encabezado-noticia {
-        font-size: 1rem;
-        font-weight: 700;
-        color: #2c3e50;
-        margin: 18px 20px 8px 20px;
-        line-height: 1.3;
-        height: 72px;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-        -webkit-box-orient: vertical;
-    }
-
-    .info-autor-fecha {
-        font-size: 0.75rem;
-        color: #a0000d;
-        margin: 0 20px 12px 20px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .descripcion-noticia {
-        font-size: 0.85rem;
-        color: #5a6c7d;
-        line-height: 1.5;
-        margin: 0 20px;
-        flex-grow: 1;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        line-clamp: 3;
-        -webkit-box-orient: vertical;
-    }
-
-    .boton-leer-mas {
-        display: inline-block;
-        background: #9c000d;
-        color: white;
-        text-decoration: none;
-        padding: 10px 20px;
-        border-radius: 20px;
-        font-weight: 700;
-        font-size: 0.8rem;
-        margin: 15px 20px 20px 20px;
-        text-align: center;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
-    }
-
-    .boton-leer-mas:hover {
-        background: #ece8e8b2;
-        color: #191970;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(201, 3, 3, 0.562);
-    }
-
-    /* Responsive design */
-    @media (max-width: 768px) {
-        .contenedor-todas-noticias {
-            grid-template-columns: 1fr;
-            gap: 20px;
-            padding: 0 10px;
-            max-width: 400px;
+    <style>
+        .seccion-noticias {
+            padding: 60px 20px;
+            background: #ffffff;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
         }
 
         .titulo-seccion {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
+            text-align: center;
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #ac000e, #191970);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 50px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contenedor-todas-noticias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .tarjeta-noticia {
-            height: 360px;
+            background: #ffffff;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            height: 580px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
         }
 
-        .seccion-noticias {
-            padding: 40px 10px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .contenedor-todas-noticias {
-            grid-template-columns: 1fr;
-            max-width: 350px;
+        .tarjeta-noticia:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(255, 71, 87, 0.15);
+            border: 2px solid #aa000e;
         }
 
-        .titulo-seccion {
-            font-size: 1.8rem;
+        .tarjeta-noticia::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #8d0000;
+            border-radius: 25px 25px 0 0;
+        }
+
+        .imagen-noticia {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            background: #8f0101;
         }
 
         .encabezado-noticia {
-            font-size: 0.9rem;
-            height: 48px;
-            margin: 15px 15px 8px 15px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 18px 20px 8px 20px;
+            line-height: 1.3;
+            height: 72px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
 
-        .info-autor-fecha,
+        .info-autor-fecha {
+            font-size: 0.75rem;
+            color: #a0000d;
+            margin: 0 20px 12px 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .descripcion-noticia {
-            margin-left: 15px;
-            margin-right: 15px;
+            font-size: 0.85rem;
+            color: #5a6c7d;
+            line-height: 1.5;
+            margin: 0 20px;
+            flex-grow: 1;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
         }
 
         .boton-leer-mas {
-            margin: 12px 15px 15px 15px;
-            padding: 8px 16px;
+            display: inline-block;
+            background: #9c000d;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin: 15px 20px 20px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
         }
-    }
-</style>
+
+        .boton-leer-mas:hover {
+            background: #ece8e8b2;
+            color: #191970;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(201, 3, 3, 0.562);
+        }
+
+        .filtro-anos {
+            margin-bottom: 30px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .contenedor-todas-noticias {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 10px;
+                max-width: 400px;
+            }
+
+            .titulo-seccion {
+                font-size: 2.2rem;
+                margin-bottom: 30px;
+            }
+
+            .tarjeta-noticia {
+                height: 360px;
+            }
+
+            .seccion-noticias {
+                padding: 40px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contenedor-todas-noticias {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+            }
+
+            .titulo-seccion {
+                font-size: 1.8rem;
+            }
+
+            .encabezado-noticia {
+                font-size: 0.9rem;
+                height: 48px;
+                margin: 15px 15px 8px 15px;
+            }
+
+            .info-autor-fecha,
+            .descripcion-noticia {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+
+            .boton-leer-mas {
+                margin: 12px 15px 15px 15px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
 
 <body>
-
     <div id="header-container"></div>
-
     <div id="menu-container"></div>
+
     <main class="main-content">
         <section class="hero">
             <div class="hero-content">
                 <h2><i class="fa-solid"></i> Noticias</h2>
             </div>
         </section>
+
         <section class="seccion-noticias">
+            <h2 class="titulo-seccion">Noticias</h2>
+
+            <!-- Botones de filtro por año -->
+            <div class="filtro-anos text-center mb-4">
+                <button class="btn btn-outline-danger filtro-btn" data-ano="2024">2025</button>
+                <button class="btn btn-outline-danger filtro-btn" data-ano="2024">2024</button>
+                <button class="btn btn-outline-danger filtro-btn" data-ano="2023">2023</button>
+                <button class="btn btn-outline-danger filtro-btn" data-ano="todos">Todos</button>
+            </div>
+
             <div class="contenedor-todas-noticias">
 
-
                 <!-- NOTICIA 1 -->
-                <div class="tarjeta-noticia">
+                <div class="tarjeta-noticia" data-ano="2024">
                     <img src="./img/noticia 1.jpeg" alt="Noticia 1" class="imagen-noticia">
-                    <h3 class="encabezado-noticia">I.E.S.T.P. «Trujillo» presente en la IV Feria Vocacional: “Descubro y
-                        elijo mi vocación para el futuro”</h3>
+                    <h3 class="encabezado-noticia">I.E.S.T.P. «Trujillo» presente en la IV Feria Vocacional...</h3>
                     <p class="info-autor-fecha">por AdminIWPT | Nov 19, 2024 | Noticias</p>
                     <p class="descripcion-noticia">
-                        El pasado 15 de noviembre, el Instituto de Educación Superior Tecnológico Público "Trujillo"
-                        participó activamente en la feria vocacional organizada por la Institución Educativa Alférez
-                        Policía
-                        Nacional del Perú “Mariano Santos Mateo”, demostrando su compromiso con la...
+                        El pasado 15 de noviembre, el Instituto de Educación Superior Tecnológico Público "Trujillo" participó...
                     </p>
                     <a href="./noticias/noticia1.html" class="boton-leer-mas">Leer más</a>
                 </div>
 
                 <!-- NOTICIA 2 -->
-                <div class="tarjeta-noticia">
+                <div class="tarjeta-noticia" data-ano="2024">
                     <img src="./img/noticia2.jpg" alt="Noticia 2" class="imagen-noticia">
-                    <h3 class="encabezado-noticia">El I.E.S.T.P. “Trujillo” celebra 45 años de excelencia académica en
-                        la
-                        formación profesional</h3>
+                    <h3 class="encabezado-noticia">El I.E.S.T.P. “Trujillo” celebra 45 años de excelencia académica...</h3>
                     <p class="info-autor-fecha">por AdminIWPT | Nov 8, 2024 | Noticias</p>
                     <p class="descripcion-noticia">
-                        En un emotivo acto que se realizó el pasado 04 de noviembre, el Instituto de Educación Superior
-                        Tecnológico Público “Trujillo” conmemoró su 45 aniversario de creación institucional. La jornada
-                        inició con una solemne misa de acción de gracias en la Iglesia San Pedro...
+                        En un emotivo acto que se realizó el pasado 04 de noviembre, el Instituto de Educación Superior...
                     </p>
                     <a href="./noticias/noticia2.html" class="boton-leer-mas">Leer más</a>
                 </div>
 
                 <!-- NOTICIA 3 -->
-                <div class="tarjeta-noticia">
+                <div class="tarjeta-noticia" data-ano="2023">
                     <img src="./img/noticia3.jpeg" alt="Noticia 3" class="imagen-noticia">
-                    <h3 class="encabezado-noticia">I.E.S.T.P. “Trujillo” Celebra 45 Años Fortaleciendo las Competencias
-                        Socioemocionales</h3>
-                    <p class="info-autor-fecha">por AdminIWPT | Oct 29, 2024 | Noticias</p>
+                    <h3 class="encabezado-noticia">I.E.S.T.P. “Trujillo” Celebra 45 Años Fortaleciendo competencias...</h3>
+                    <p class="info-autor-fecha">por AdminIWPT | Oct 29, 2023 | Noticias</p>
                     <p class="descripcion-noticia">
-                        Nuestra Institución en el marco de su 45 aniversario, llevó a cabo el día de hoy un ciclo de
-                        conferencias enfocado en un tema de vital importancia en el desarrollo personal y profesional:
-                        el
-                        fortalecimiento de las competencias socioemocionales. La actividad, titulada...
+                        Nuestra Institución en el marco de su 45 aniversario, llevó a cabo un ciclo de conferencias enfocado...
                     </p>
                     <a href="./noticias/noticia3.html" class="boton-leer-mas">Leer más</a>
                 </div>
 
                 <!-- NOTICIA 4 -->
-                <div class="tarjeta-noticia">
+                <div class="tarjeta-noticia" data-ano="2024">
                     <img src="./img/noticia4.jpeg" alt="Noticia 4" class="imagen-noticia">
                     <h3 class="encabezado-noticia">IESTP “TRUJILLO” INICIÓ CELEBRACIONES POR 45° ANIVERSARIO DE CREACIÓN
                         INSTITUCIONAL</h3>
@@ -269,7 +269,7 @@
                 </div>
 
                 <!-- NOTICIA 5 -->
-                <div class="tarjeta-noticia">
+                <div class="tarjeta-noticia" data-ano="2024">
                     <img src="./img/noticia5.jpg" alt="Noticia 5" class="imagen-noticia">
                     <h3 class="encabezado-noticia">Gerencia Regional de Trabajo y Promoción del Empleo de La Libertad
                         promueve los derechos laborales en nuestra Institución.</h3>
@@ -284,7 +284,7 @@
                 </div>
 
                 <!-- NOTICIA 6 -->
-                <div class="tarjeta-noticia">
+                <div class="tarjeta-noticia" data-ano="2024">
                     <img src="./img/noticia6.jpeg" alt="Noticia 6" class="imagen-noticia">
                     <h3 class="encabezado-noticia">El IESTP “TRUJILLO” explora las Maravillas de “El Brujo”</h3>
                     <p class="info-autor-fecha">por AdminIWPT | Oct 15, 2024 | Noticias</p>
@@ -298,7 +298,7 @@
                 </div>
 
                 <!-- NOTICIA 7 -->
-                <div class="tarjeta-noticia">
+                <div class="tarjeta-noticia" data-ano="2024">
                     <img src="./img/noticia7.jpeg" alt="Noticia 7" class="imagen-noticia">
                     <h3 class="encabezado-noticia">III Encuentro Regional de Articulación con el Sector Productivo
                         Fortalece
@@ -315,7 +315,7 @@
                 </div>
 
                 <!-- NOTICIA 8 -->
-                <div class="tarjeta-noticia">
+                <div class="tarjeta-noticia" data-ano="2024">
                     <img src="./img/noticia8.jpeg" alt="Noticia 8" class="imagen-noticia">
                     <h3 class="encabezado-noticia">Instituto Trujillo ofrece charla educativa sobre Factores
                         Psicosociales
@@ -330,7 +330,7 @@
                 </div>
 
                 <!-- NOTICIA 9 -->
-                <div class="tarjeta-noticia">
+                <div class="tarjeta-noticia" data-ano="2024">
                     <img src="./img/noticia9.jpg" alt="Noticia 9" class="imagen-noticia">
                     <h3 class="encabezado-noticia">Reconocimiento a los ganadores y jurado de la III Feria Institucional
                         de
@@ -345,7 +345,7 @@
                 </div>
 
                 <!-- NOTICIA 10 -->
-                <div class="tarjeta-noticia">
+                <div class="tarjeta-noticia" data-ano="2024">
                     <img src="./img/noticia10.jpeg" alt="Noticia 10" class="imagen-noticia">
                     <h3 class="encabezado-noticia">El IESTP «Trujillo» Realiza con éxito su Tercera Feria de
                         Investigación e
@@ -359,6 +359,19 @@
                     </p>
                     <a href="./noticias/noticia10.html" class="boton-leer-mas">Leer más</a>
                 </div>
+                <!-- NOTICIA 11 -->
+                <div class="tarjeta-noticia" data-ano="2025">
+                    <img src="./img/noticia11.jpeg" alt="Noticia 11" class="imagen-noticia">
+                    <h3 class="encabezado-noticia">Apertura del Período Académico 2025 - II y Reconocimiento en Excelencia Académica</h3>
+                    <p class="info-autor-fecha">por AdminWPT | Agosto 18, 2025 | Noticias, Unidad de Investigación</p>
+                    <p class="descripcion-noticia">
+                        El Instituto de Educación Superior Tecnológico Público “Trujillo”, líder en formación
+                        tecnológica de
+                        la Región, realizó con gran éxito su Apertura del Período Académico 2025 - II el pasado 18 de agosto. En esta ceremonia, se reconoció a la institución por su Excelencia Académica.
+                    </p>
+                    <a href="./noticias/noticia11.html" class="boton-leer-mas">Leer más</a>
+                </div>
+
 
             </div>
         </section>
@@ -367,6 +380,26 @@
 
 
     <div id="footer-container"></div>
+     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Filtro por año
+        const botonesFiltro = document.querySelectorAll('.filtro-btn');
+        const noticias = document.querySelectorAll('.tarjeta-noticia');
+
+        botonesFiltro.forEach(boton => {
+            boton.addEventListener('click', () => {
+                const ano = boton.getAttribute('data-ano');
+                noticias.forEach(noticia => {
+                    if (ano === 'todos' || noticia.getAttribute('data-ano') === ano) {
+                        noticia.style.display = 'flex';
+                    } else {
+                        noticia.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
