@@ -89,7 +89,7 @@ function closeModal2() {
 // Función para cerrar el tercer modal
 function closeModal3() {
   document.getElementById('modal-banner-4').style.display = 'none';
-  document.getElementById('modal-banner-2').style.display = 'block';
+  //document.getElementById('modal-banner-2').style.display = 'block';
 
 }
 /*
