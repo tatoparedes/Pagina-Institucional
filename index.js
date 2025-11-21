@@ -80,8 +80,8 @@ function closeModal1() {
 }
 
 // Función para cerrar el segundo modal y abrir el tercero
-function closeModal2() {
-  document.getElementById('modal-banner-2').style.display = 'none';
+function closeModal4() {
+  document.getElementById('modal-banner-5').style.display = 'none';
  //document.getElementById('modal-banner-4').style.display = 'block';
 }
 
@@ -89,7 +89,7 @@ function closeModal2() {
 // Función para cerrar el tercer modal
 function closeModal3() {
   document.getElementById('modal-banner-4').style.display = 'none';
-  //document.getElementById('modal-banner-2').style.display = 'block';
+  document.getElementById('modal-banner-5').style.display = 'block';
 
 }
 /*
