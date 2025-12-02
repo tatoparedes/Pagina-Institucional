@@ -70,7 +70,7 @@
 
  
 window.onload = function () {
-  document.getElementById('modal-banner-4').style.display = "block";
+  document.getElementById('modal-banner-5').style.display = "block";
 };
 
 // Función para cerrar el primer modal y abrir el segundo
@@ -81,15 +81,20 @@ function closeModal1() {
 
 // Función para cerrar el segundo modal y abrir el tercero
 function closeModal4() {
-  document.getElementById('modal-banner-5').style.display = 'none';
+  document.getElementById('modal-banner-4').style.display = 'none';
  //document.getElementById('modal-banner-4').style.display = 'block';
+}
+
+function closeModal5() {
+ document.getElementById('modal-banner-5').style.display = 'none';
+ document.getElementById('modal-banner-6').style.display = 'block';
 }
 
 
 // Función para cerrar el tercer modal
-function closeModal3() {
-  document.getElementById('modal-banner-4').style.display = 'none';
-  document.getElementById('modal-banner-5').style.display = 'block';
+function closeModal6() {
+  document.getElementById('modal-banner-6').style.display = 'none';
+  document.getElementById('modal-banner-4').style.display = 'block';
 
 }
 /*
