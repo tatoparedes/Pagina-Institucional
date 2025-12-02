@@ -75,6 +75,7 @@ window.onload = function () {
 
 // Función para cerrar el primer modal y abrir el segundo
 function closeModal1() {
+  
   document.getElementById('modal-banner').style.display = 'none';
   document.getElementById('modal-banner-2').style.display = 'block';
 }
