@@ -92,7 +92,7 @@ function closeModal4() {
 
 function closeModal7() {
   document.getElementById('modal-banner-7').style.display = 'none';
- document.getElementById('modal-banner-4').style.display = 'block';
+ //document.getElementById('modal-banner-4').style.display = 'block';
 }
 
 function closeModal5() {
