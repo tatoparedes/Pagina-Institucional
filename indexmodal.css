@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Overlay */
+.modal-overlay {
+    display: none;
+      /* oculto por defecto */
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+      /* fondo semi-transparente */
+}
+
+/* Modal */
+.modal-contentconcurso {
+ background: #f2f2f2;
+    width: 90%;
+    max-width: 800px;
+    
+    overflow-y: auto;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    margin: 10% auto;
+    position: relative;
+}
+
+/* Botón cerrar 
+
+    
+    
+    font-size: 22px;
+    
+    
+*/
+.close-btnconcurso {
+   position: absolute;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: end;
+    color: #b3002d;
+    right: 15px;
+    top: 0px;
+    
+}
+
+/* Título */
+.modal-contentconcurso h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-top: 0;
+    font-weight: bold;
+}
+
+
+/* Botón Ver Más */
+.btn-vermasconcurso {
+    display: inline-block;
+    background: #b3002d;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 6px;
+    text-decoration: none; /* quita subrayado */
+    font-weight: bold;
+}
+
+.btn-vermasconcurso:hover {
+    opacity: 0.9;
+}
+
+ /*Subtítulos*/
+.modal-contentconcurso h4 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: bold;
+}
+     
+
+/* Grupo de botones */
+.button-groupconcurso {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Botones */
+.button-groupconcurso a {
+    background: #243b5e;        
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;    
+    min-width: 200px;        
+    padding: 10px 25px;    
+    text-decoration: none; /* quita subrayado */    
+    color: white;
+    -webkit-text-fill-color: white;
+}
+
+.button-groupconcurso button {
+    background: #243b5e;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.button-groupconcurso button:hover {
+    background: #1c2f4a;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .modal-contentconcurso {
+        padding: 20px 15px;
+    }
+
+    .modal-contentconcurso a {
+        font-size: 16px;        
+    }
+
+    .button-groupconcurso button {
+        width: 100%;
+        min-width: unset;
+    }
+}
