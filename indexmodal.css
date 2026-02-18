@@ -84,6 +84,15 @@ body {
     color: #000;
     font-weight: bold;
 }
+
+.modal-contentconcurso h3 {
+    margin-top: 40px;
+    font-size: 20px;
+    margin-bottom: 0px;
+    color: #700128;
+    font-weight: bold;
+    text-align: end;
+}
      
 
 /* Grupo de botones */
