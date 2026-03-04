@@ -70,7 +70,7 @@
 
  
 window.onload = function () {
-  document.getElementById('modal-banner-4').style.display = "block";
+  document.getElementById('modal-banner-6').style.display = "block";
 };
 
 // Función para cerrar el primer modal y abrir el segundo
@@ -104,7 +104,7 @@ function closeModal5() {
 // Función para cerrar el tercer modal
 function closeModal6() {
   document.getElementById('modal-banner-6').style.display = 'none';
-  document.getElementById('modal-banner-7').style.display = 'block';
+  document.getElementById('modal-banner-4').style.display = 'block';
 
 }
 /*
