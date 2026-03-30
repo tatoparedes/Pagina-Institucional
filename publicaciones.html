@@ -3,77 +3,162 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Instituto Tecnológico Trujillo</title>
-
-  <!-- Estilos -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instituto Trujillo</title>
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Script -->
   <script src="script.js" defer></script>
-
   <style>
-    html,
-    body {
-      height: 100%;
-      margin: 0;
+    .schedule {
+      max-width: 700px;
+      margin: 30px auto;
+      border-collapse: collapse;
+      width: 90%;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
     }
 
-    .tupaconte {
+    .schedule th,
+    .schedule td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .schedule th {
+      background-color: #99001f;
+      color: white;
+    }
+
+    .schedule caption {
+      font-size: 22px;
+      font-weight: 700;
+      color: #99001f;
+      margin-bottom: 10px;
+    }
+
+    .presentation {
+      margin: 40px auto;
+      padding: 20px;
+      max-width: 1200px;
+    }
+
+    .convenio-box {
+      background-color: #f8f8f8;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: white;
+      justify-content: space-between;
+      /* Asegura que el botón se alinee al final */
+      /*height: 250px;*/
+      /* Establece una altura fija para todos los boxes */
     }
 
-    h3 {
+    .convenio-box h4 {
       color: #99001f;
-      font-size: 25px;
+      font-size: 20px;
+      font-weight: 700;
       margin-bottom: 10px;
-      text-align: center;
     }
 
-    #visor {
-      width: 80vw;
-      /* 80% del ancho de la ventana */
-      height: 80vh;
-      /* 80% del alto de la ventana */
-      border: none;
-      background-color: white;
+    .convenio-box p,
+    .convenio-box span {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .convenio-box a {
+      padding: 8px 16px;
+      /* Botones más pequeños */
+      background-color: #99001f;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+      font-size: 14px;
+      /* Tamaño de fuente ajustado */
+      align-self: flex-start;
+      /* Alineamos el botón a la izquierda */
+    }
+
+    .convenio-box a:hover {
+      background-color: #c92b3a;
+    }
+
+    .convenio-box a:active {
+      transform: scale(0.98);
     }
   </style>
 </head>
 
 <body>
+
   <div id="header-container"></div>
+
   <div id="menu-container"></div>
-  
 
   <main class="main-content">
-<section class="hero">
-    <div class="hero-content">
-      <h2><i class="fas fa-chart-"></i>PUBLICACIONES</h2>
-    </div>
-  </section>
 
-<section class="tupaconte">
-  <h3>Cuadro de Meritos Regional de Contrato Docente</h3>
-    <iframe class="" id="visor" src="./documentos/CuadrodeMeritosRegionaldeContratoDocente.pdf"></iframe>
-</section>
+    <!-- Banner de bienvenida -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2><i class="fa-regular fa-newspaper"></i> Publicaciones</h2>
+      </div>
+    </section>
+
+    <section class="presentation">    
+      <h3>RESULTADOS EXAMEN DE ADMISIÓN ORDINARIO 2026</h3>    
+      <div class="convenio-box">             
+        <span>Fecha de Publicación: 29/03/2026</span>      
+        <h4>RESULTADOS POR PROGRAMA DE ESTUDIOS</h4>      
+        <a href="./ResultadosOrdinario2026/AsistenciaMañana.pdf" target="_blank">Asistencia Administrativa</a>
+        <a href="./ResultadosOrdinario2026/ContabilidadMañana.pdf" target="_blank">Contabilidad (Turno Mañana)</a>
+        <a href="./ResultadosOrdinario2026/ContabilidadTarde.pdf" target="_blank">Contabilidad (Turno Tarde)</a>
+        <a href="./ResultadosOrdinario2026/DiseñoyProgramacionMañana.pdf" target="_blank">Diseño y Programación Web (Turno Mañana)</a>
+        <a href="./ResultadosOrdinario2026/DiseñoyProgramacionTarde.pdf" target="_blank">Diseño y Programación Web (Turno Tarde)</a>
+        <a href="./ResultadosOrdinario2026/Enfermeria.pdf" target="_blank">Enfermeria Técnica</a>
+        <a href="./ResultadosOrdinario2026/GuiaOficialTurismo.pdf" target="_blank">Guía Oficial de Turismo</a>
+        <a href="./ResultadosOrdinario2026/LaboratorioClinicoAnatomiaPatologica.pdf" target="_blank">Laboratorio Clínico y Anatomia Patológica</a>
+        <a href="./ResultadosOrdinario2026/Marketing.pdf" target="_blank">Marketing</a>
+
+      </div>   
+    </section>
+
+     <section class="presentation">
+    <h3>SEGUNDA CONVOCATORIA: 
+    CRONOGRAMA PARA EL PROCESO DE CONTRATACION DE PERSONAL ADMINISTRATIVO</h3>    
+      <div class="convenio-box">             
+        <span>Fecha de Publicación: 26/03/2026</span>
+        <h4>CRONOGRAMA PARA EL PROCESO DE CONTRATACION DE PERSONAL ADMINISTRATIVO</h4>        
+        <a href="./documentos/2DACONVOCATORIAPERSONALSERVICIO.pdf" target="_blank">Ver Mas</a>
+      </div>   
+    </section>
+
+     <section class="presentation">
+    <h3>Cuadro de Meritos Regional de Contrato Docente</h3>           
+      <div class="convenio-box">             
+        <span>Fecha de Publicación: 19/03/2026</span>
+        <a href="./documentos/CuadrodeMeritosRegionaldeContratoDocente.pdf" target="_blank">Ver Mas</a>
+      </div>   
+    </section>
+
     
+
   </main>
 
   <div id="footer-container"></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>
