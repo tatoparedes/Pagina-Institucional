@@ -70,7 +70,7 @@
 
  
 window.onload = function () {
-  document.getElementById('modal-banner-6').style.display = "block";
+  document.getElementById('modal-banner-5').style.display = "block";
 };
 
 // Función para cerrar el primer modal y abrir el segundo
@@ -97,7 +97,7 @@ function closeModal10() {
 
 function closeModal5() {
  document.getElementById('modal-banner-5').style.display = 'none';
- document.getElementById('modal-banner-4').style.display = 'block';
+ //document.getElementById('modal-banner-4').style.display = 'block';
 }
 
 
