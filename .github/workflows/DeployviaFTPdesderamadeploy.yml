@@ -24,3 +24,12 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: ${{ secrets.FTP_TARGET }}/
         dangerous-clean-slate: false
+
+        # 🔐 Plesk trabaja mejor con FTPS 
+        protocol: ftps 
+        port: 21 
+        passive: true 
+        # ⏱️ Evitar cortes (muy común en Plesk) 
+        timeout: 600000 
+        # 🧪 Logs para depuración 
+        log-level: verbose    
