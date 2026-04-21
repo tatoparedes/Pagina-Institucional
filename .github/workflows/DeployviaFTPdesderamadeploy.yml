@@ -32,4 +32,11 @@ jobs:
         # ⏱️ Evitar cortes (muy común en Plesk) 
         timeout: 600000 
         # 🧪 Logs para depuración 
-        log-level: verbose    
+        log-level: verbose   
+
+        # 🚫 EXCLUIR ARCHIVOS INNECESARIOS 
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/.vscode/**
+          **/node_modules/**
