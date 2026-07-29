@@ -70,7 +70,7 @@
 
  
 window.onload = function () {
-  document.getElementById('modal-banner-1').style.display = "block";
+  document.getElementById('modal-banner-7').style.display = "block";
 
 };
 
