@@ -278,6 +278,32 @@
       }
     }
 
+.bolsa-laboral {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 110px;
+    z-index: 9999;
+    
+    transition: all 0.3s ease;
+}
+
+.bolsa-laboral img {
+    width: 100%;
+    display: block;
+    
+    transition: transform 0.3s ease;
+}
+
+/* Al pasar el mouse */
+.bolsa-laboral:hover {
+    width: 180px;
+}
+
+.bolsa-laboral:hover img {
+    transform: scale(1.05);
+}
+
     .icon-box i {
       font-size: 28px;
       /* Reducido el tamaño de fuente a 28px */
